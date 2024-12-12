@@ -6,7 +6,7 @@ license(s): MIT, CC BY 4.0
 ---
 
 
-## The iOS App Lifecycle Management
+## The iOS App Lifecycle Management Overview
 
 ```mermaid
 graph LR
