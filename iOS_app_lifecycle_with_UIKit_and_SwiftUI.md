@@ -1,7 +1,7 @@
 ---
 created: 2024-11-11 05:31:26
 author: Cong Le
-version: "3.0"
+version: "3.5"
 license(s): MIT, CC BY 4.0
 ---
 
@@ -61,6 +61,102 @@ graph LR
 
 ---
 
+another overview diagram version:
+
+
+```mermaid
+%% Diagram of iOS Application Lifecycle with SwiftUI View Lifecycle using Mermaid
+graph TD
+    %% Define styles
+    classDef lifecycleStarts fill:#6c8ebf,stroke:#333,stroke-width:2px,roundedCorners, color:#ffffff
+    classDef lifecycleEnds fill:#bf6c6c,stroke:#333,stroke-width:2px,roundedCorners, color:#ffffff
+    classDef lifecycleActive fill:#6bbf6c,stroke:#333,stroke-width:2px,roundedCorners, color:#000000
+    classDef UIKitProcess fill:#FF6666,stroke:#333,stroke-width:2px,roundedCorners, color:#000000
+    classDef SwiftUIProcess fill:#FFC0CB,stroke:#333,stroke-width:2px,roundedCorners, color:#000000
+
+    %% Nodes
+    NotRunning("Not Running"):::lifecycleStarts
+    AppLaunch("App Launches"):::UIKitProcess
+    SceneWillConnect("scene(_:willConnectTo:options:)"):::UIKitProcess
+    didFinishLaunching("didFinishLaunchingWithOptions()"):::UIKitProcess
+    appDidBecomeActive("applicationDidBecomeActive()"):::UIKitProcess
+    Active("App is Active"):::lifecycleActive
+
+    willResignActive("applicationWillResignActive()"):::UIKitProcess
+    didEnterBackground("applicationDidEnterBackground()"):::UIKitProcess
+    Background("App is in Background"):::lifecycleActive
+
+    willEnterForeground("applicationWillEnterForeground()"):::UIKitProcess
+    appBecomeActiveAgain("applicationDidBecomeActive()"):::UIKitProcess
+    willTerminate("applicationWillTerminate()"):::UIKitProcess
+    Terminated("App is Terminated"):::lifecycleEnds
+    Suspended("App is Suspended"):::lifecycleActive
+
+    %% SwiftUI View Lifecycle Nodes
+    mainViewAppear("MainView.onAppear()"):::SwiftUIProcess
+    mainViewDisappear("MainView.onDisappear()"):::SwiftUIProcess
+    detailViewAppear("DetailView.onAppear()"):::SwiftUIProcess
+    detailViewDisappear("DetailView.onDisappear()"):::SwiftUIProcess
+    refreshBody("MainView.body recomputes"):::SwiftUIProcess
+
+    %% Scene Delegate Nodes (iOS 13+)
+    SceneDidDisconnect("sceneDidDisconnect()"):::UIKitProcess
+    SceneDidBecomeActive("sceneDidBecomeActive()"):::UIKitProcess
+    SceneWillResignActive("sceneWillResignActive()"):::UIKitProcess
+    SceneWillEnterForeground("sceneWillEnterForeground()"):::UIKitProcess
+    SceneDidEnterBackground("sceneDidEnterBackground()"):::UIKitProcess
+
+    %% Transitions
+    NotRunning --> AppLaunch
+    AppLaunch --> SceneWillConnect
+    SceneWillConnect --> didFinishLaunching
+    didFinishLaunching --> appDidBecomeActive
+    appDidBecomeActive --> Active
+
+    Active -->|Incoming Call,<br>User Presses Home/Lock| willResignActive
+    willResignActive --> didEnterBackground
+    didEnterBackground --> Background
+
+    Background -->|User Reopens App<br>System Promotes App| willEnterForeground
+    willEnterForeground --> appBecomeActiveAgain
+    appBecomeActiveAgain --> Active
+
+    Background --> willTerminate
+    willTerminate --> Terminated
+    Terminated --> Suspended
+
+    %% Scene Delegate Transitions
+    Active --> SceneDidBecomeActive
+    SceneDidBecomeActive --> Active
+    SceneWillResignActive --> willResignActive
+    SceneDidEnterBackground --> didEnterBackground
+    SceneWillEnterForeground --> willEnterForeground
+    SceneDidDisconnect --> Terminated
+
+    %% SwiftUI View Lifecycle Transitions
+    Active --> mainViewAppear
+    mainViewAppear --> mainViewDisappear
+    mainViewAppear --> detailViewAppear
+    detailViewAppear --> detailViewDisappear
+    mainViewAppear --> refreshBody
+    detailViewAppear --> refreshBody
+    mainViewDisappear --> refreshBody
+    detailViewDisappear --> refreshBody
+
+    %% Additional Transitions
+    Active -.->|User Presses Home or Locks Screen| willResignActive
+    Background -.->|System Needs to Free Up Memory| Terminated
+    Suspended -.->|User Opens App Again| didFinishLaunching
+    SceneDidDisconnect -.-> Terminated
+
+    %% Styling SwiftUI Nodes
+    class mainViewAppear,mainViewDisappear,detailViewAppear,detailViewDisappear,refreshBody SwiftUIProcess
+
+```
+
+
+---
+
 Conveying the complexity of the iOS application lifecycle, especially when integrating both UIKit and SwiftUI components, can be effectively achieved by utilizing a **set of interconnected diagrams**. This approach allows for a modular understanding, where each diagram focuses on a specific aspect of the lifecycle, and together they provide a comprehensive overview.
 
 Below, I present **three distinct Mermaid diagrams**:
@@ -72,7 +168,6 @@ Below, I present **three distinct Mermaid diagrams**:
 
 Each diagram highlights different facets of the lifecycle, and their interconnections are explained to provide a holistic understanding.
 
----
 
 ## 1. High-Level Application Lifecycle Diagram
 
