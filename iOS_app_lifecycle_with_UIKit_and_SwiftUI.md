@@ -1,7 +1,7 @@
 ---
 created: 2024-11-11 05:31:26
 author: Cong Le
-version: "2.0"
+version: "3.0"
 license(s): MIT, CC BY 4.0
 ---
 
@@ -68,6 +68,7 @@ Below, I present **three distinct Mermaid diagrams**:
 1. **High-Level Application Lifecycle Diagram**
 2. **SwiftUI Scene Phase Lifecycle Diagram**
 3. **SwiftUI View Lifecycle Diagram**
+4. **iOS app lifecycle with multiple scenes in various states**
 
 Each diagram highlights different facets of the lifecycle, and their interconnections are explained to provide a holistic understanding.
 
@@ -160,6 +161,92 @@ stateDiagram-v2
 - **DetailView.onAppear():** Triggered when `DetailView` appears.
 - **DetailView.onDisappear():** Triggered when `DetailView` disappears.
 - **body recomputes:** Indicates that the view's body is being re-rendered, often due to state changes.
+
+
+
+## 4. The iOS application lifecycle with multiple scenes in various states
+
+
+```mermaid
+stateDiagram-v2
+    [*] --> NotRunning
+
+    NotRunning --> Inactive : Launch (didFinishLaunchingWithOptions)
+    Inactive --> Active : Became Active (applicationDidBecomeActive / sceneDidBecomeActive)
+    Active --> Inactive : Interruptions (e.g., Phone Call) (applicationWillResignActive / sceneWillResignActive)
+    Inactive --> Background : Home Button Press / App Switch (applicationDidEnterBackground / sceneDidEnterBackground)
+    Background --> Suspended : No active tasks
+    Suspended --> NotRunning : System terminates app
+
+    %% Additional Transitions
+    Inactive --> Background : Move to background directly
+    Background --> Active : Some background tasks request to become active
+
+    %% Termination
+    Active --> NotRunning : Force Quit
+    Inactive --> NotRunning : Force Quit
+
+    %% SwiftUI Lifecycle
+    [*] --> SwiftUIApplication
+
+    SwiftUIApplication --> ActiveSwiftUI : "onChange(scenePhase active)"
+    ActiveSwiftUI --> InactiveSwiftUI : "onChange(scenePhase inactive)"
+    InactiveSwiftUI --> BackgroundSwiftUI : "onChange(scenePhase background)"
+    BackgroundSwiftUI --> Suspended : System suspends app
+
+    %% State Restoration
+    Suspended --> Inactive : App is relaunched (state restoration)
+
+    %% Multiple Scenes
+    state MultipleScenes {
+        [*] --> Scene1
+        [*] --> Scene2
+
+        Scene1 --> Active
+        Scene2 --> Inactive
+    }
+
+    %% Notes
+    note right of NotRunning
+        App is not launched
+    end note
+
+    note right of Active
+        App is in foreground
+    end note
+
+    note right of Background
+        App is executing in background
+    end note
+
+    note right of Suspended
+        App is in background, not executing
+    end note
+
+```
+
+### Diagram Explanation
+
+1. **States:**
+    - **Not Running:** The app is not launched or has been terminated.
+    - **Inactive:** The app is in the foreground but not receiving events (e.g., during an interruption like a phone call).
+    - **Active:** The app is in the foreground and receiving events.
+    - **Background:** The app is executing code in the background.
+    - **Suspended:** The app is in the background but not executing code.
+2. **Transitions:**
+    - **Launch:** When the app is launched, it moves from **Not Running** to **Inactive**, then to **Active**.
+    - **Interruptions:** An active app can become **Inactive** due to interruptions (like incoming calls), and then either return to **Active** or move to **Background**.
+    - **Home Button Press/App Switch:** Moves the app from **Active** to **Background**.
+    - **Termination:** The system can terminate the app from the **Background** or **Suspended** state, moving it to **Not Running**.
+    - **SwiftUI Lifecycle:** Represents the modern lifecycle management using the `@main` App protocol and `scenePhase`.
+3. **SwiftUI Specifics:**
+    - Uses the `@main` App protocol to manage lifecycle states with `scenePhase`.
+    - Transitions include **ActiveSwiftUI**, **InactiveSwiftUI**, and **BackgroundSwiftUI** corresponding to the `scenePhase` changes.
+4. **Multiple Scenes:**
+    - Illustrates support for multiple UI windows (scenes) within the same app, each managing its own lifecycle independently.
+5. **State Restoration:**
+    - Allows the app to restore its state when relaunched from the **Suspended** state.
+
 
 ---
 
