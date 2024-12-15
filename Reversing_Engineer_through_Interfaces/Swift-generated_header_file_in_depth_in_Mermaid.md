@@ -1,0 +1,409 @@
+---
+created: 2024-12-15 12:35:11
+author: Cong Le
+version: "1.0"
+license(s): MIT, CC BY 4.0
+---
+
+
+
+# # Swift-generated header file - Mermaid Diagrams of the Code Content
+
+Below are Mermaid diagrams representing the content explained content in file: 
+Reversing_Engineer_through_Interfaces/Swift-generated_header_file-Explaination-in-depth.md.
+
+These diagrams illustrate the class hierarchy, inheritance, protocols, and relationships among the classes in your `MyApp` Swift module as exposed to Objective-C. These will serve as reference documentation for future use.
+
+---
+
+## 1. Class Hierarchy Diagram
+
+This diagram shows the inheritance relationships between the classes and protocols.
+
+```mermaid
+classDiagram
+    %% Base Classes and Protocols
+    class NSObject
+    class UIResponder
+    class UIView
+    class UIViewController
+    class UIApplicationDelegate
+    class UIWindowSceneDelegate
+    class AVCaptureVideoDataOutputSampleBufferDelegate
+
+    %% AppDelegate
+    class AppDelegate {
+        +applicationDidFinishLaunchingWithOptions(application, launchOptions) BOOL
+        +applicationDidBecomeActive(application)
+        +applicationWillResignActive(application)
+        +applicationDidEnterBackground(application)
+        +applicationWillEnterForeground(application)
+        +applicationWillTerminate(application)
+        +applicationConfigurationForConnectingSceneSessionOptions(application, connectingSceneSession, options) UISceneConfiguration
+    }
+    AppDelegate --|> UIResponder
+    AppDelegate ..|> UIApplicationDelegate
+
+    %% SceneDelegate
+    class SceneDelegate {
+        +window UIWindow
+        +sceneWillConnectToSessionOptions(scene, session, connectionOptions)
+        +sceneDidBecomeActive(scene)
+        +sceneWillResignActive(scene)
+        +sceneDidEnterBackground(scene)
+        +sceneWillEnterForeground(scene)
+        +sceneDidDisconnect(scene)
+    }
+    SceneDelegate --|> UIResponder
+    SceneDelegate ..|> UIWindowSceneDelegate
+
+    %% CustomUIKitView
+    class CustomUIKitView {
+        +initWithFrame(frame) 
+        +initWithCoder(coder)
+        +awakeFromNib()
+        +layoutSubviews()
+        +drawRect(rect)
+        +didMoveToSuperview()
+        +didMoveToWindow()
+    }
+    CustomUIKitView --|> UIView
+
+    %% View Controllers
+    class MyUIKitViewController {
+        +viewDidLoad()
+        +initWithNibNameBundle(nibNameOrNil, nibBundleOrNil)
+        +initWithCoder(coder)
+    }
+    MyUIKitViewController --|> UIViewController
+
+    class NativeUIKitViewController {
+        +viewDidLoad()
+        +initWithNibNameBundle(nibNameOrNil, nibBundleOrNil)
+        +initWithCoder(coder)
+    }
+    NativeUIKitViewController --|> UIViewController
+
+    class YOLOViewController {
+        +viewDidLoad()
+        +viewWillLayoutSubviews()
+        +pinch(pinch)
+        +modelChanged(sender)
+        +sliderChanged(sender)
+        +playButtonTapped()
+        +pauseButtonTapped()
+        +navigateToStatistics()
+        +navigateToSettings()
+        +initWithNibNameBundle(nibNameOrNil, nibBundleOrNil)
+        +initWithCoder(coder)
+    }
+    YOLOViewController --|> UIViewController
+
+    class YOLOSettingsViewController {
+        +viewDidLoad()
+        +developerModeToggled(sender)
+        +telephotoCameraToggled(sender)
+        +initWithNibNameBundle(nibNameOrNil, nibBundleOrNil)
+        +initWithCoder(coder)
+    }
+    YOLOSettingsViewController --|> UIViewController
+
+    class YOLOStatisticsViewController {
+        +viewDidLoad()
+        +viewWillAppear(animated)
+        +initWithNibNameBundle(nibNameOrNil, nibBundleOrNil)
+        +initWithCoder(coder)
+    }
+    YOLOStatisticsViewController --|> UIViewController
+
+    %% VideoCapture
+    class VideoCapture {
+        +init()
+        +captureOutputDidOutputSampleBufferFromConnection(output, sampleBuffer, connection)
+        +captureOutputDidDropSampleBufferFromConnection(output, sampleBuffer, connection)
+    }
+    VideoCapture --|> NSObject
+    VideoCapture ..|> AVCaptureVideoDataOutputSampleBufferDelegate
+```
+
+---
+
+## 2. App Lifecycle and Delegate Methods
+
+This diagram illustrates how `AppDelegate` and `SceneDelegate` interact with the application and scene lifecycles.
+
+```mermaid
+sequenceDiagram
+    participant App as UIApplication
+    participant AD as AppDelegate
+    participant SD as SceneDelegate
+    participant Scene as UIScene
+
+    App ->> AD: application:didFinishLaunchingWithOptions:
+    AD -->> App: BOOL
+
+    Note over App,AD: Application launched
+
+    App ->> SD: configurationForConnectingSceneSession:
+    SD -->> App: UISceneConfiguration
+
+    Note over App,SD: Configuring new scene
+
+    App ->> SD: scene:willConnectToSession:options:
+    SD -->> Scene: Setup UIWindow
+
+    Note over SD,Scene: Scene is connecting
+
+    App ->> SD: sceneDidBecomeActive:
+    Note over SD: Scene became active
+
+    App ->> SD: sceneWillResignActive:
+    Note over SD: Scene will resign active
+
+    App ->> SD: sceneDidEnterBackground:
+    Note over SD: Scene entered background
+
+    App ->> SD: sceneWillEnterForeground:
+    Note over SD: Scene will enter foreground
+
+    App ->> AD: applicationWillTerminate:
+    Note over AD: Application will terminate
+```
+
+---
+
+## 3. Video Capture Flow
+
+This diagram shows how `VideoCapture` handles video frames from the camera.
+
+```mermaid
+sequenceDiagram
+    participant Camera as AVCaptureSession
+    participant VC as VideoCapture
+    participant Delegate as AVCaptureVideoDataOutputSampleBufferDelegate
+
+    Camera ->> VC: captureOutput:didOutputSampleBuffer:fromConnection:
+    VC ->> Delegate: Process sampleBuffer
+    Note over VC: Processes the frame
+
+    Camera ->> VC: captureOutput:didDropSampleBuffer:fromConnection:
+    VC ->> Delegate: Handle dropped buffer
+    Note over VC: Handles dropped frame
+```
+
+---
+
+## 4. YOLOViewController User Interactions
+
+This diagram represents user interactions within `YOLOViewController`.
+
+```mermaid
+flowchart TD
+    subgraph YOLOViewController
+        A[viewDidLoad]
+        B[viewWillLayoutSubviews]
+        C[pinchGesture]
+        D[modelChanged]
+        E[sliderChanged]
+        F[playButtonTapped]
+        G[pauseButtonTapped]
+        H[navigateToStatistics]
+        I[navigateToSettings]
+    end
+
+    User -->|Pinch Gesture| C
+    User -->|Change Model| D
+    User -->|Adjust Slider| E
+    User -->|Tap Play| F
+    User -->|Tap Pause| G
+    User -->|Statistics| H
+    User -->|Settings| I
+```
+
+---
+
+## 5. Class Relationships and Protocol Conformance
+
+This class diagram focuses on protocol conformance and delegates.
+
+```mermaid
+classDiagram
+    class AVCaptureVideoDataOutputSampleBufferDelegate
+    class VideoCapture {
+        +captureOutputDidOutputSampleBufferFromConnection(output, sampleBuffer, connection)
+        +captureOutputDidDropSampleBufferFromConnection(output, sampleBuffer, connection)
+    }
+    VideoCapture ..|> AVCaptureVideoDataOutputSampleBufferDelegate
+
+    class UIWindowSceneDelegate
+    class SceneDelegate
+    SceneDelegate ..|> UIWindowSceneDelegate
+
+    class UIApplicationDelegate
+    class AppDelegate
+    AppDelegate ..|> UIApplicationDelegate
+
+    %% View Controllers Conforming to UIViewController
+    class UIViewController
+
+    class YOLOViewController
+    YOLOViewController --|> UIViewController
+
+    class YOLOSettingsViewController
+    YOLOSettingsViewController --|> UIViewController
+
+    class YOLOStatisticsViewController
+    YOLOStatisticsViewController --|> UIViewController
+
+    %% Gesture Recognizers and Controls
+    class UIPinchGestureRecognizer
+    class UISegmentedControl
+    class UISlider
+
+    YOLOViewController o-- UIPinchGestureRecognizer : uses
+    YOLOViewController o-- UISegmentedControl : uses
+    YOLOViewController o-- UISlider : uses
+```
+
+---
+
+## 6. Method Overrides and Extensions
+
+This diagram highlights how certain methods are overridden in subclasses.
+
+```mermaid
+classDiagram
+    class UIViewController {
+        +viewDidLoad()
+        +viewWillAppear(animated)
+    }
+
+    class YOLOViewController {
+        +viewDidLoad()
+        +viewWillLayoutSubviews()
+        +additionalMethods()
+    }
+    YOLOViewController --|> UIViewController
+
+    class YOLOSettingsViewController {
+        +viewDidLoad()
+        +developerModeToggled(sender)
+        +telephotoCameraToggled(sender)
+    }
+    YOLOSettingsViewController --|> UIViewController
+
+    class YOLOStatisticsViewController {
+        +viewDidLoad()
+        +viewWillAppear(animated)
+    }
+    YOLOStatisticsViewController --|> UIViewController
+
+    %% Indicate overridden methods
+    UIViewController : <<virtual>>
+    YOLOViewController : viewDidLoad() *overrides*
+    YOLOStatisticsViewController : viewWillAppear(animated) *overrides*
+```
+
+---
+
+## 7. Interoperability Between Swift and Objective-C
+
+This flowchart outlines how Swift classes are exposed to Objective-C through the generated header.
+
+```mermaid
+flowchart TD
+    subgraph Swift Module [Swift Module - MyApp]
+        S1[Swift Classes and Methods]
+    end
+
+    subgraph ObjC Runtime [Objective-C Runtime]
+        O1["Generated Header (MyApp-Swift.h)"]
+        O2[Objective-C Classes]
+    end
+
+    S1 -->|Compilation| O1
+    O1 -->|Exposes| O2
+    O2 -->|Can Access| S1
+
+    %%Note over S1,O1: Swift compiler generates header
+    %%Note over O1,O2: Objective-C code includes header
+    
+```
+
+
+---
+
+## 8. Application Architecture Overview
+
+This diagram represents the overall architecture, highlighting the adherence to the MVC pattern.
+
+```mermaid
+flowchart LR
+    subgraph Model
+        DataModel[Data Model Classes]
+    end
+
+    subgraph View
+        CustomUIKitView
+        UIViews[UIKit Views]
+    end
+
+    subgraph Controller
+        AppDelegate
+        SceneDelegate
+        MyUIKitViewController
+        NativeUIKitViewController
+        YOLOViewController
+        YOLOSettingsViewController
+        YOLOStatisticsViewController
+        VideoCapture
+    end
+
+    Controller --> Model
+    View --> Controller
+```
+
+---
+
+## 9. Protocols and Delegates Implementation
+
+This diagram shows how delegates are used within the app, particularly with `VideoCapture`.
+
+```mermaid
+classDiagram
+    class AVCaptureOutput
+    class VideoCaptureDelegate {
+        +captureOutputDidOutputSampleBufferFromConnection(output, sampleBuffer, connection)
+    }
+    class VideoCapture
+
+    VideoCaptureDelegate <|.. VideoCapture : implements
+    AVCaptureOutput o-- VideoCaptureDelegate : delegate
+```
+
+---
+
+**Notes:**
+
+- **Classes and Inheritance:**
+  - Solid arrows (`--|>`) represent inheritance.
+  - Dashed arrows (`..|>`) represent protocol conformance.
+  - Open diamonds (`o--`) represent associations (usage/has-a relationships).
+
+- **Protocols and Delegates:**
+  - Protocol conformance is shown with dashed lines and open arrowheads.
+  - Delegation relationships are indicated where a class implements a delegate protocol.
+
+- **Sequence Diagrams:**
+  - Show the flow of method calls and lifecycle events.
+  - Useful for understanding how objects interact over time.
+
+- **Flowcharts:**
+  - Represent user interactions and application logic flow.
+  - Help visualize the sequence of events triggered by user actions.
+
+- **Architecture Overview:**
+  - Highlights the separation of concerns following the MVC pattern.
+  - Shows how controllers mediate between views and models.
+
+---
