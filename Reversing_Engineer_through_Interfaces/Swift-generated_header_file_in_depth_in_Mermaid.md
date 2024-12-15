@@ -495,6 +495,11 @@ flowchart LR
 This diagram shows how delegates are used within the app, particularly with `VideoCapture`.
 
 ```mermaid
+%%   Notes:
+%%   - Blue arrows (`--|>`) represent inheritance.
+%%   - Green arrows (`..|>`) represent protocol conformance.
+%%   - Red Open diamonds arrows (`o--`) represent associations (usage/has-a relationships).
+
 classDiagram
     class AVCaptureOutput
     class VideoCaptureDelegate {
@@ -502,9 +507,11 @@ classDiagram
     }
     class VideoCapture
 
-    VideoCaptureDelegate <|.. VideoCapture : implements
-    AVCaptureOutput o-- VideoCaptureDelegate : delegate
+    VideoCaptureDelegate <|.. VideoCapture : <font color=green>implements</font>
+    AVCaptureOutput o-- VideoCaptureDelegate : <font color=red>delegates</font>
+
 ```
+
 
 ---
 
