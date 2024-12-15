@@ -64,12 +64,25 @@ graph LR
 graph LR
     A[Includes] --> B[System Headers];
     A --> C[Platform Specific Headers];
-       B --> B1["<swift/objc-prologue.h>"];
-       B --> B2["<Foundation/Foundation.h>"];
-       B --> B3["<cstdint>", "<cstddef>", ..., "<string.h>"];
-       C --> C1["#if defined(__OBJC__)"];
-       C --> C2["#if defined(__cplusplus)"];
-    style A fill:#a1fa;
+
+    B1["swift/objc-prologue.h"]
+    B2["Foundation/Foundation.h"]
+    B3("
+        stdint
+        cstddef
+        ...
+        string.h
+        "
+    )
+
+    B --> B1
+    B --> B2
+    B --> B3
+ 
+    C --> C1["#if defined(__OBJC__)"];
+    C --> C2["#if defined(__cplusplus)"];
+
+style A fill:#a1fa;
 
 ```
 
