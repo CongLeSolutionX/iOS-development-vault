@@ -460,15 +460,18 @@ This diagram represents the overall architecture, highlighting the adherence to 
 ```mermaid
 flowchart LR
     subgraph Model
+        style Model fill:#5FF3,stroke:#23F,stroke-width:2px
         DataModel[Data Model Classes]
     end
 
     subgraph View
+        style View fill:#593,stroke:#23F,stroke-width:2px
         CustomUIKitView
         UIViews[UIKit Views]
     end
 
     subgraph Controller
+        style Controller fill:#22F,stroke:#23F,stroke-width:2px
         AppDelegate
         SceneDelegate
         MyUIKitViewController
@@ -481,7 +484,9 @@ flowchart LR
 
     Controller --> Model
     View --> Controller
+
 ```
+
 
 ---
 
