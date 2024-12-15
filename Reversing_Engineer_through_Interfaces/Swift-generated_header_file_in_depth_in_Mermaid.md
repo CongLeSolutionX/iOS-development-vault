@@ -21,6 +21,11 @@ These diagrams illustrate the class hierarchy, inheritance, protocols, and relat
 This diagram shows the inheritance relationships between the classes and protocols.
 
 ```mermaid
+%%   Notes:
+%%   - Blue Solid arrows (`--|>`) represent inheritance.
+%%   - Green Dashed arrows (`..|>`) represent protocol conformance.
+%%   - Red Open diamonds Solid arrows (`o--`) represent associations (usage/has-a relationships).
+
 classDiagram
     %% Base Classes and Protocols
     class NSObject
@@ -30,7 +35,7 @@ classDiagram
     class UIApplicationDelegate
     class UIWindowSceneDelegate
     class AVCaptureVideoDataOutputSampleBufferDelegate
-
+    
     %% AppDelegate
     class AppDelegate {
         +applicationDidFinishLaunchingWithOptions(application, launchOptions) BOOL
@@ -41,8 +46,10 @@ classDiagram
         +applicationWillTerminate(application)
         +applicationConfigurationForConnectingSceneSessionOptions(application, connectingSceneSession, options) UISceneConfiguration
     }
-    AppDelegate --|> UIResponder
-    AppDelegate ..|> UIApplicationDelegate
+    %% AppDelegate is inherited from UIResponder 
+    %% AppDelegate is conforming to UIApplicationDelegate
+    AppDelegate --|> UIResponder :  <font color=blue>Inherited from</font>
+    AppDelegate ..|> UIApplicationDelegate : <font color=green>Conforming to</font>
 
     %% SceneDelegate
     class SceneDelegate {
@@ -54,8 +61,10 @@ classDiagram
         +sceneWillEnterForeground(scene)
         +sceneDidDisconnect(scene)
     }
-    SceneDelegate --|> UIResponder
-    SceneDelegate ..|> UIWindowSceneDelegate
+    %% SceneDelegate is inherited from UIResponder
+    %% SceneDelegate is conforming to UIWindowSceneDelegate
+    SceneDelegate --|> UIResponder : <font color=blue>Inherited from</font>
+    SceneDelegate ..|> UIWindowSceneDelegate : <font color=green>Conforming to</font>
 
     %% CustomUIKitView
     class CustomUIKitView {
@@ -67,7 +76,8 @@ classDiagram
         +didMoveToSuperview()
         +didMoveToWindow()
     }
-    CustomUIKitView --|> UIView
+    %% CustomUIKitView is inherited from UIView
+    CustomUIKitView --|> UIView : <font color=blue>Inherited from</font>
 
     %% View Controllers
     class MyUIKitViewController {
@@ -75,14 +85,16 @@ classDiagram
         +initWithNibNameBundle(nibNameOrNil, nibBundleOrNil)
         +initWithCoder(coder)
     }
-    MyUIKitViewController --|> UIViewController
+    %% MyUIKitViewController is inherited from UIViewController
+    MyUIKitViewController --|> UIViewController : <font color=blue>Inherited from</font>
 
     class NativeUIKitViewController {
         +viewDidLoad()
         +initWithNibNameBundle(nibNameOrNil, nibBundleOrNil)
         +initWithCoder(coder)
     }
-    NativeUIKitViewController --|> UIViewController
+    %% NativeUIKitViewController is inherited from UIViewController
+    NativeUIKitViewController --|> UIViewController : <font color=blue>Inherited from</font>
 
     class YOLOViewController {
         +viewDidLoad()
@@ -97,7 +109,8 @@ classDiagram
         +initWithNibNameBundle(nibNameOrNil, nibBundleOrNil)
         +initWithCoder(coder)
     }
-    YOLOViewController --|> UIViewController
+    %% YOLOViewController is inherited from UIViewController
+    YOLOViewController --|> UIViewController : <font color=blue>Inherited from</font>
 
     class YOLOSettingsViewController {
         +viewDidLoad()
@@ -106,7 +119,8 @@ classDiagram
         +initWithNibNameBundle(nibNameOrNil, nibBundleOrNil)
         +initWithCoder(coder)
     }
-    YOLOSettingsViewController --|> UIViewController
+    %% YOLOSettingsViewController is inherited from UIViewController
+    YOLOSettingsViewController --|> UIViewController : <font color=blue>Inherited from</font>
 
     class YOLOStatisticsViewController {
         +viewDidLoad()
@@ -114,7 +128,8 @@ classDiagram
         +initWithNibNameBundle(nibNameOrNil, nibBundleOrNil)
         +initWithCoder(coder)
     }
-    YOLOStatisticsViewController --|> UIViewController
+    %% YOLOStatisticsViewController is inherited from UIViewController
+    YOLOStatisticsViewController --|> UIViewController : <font color=blue>Inherited from</font>
 
     %% VideoCapture
     class VideoCapture {
@@ -122,9 +137,14 @@ classDiagram
         +captureOutputDidOutputSampleBufferFromConnection(output, sampleBuffer, connection)
         +captureOutputDidDropSampleBufferFromConnection(output, sampleBuffer, connection)
     }
-    VideoCapture --|> NSObject
-    VideoCapture ..|> AVCaptureVideoDataOutputSampleBufferDelegate
+    %% VideoCapture is inherited from NSObject
+    %% VideoCapture is conforming to AVCaptureVideoDataOutputSampleBufferDelegate
+    VideoCapture --|> NSObject : <font color=blue>Inherited from</font>
+    VideoCapture ..|> AVCaptureVideoDataOutputSampleBufferDelegate : <font color=green>Conforming to</font>
+
 ```
+
+
 
 ---
 
