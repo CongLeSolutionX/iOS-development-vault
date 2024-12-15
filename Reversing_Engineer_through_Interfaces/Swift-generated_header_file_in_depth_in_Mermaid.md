@@ -240,7 +240,7 @@ sequenceDiagram
     App ->> AD: applicationWillTerminate:
     Note over AD: Application will terminate
     end
-    
+
 ```
 
 ---
@@ -255,13 +255,18 @@ sequenceDiagram
     participant VC as VideoCapture
     participant Delegate as AVCaptureVideoDataOutputSampleBufferDelegate
 
+    rect rgb(21, 13, 51)
     Camera ->> VC: captureOutput:didOutputSampleBuffer:fromConnection:
     VC ->> Delegate: Process sampleBuffer
     Note over VC: Processes the frame
+    end
 
+    rect rgb(21, 123, 51)
     Camera ->> VC: captureOutput:didDropSampleBuffer:fromConnection:
     VC ->> Delegate: Handle dropped buffer
     Note over VC: Handles dropped frame
+    end
+      
 ```
 
 ---
