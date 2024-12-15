@@ -367,6 +367,10 @@ classDiagram
 This diagram highlights how certain methods are overridden in subclasses.
 
 ```mermaid
+%% %%   Notes:
+%% %%   - Blue arrows (`--|>`) represent inheritance.
+%% %%   - Green arrows (`..|>`) represent protocol conformance.
+%% %%   - Red Open diamonds arrows (`o--`) represent associations (usage/has-a relationships).
 classDiagram
     class UIViewController {
         +viewDidLoad()
@@ -378,25 +382,26 @@ classDiagram
         +viewWillLayoutSubviews()
         +additionalMethods()
     }
-    YOLOViewController --|> UIViewController
+    YOLOViewController --|> UIViewController :  <font color=blue>Inherited from</font>
 
     class YOLOSettingsViewController {
         +viewDidLoad()
         +developerModeToggled(sender)
         +telephotoCameraToggled(sender)
     }
-    YOLOSettingsViewController --|> UIViewController
+    YOLOSettingsViewController --|> UIViewController :  <font color=blue>Inherited from</font>
 
     class YOLOStatisticsViewController {
         +viewDidLoad()
         +viewWillAppear(animated)
     }
-    YOLOStatisticsViewController --|> UIViewController
+    YOLOStatisticsViewController --|> UIViewController :  <font color=blue>Inherited from</font>
 
     %% Indicate overridden methods
     UIViewController : <<virtual>>
     YOLOViewController : viewDidLoad() *overrides*
     YOLOStatisticsViewController : viewWillAppear(animated) *overrides*
+
 ```
 
 ---
