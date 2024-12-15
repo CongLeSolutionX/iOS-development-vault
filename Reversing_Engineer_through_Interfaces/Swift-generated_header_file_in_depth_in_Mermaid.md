@@ -1,7 +1,7 @@
 ---
 created: 2024-12-15 12:35:11
 author: Cong Le
-version: "1.0"
+version: "1.5"
 license(s): MIT, CC BY 4.0
 ---
 
@@ -144,11 +144,48 @@ classDiagram
 
 ```
 
+## 2. Flowchart Diagram
+
+Note: Mainly to introduce new Mermaid syntax for now
+
+Styling Relationships: 
+- Inheritance: blue solid line
+- Conformance: green dashed line
+- Association: red solid line, open arrowhead
+
+
+```mermaid
+flowchart TD
+    AppDelegate --> |Inherits| UIResponder
+    AppDelegate -.-> |Conforms| UIApplicationDelegate
+
+    SceneDelegate --> |Inherits| classUIResponder
+    SceneDelegate -.-> |Conforms| UIWindowSceneDelegate
+
+    CustomUIKitView --> |Inherits| UIView
+    MyUIKitViewController --> |Inherits| UIViewController
+    NativeUIKitViewController --> |Inherits| UIViewController
+    YOLOViewController --> |Inherits| UIViewController
+    YOLOSettingsViewController --> |Inherits| UIViewController
+    YOLOStatisticsViewController --> |Inherits| UIViewController
+
+    VideoCapture --> |Inherits| NSObject
+    VideoCapture -.-> |Conforms| AVCaptureVideoDataOutputSampleBufferDelegate
+
+
+    %% Styling Relationships
+    linkStyle 0,2,4,5,6,7,8,9,10 stroke:#0000FF,stroke-width:2px %% Inheritance: blue solid line
+    linkStyle 1,3,11 stroke:#00FF00,stroke-dasharray:5 5 %% Protocol Conformance: green dashed line
+    linkStyle 2 stroke:#FF0000,stroke-width:2px %% Association: red solid line, open arrowhead
+
+%% Note: The numbers in linkStyle correspond to the order of links above.
+
+```
 
 
 ---
 
-## 2. App Lifecycle and Delegate Methods
+## 3. App Lifecycle and Delegate Methods
 
 This diagram illustrates how `AppDelegate` and `SceneDelegate` interact with the application and scene lifecycles.
 
@@ -192,7 +229,7 @@ sequenceDiagram
 
 ---
 
-## 3. Video Capture Flow
+## 4. Video Capture Flow
 
 This diagram shows how `VideoCapture` handles video frames from the camera.
 
@@ -213,7 +250,7 @@ sequenceDiagram
 
 ---
 
-## 4. YOLOViewController User Interactions
+## 5. YOLOViewController User Interactions
 
 This diagram represents user interactions within `YOLOViewController`.
 
@@ -242,7 +279,7 @@ flowchart TD
 
 ---
 
-## 5. Class Relationships and Protocol Conformance
+## 6. Class Relationships and Protocol Conformance
 
 This class diagram focuses on protocol conformance and delegates.
 
@@ -287,7 +324,7 @@ classDiagram
 
 ---
 
-## 6. Method Overrides and Extensions
+## 7. Method Overrides and Extensions
 
 This diagram highlights how certain methods are overridden in subclasses.
 
@@ -326,7 +363,7 @@ classDiagram
 
 ---
 
-## 7. Interoperability Between Swift and Objective-C
+## 8. Interoperability Between Swift and Objective-C
 
 This flowchart outlines how Swift classes are exposed to Objective-C through the generated header.
 
@@ -353,7 +390,7 @@ flowchart TD
 
 ---
 
-## 8. Application Architecture Overview
+## 9. Application Architecture Overview
 
 This diagram represents the overall architecture, highlighting the adherence to the MVC pattern.
 
@@ -385,7 +422,7 @@ flowchart LR
 
 ---
 
-## 9. Protocols and Delegates Implementation
+## 10. Protocols and Delegates Implementation
 
 This diagram shows how delegates are used within the app, particularly with `VideoCapture`.
 
