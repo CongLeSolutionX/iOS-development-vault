@@ -144,12 +144,13 @@ style A fill:#f1aa;
 
 ## Diagram 6: Objective-C Class Definitions
 
-##TODO: Debug diagram syntax error
-
 ```mermaid
 graph LR
     A[Objective-C Class Definitions] --> B[Interfaces];
+    
     B --> B1[AppDelegate];
+    B1 --> B11["Methods from UIApplicationDelegate"];
+
     B --> B2[CustomUIKitView];
     B --> B3[MyUIKitViewController];
     B --> B4[NativeUIKitViewController];
@@ -157,21 +158,76 @@ graph LR
     B --> B6[VideoCapture];
     B --> B7[YOLOSettingsViewController];
     B --> B8[YOLOStatisticsViewController];
-   B --> B9[YOLOViewController]
-    B1 --> B11["Methods from UIApplicationDelegate"];
-    B2 --> B21["initWithFrame", "initWithCoder", "lifecycle methods"];
-    B3 --> B31["viewDidLoad", "initializers"];
-      B4 --> B41["viewDidLoad", "initializers"];
-   B5 --> B51["UIWindow property", "Scene lifecycle methods"];
-   B6 --> B61["AVCaptureVideoDataOutputSampleBufferDelegate", "delegate methods"];
-    B7 --> B71["viewDidLoad", "developerModeToggled", "telephotoCameraToggled", "initializers"];
-    B8 --> B81["viewDidLoad", "viewWillAppear","initializers"];
-   B9 --> B91["viewDidLoad", "viewWillLayoutSubviews", "delegate methods","navigation methods","initializers"];
+    B --> B9[YOLOViewController]
 
+
+    B2 --> B21;
+    B3 --> B31;
+    B4 --> B41;
+    B5 --> B51;
+    B6 --> B61;
+    B7 --> B71;
+    B8 --> B81;
+    B9 --> B91;
+
+    B21("
+        initWithFrame
+        initWithCoder
+        lifecycle methods
+        "
+    )
+
+    B31("
+        viewDidLoad
+        initializers
+        "
+    )
+
+    B41("
+        viewDidLoad
+        initializers
+        "
+    )
+
+    B51("
+        UIWindow property
+        Scene lifecycle methods
+        "
+    )
+
+    B61("
+        AVCaptureVideoDataOutputSampleBufferDelegate
+        delegate methods
+        "
+    )
+
+    B71("
+        viewDidLoad
+        developerModeToggled
+        telephotoCameraToggled
+        initializers
+        "
+    )
+
+    B81("
+        viewDidLoad
+        viewWillAppear
+        initializers
+        "
+    )
+
+    B91("
+        viewDidLoad
+        viewWillLayoutSubviews
+        delegate methods
+        navigation methods
+        initializers
+        "
+    )
 
 style A fill:#a1ab;
-linkStyle default stroke:#333,stroke-width:1px
-    
+linkStyle default stroke:#262,stroke-width:3px
+  
 ```
 
 ## Diagram 7: External Source Symbol Attributes
