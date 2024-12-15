@@ -278,6 +278,9 @@ This diagram represents user interactions within `YOLOViewController`.
 ```mermaid
 flowchart TD
     subgraph YOLOViewController
+        %% Background style for subgraph YOLOViewController
+        style YOLOViewController fill:#234,stroke:#23F,stroke-width:2px
+        
         A[viewDidLoad]
         B[viewWillLayoutSubviews]
         C[pinchGesture]
@@ -296,6 +299,13 @@ flowchart TD
     User -->|Tap Pause| G
     User -->|Statistics| H
     User -->|Settings| I
+
+
+%% Style for arrows
+linkStyle 0,1,2,3,4,5,6 stroke:#00FF00,stroke-width:3px,stroke-dasharray:5 5
+%% Note: The numbers in linkStyle correspond to the order of links above.
+%% linkStyle default stroke:#451,stroke-width:3px
+
 ```
 
 ---
@@ -305,43 +315,50 @@ flowchart TD
 This class diagram focuses on protocol conformance and delegates.
 
 ```mermaid
+%%   Notes:
+%%   - Blue arrows (`--|>`) represent inheritance.
+%%   - Green arrows (`..|>`) represent protocol conformance.
+%%   - Red Open diamonds arrows (`o--`) represent associations (usage/has-a relationships).
+
 classDiagram
     class AVCaptureVideoDataOutputSampleBufferDelegate
     class VideoCapture {
         +captureOutputDidOutputSampleBufferFromConnection(output, sampleBuffer, connection)
         +captureOutputDidDropSampleBufferFromConnection(output, sampleBuffer, connection)
     }
-    VideoCapture ..|> AVCaptureVideoDataOutputSampleBufferDelegate
+    VideoCapture ..|> AVCaptureVideoDataOutputSampleBufferDelegate : <font color=green>Conforming to</font>
 
     class UIWindowSceneDelegate
     class SceneDelegate
-    SceneDelegate ..|> UIWindowSceneDelegate
+    SceneDelegate ..|> UIWindowSceneDelegate : <font color=green>Conforming to</font>
 
     class UIApplicationDelegate
     class AppDelegate
-    AppDelegate ..|> UIApplicationDelegate
+    AppDelegate ..|> UIApplicationDelegate : <font color=green>Conforming to</font>
 
     %% View Controllers Conforming to UIViewController
     class UIViewController
 
     class YOLOViewController
-    YOLOViewController --|> UIViewController
+    YOLOViewController --|> UIViewController :  <font color=blue>Inherited from</font>
 
     class YOLOSettingsViewController
-    YOLOSettingsViewController --|> UIViewController
+    YOLOSettingsViewController --|> UIViewController :  <font color=blue>Inherited from</font>
 
     class YOLOStatisticsViewController
-    YOLOStatisticsViewController --|> UIViewController
+    YOLOStatisticsViewController --|> UIViewController :  <font color=blue>Inherited from</font>
 
     %% Gesture Recognizers and Controls
     class UIPinchGestureRecognizer
     class UISegmentedControl
     class UISlider
 
-    YOLOViewController o-- UIPinchGestureRecognizer : uses
-    YOLOViewController o-- UISegmentedControl : uses
-    YOLOViewController o-- UISlider : uses
+    YOLOViewController o-- UIPinchGestureRecognizer : <font color=red>uses</font>
+    YOLOViewController o-- UISegmentedControl : <font color=red>uses</font>
+    YOLOViewController o-- UISlider : <font color=red>uses</font>
+
 ```
+
 
 ---
 
