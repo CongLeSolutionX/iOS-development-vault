@@ -411,23 +411,43 @@ classDiagram
 This flowchart outlines how Swift classes are exposed to Objective-C through the generated header.
 
 ```mermaid
+%%{
+  init: {
+    'theme': 'base',
+    'themeVariables': {
+      'primaryColor': '#BE2528',
+      'primaryTextColor': '#fff',
+      'primaryBorderColor': '#7C0000',
+      'lineColor': '#F8B229',
+      'secondaryColor': '#006100',
+      'tertiaryColor': '#fff'
+    }
+  }
+}%%
+
 flowchart TD
-    subgraph Swift Module [Swift Module - MyApp]
+    subgraph Swift_Module [Swift Module - MyApp]
+        %% Background style for subgraph Swift_Module
+        style Swift_Module fill:#5FF3,stroke:#23F,stroke-width:2px
         S1[Swift Classes and Methods]
     end
 
-    subgraph ObjC Runtime [Objective-C Runtime]
-        O1["Generated Header (MyApp-Swift.h)"]
+    subgraph ObjC_Runtime [Objective-C Runtime]
+        %% Background style for subgraph ObjC_Runtime
+        style ObjC_Runtime fill:#394,stroke:#23F,stroke-width:2px
+        O1["Generated Header <br> (MyApp-Swift.h)"]
         O2[Objective-C Classes]
     end
+    
 
     S1 -->|Compilation| O1
+    %% Note over O1: Swift compiler generates header
     O1 -->|Exposes| O2
     O2 -->|Can Access| S1
 
-    %%Note over S1,O1: Swift compiler generates header
+    %%Note over O1: Swift compiler generates header
     %%Note over O1,O2: Objective-C code includes header
-    
+     
 ```
 
 
