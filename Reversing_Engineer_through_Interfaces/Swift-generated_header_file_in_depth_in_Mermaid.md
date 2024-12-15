@@ -7,7 +7,7 @@ license(s): MIT, CC BY 4.0
 
 
 
-# # Swift-generated header file - Mermaid Diagrams of the Code Content
+# Swift-generated header file - Mermaid Diagrams of the Code Content
 
 Below are Mermaid diagrams representing the content explained content in file: 
 Reversing_Engineer_through_Interfaces/Swift-generated_header_file-Explaination-in-depth.md.
@@ -191,40 +191,56 @@ This diagram illustrates how `AppDelegate` and `SceneDelegate` interact with the
 
 ```mermaid
 sequenceDiagram
+
     participant App as UIApplication
     participant AD as AppDelegate
     participant SD as SceneDelegate
     participant Scene as UIScene
-
+    
+    
+    rect rgb(121, 13, 255)
+    Note over App,AD: Application launched
     App ->> AD: application:didFinishLaunchingWithOptions:
     AD -->> App: BOOL
+    end
 
-    Note over App,AD: Application launched
-
+    rect rgb(21, 23, 255)
+    Note over App,SD: Configuring new scene
     App ->> SD: configurationForConnectingSceneSession:
     SD -->> App: UISceneConfiguration
+    end
 
-    Note over App,SD: Configuring new scene
-
+    rect rgb(21, 91, 33)
+    Note over SD,Scene: Scene is connecting
     App ->> SD: scene:willConnectToSession:options:
     SD -->> Scene: Setup UIWindow
+    end
 
-    Note over SD,Scene: Scene is connecting
-
+    rect rgb(21, 71, 33)
     App ->> SD: sceneDidBecomeActive:
     Note over SD: Scene became active
-
+    end
+    
+    rect rgb(21, 61, 33)
     App ->> SD: sceneWillResignActive:
     Note over SD: Scene will resign active
+    end
 
+    rect rgb(21, 51, 33)
     App ->> SD: sceneDidEnterBackground:
     Note over SD: Scene entered background
+    end
 
+    rect rgb(21, 41, 33)
     App ->> SD: sceneWillEnterForeground:
     Note over SD: Scene will enter foreground
+    end
 
+    rect rgb(121, 83, 255)
     App ->> AD: applicationWillTerminate:
     Note over AD: Application will terminate
+    end
+    
 ```
 
 ---
