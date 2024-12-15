@@ -91,29 +91,54 @@ style A fill:#a1fa;
 ```mermaid
 graph LR
     A[Swift Type Definitions] --> B[Vector Type Aliases];
-        B --> B1["typedef float swift_float2 ..."];
-        B --> B2["typedef float swift_float3 ..."];
-        B --> B3["typedef double swift_double2 ..."];
-      	B --> B4["typedef int swift_int2 ..."];
-        B --> B5["typedef unsigned int swift_uint2 ..."];
+        B --> B1[("typedef float swift_float2 ...")];
+        B --> B2[("typedef float swift_float3 ...")];
+        B --> B3[("typedef double swift_double2 ...")];
+      	B --> B4[("typedef int swift_int2 ...")];
+        B --> B5[("typedef unsigned int swift_uint2 ...")];
 
 style A fill:#a1af;
 ```
 
 ## Diagram 5: Macros Section
 
-##TODO: Debug diagram syntax error
 
 ```mermaid
 graph LR
     A[Macros] --> B[Swift Compatibility Macros];
     A --> C[Type Declaration Macros];
     A --> D[Attribute Macros];
-        B --> B1["SWIFT_PASTE", "SWIFT_METATYPE", ...] ;
-				C --> C1["SWIFT_CLASS", "SWIFT_PROTOCOL", "SWIFT_EXTENSION", "SWIFT_ENUM", ...]
-        D --> D1["SWIFT_WARN_UNUSED_RESULT", "SWIFT_NOESCAPE", "SWIFT_NORETURN", ...];
+       
+    B --> B1;
+	C --> C1;
+    D --> D1;
+    
+    B1("
+        SWIFT_PASTE
+        SWIFT_METATYPE
+        ...
+        "
+    )
+
+    C1("
+        SWIFT_CLASS
+        SWIFT_PROTOCOL
+        SWIFT_EXTENSION
+        SWIFT_ENUM
+        ...
+        "
+    )
+
+    D1("
+        SWIFT_WARN_UNUSED_RESULT
+        SWIFT_NOESCAPE
+        SWIFT_NORETURN
+        ...
+        "
+    )
 
 style A fill:#f1aa;
+
 
 ```
 
