@@ -10,6 +10,13 @@ Below is a breakdown of the diagrams I will create, aligning with [the original 
 
 It's a comprehensive explanation of the feature, its motivations, and its implications.
 
+---
+
+
+# Diagram 1: Problems with Completion Handlers
+
+This diagram explains issues with completion handlers, setting the stage for the introduction of `async/await`.
+
 
 ```mermaid
 ---
@@ -24,16 +31,16 @@ graph LR
     B --> C{Difficult to Read/Track};
     
     D[Problem: Error Handling] --> E(Verbose Error Handling);
-    E --> F{Repetitive `guard` or `do-catch`};
+    E --> F{"Repetitive 'guard' or 'do-catch' "};
     
     G[Problem: Conditional Execution] --> H(Inverted Code Structure);
     H --> I{Hard to Reason About};
 
     J[Problem: Easy to Make Mistakes] --> K(Forgetting Completion Handlers);
-    K --> L{Bailing Out Early/Not Returning};    
+    K --> L{"Bailing Out Early/Not Returning"};    
     
      M[Problem: Synchronous APIs] --> N(Too many synchronous block APIs);
-    N --> O{Performance & Responsiveness Problems}
+    N --> O{"Performance & Responsiveness Problems"}
 
     end
     
@@ -47,12 +54,11 @@ style M fill:#f19f,stroke:#333,stroke-width:2px
 
 ---
 
+# Diagram 2: Async/await Solution
 
-# Diagram 1: Problems with Completion Handlers
+This diagram explains how `async/await` solves the problems and simplifies asynchronous code.
 
-This diagram explains issues with completion handlers, setting the stage for the introduction of `async/await`.
 
----
 ```mermaid
 ---
 config:
@@ -90,11 +96,10 @@ style N fill:#c1cf,stroke:#333,stroke-width:2px
 
 ```
 
----
+# Diagram 3: Detailed Design
 
-# Diagram 2: Async/await Solution
+This diagram explains technical details about asynchronous functions: their declarations, types, `await` expressions, closures, overloading, autoclosures, and protocol conformance.
 
-This diagram explains how `async/await` solves the problems and simplifies asynchronous code.
 
 ---
 ```mermaid
@@ -145,11 +150,11 @@ style W fill:#c1ff,stroke:#333,stroke-width:1.5px;
 
 ---
 
-# Diagram 3: Detailed Design
 
-This diagram explains technical details about asynchronous functions: their declarations, types, `await` expressions, closures, overloading, autoclosures, and protocol conformance.
+# Diagram 4: Compatibility & Future
+This diagram explains source and ABI compatibility, API resilience, and the potential future direction of `reasync`.
 
----
+
 ```mermaid
 ---
 config:
@@ -181,10 +186,9 @@ style J fill:#a1fa,stroke:#333,stroke-width:1.5px
 ---
 
 
-# Diagram 4: Compatibility & Future
-This diagram explains source and ABI compatibility, API resilience, and the potential future direction of `reasync`.
+# Diagram 5: Alternatives
+This diagram explains the alternatives that were considered and the reasons for rejection.
 
----
 
 ```mermaid
 ---
@@ -195,7 +199,7 @@ config:
 ---
 graph LR
     A[Alternatives Considered] --> B(" 'await' Implies 'try' ");
-    B --> C(Rejected, `await` for suspension, `try` for errors);
+    B --> C("Rejected, 'await' for suspension, 'try' for errors");
     
     A --> D(Launching Async Tasks);
      D --> E(Addressed in Structured Concurrency);
@@ -209,11 +213,7 @@ style A fill:#f1aa,stroke:#333,stroke-width:1.5px;
 
 ---
 
-
-# Diagram 5: Alternatives
-This diagram explains the alternatives that were considered and the reasons for rejection.
-
-## Summary
+# Summary
 
 **Key Concepts Illustrated:**
 
