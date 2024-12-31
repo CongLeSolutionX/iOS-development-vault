@@ -140,7 +140,7 @@ linkStyle 3,4 stroke:#999,stroke-width:2px;
 
 **Explanation:**
 
-*   A **Parent Task** can create a **Task Group.**
+*  A **Parent Task** can create a **Task Group.**
 *  **Task Groups** manage multiple **Child Tasks**, ensuring they complete before the group's scope exits.
 *  A **Parent Task** can also create **Unstructured Tasks.**
 *  A **Parent Task** can also create **Detached Tasks**.
@@ -252,7 +252,7 @@ linkStyle 0,1,2,3,4,5,6,7,8,9 stroke:#555,stroke-width:1px;
 # Unstructured Tasks
 
 Diagram illustrating various ways an unstructured task is created:
-s
+
 ```mermaid
 graph LR
    A[Create Unstructured Task] --> B{Initialization Context};
@@ -270,6 +270,7 @@ graph LR
     linkStyle 3,4 stroke:#999,stroke-width:1px;
     linkStyle 5,6 stroke:#999,stroke-width:1px;
 ```
+
 **Explanation:**
 *   Unstructured tasks are created using the `Task { } ` initializer.
 *   If created within a Task's synchronous context. It will inherit: Priority, Task Locals and Actor Isolation. 
