@@ -175,12 +175,12 @@ graph LR
 # 5. Actor Reentrancy
 
 ```mermaid
----
-config:
-  layout: elk
-  look: handDrawn
-  theme: dark
----
+%%---
+%%config:
+%%  layout: elk
+%%  look: handDrawn
+%%  theme: dark
+%%---
 stateDiagram-v2
     state InitialState
     state "Actor-Isolated Function" as ActorIsolatedFunction {
