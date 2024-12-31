@@ -24,32 +24,35 @@ config:
   theme: dark
 ---
 graph LR
-    subgraph "Structured Concurrency"
-    A[Task] --> B(Child Task);
-    A --> C(Task Group);
-    C --> D[Child Task];
-    C --> E[Child Task];
-    A --> F[Unstructured Task];
-    A --> G[Detached Task];
+    subgraph Structured_Concurrency["Structured Concurrency"]
+        style Structured_Concurrency fill:#232f,stroke:#7fa,stroke-width:1px
+        A[Task] --> B(Child Task);
+        A --> C(Task Group);
+        C --> D[Child Task];
+        C --> E[Child Task];
+        A --> F[Unstructured Task];
+        A --> G[Detached Task];
+        
         subgraph Task_States
-            style Task_States fill:#321,stroke:#333,stroke-width:1px
+            style Task_States fill:#321,stroke:#993,stroke-width:3px
             H[State] -- suspended --> I[Schedulable]
             H -- suspended --> J[Waiting]
             H  -- running --> K[Thread]
             H --> L[Completed]
         end
-      style H fill:#22f,stroke:#7fa,stroke-width:2px
+        style H fill:#22f,stroke:#7fa,stroke-width:2px
     end
     style A fill:#c2cf,stroke:#333,stroke-width:2px
     
-    subgraph "Executors"
-      M[Executor] --> N[Job]
-      N --> O[Thread]
+    subgraph Executors["Executors"]
+        style Executors fill:#229,stroke:#f312a,stroke-width:1px
+        M[Executor] --> N[Job]
+        N --> O[Thread]
     end
     style M fill:#e68c,stroke:#333,stroke-width:2px
      
-linkStyle 0,1,2,3,4,5,6 stroke:#555,stroke-width:1px;
-linkStyle 7,8,9 stroke:#999,stroke-width:1px;
+linkStyle 0,1,2,3,4,5,6 stroke:#555,stroke-width:2px;
+linkStyle 7,8,9 stroke:#999,stroke-width:2px;
 
 ```
 
@@ -266,9 +269,9 @@ graph LR
     G --> H["Actor Executor, Access to actor state"];
 
 
-    linkStyle 0,1,2 stroke:#555,stroke-width:1px;
-    linkStyle 3,4 stroke:#999,stroke-width:1px;
-    linkStyle 5,6 stroke:#999,stroke-width:1px;
+    linkStyle 0,1,2 stroke:#555,stroke-width:2px;
+    linkStyle 3,4 stroke:#999,stroke-width:2px;
+    linkStyle 5,6 stroke:#999,stroke-width:2px;
 ```
 
 **Explanation:**
