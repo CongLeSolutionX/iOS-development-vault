@@ -328,7 +328,7 @@ graph LR
         A["Swift 6"] --> B["Static SDK for Linux"];
         B --> C["Fully Statically Linked Executables"];
         C --> D["No External Dependencies"];
-        D --> E["Easy Deployment (Copy & Run)"];
+        D --> E["Easy Deployment <br> (Copy & Run)"];
         B --> F["Cross-Compilation Support"];
     end
     
@@ -348,7 +348,7 @@ graph LR
     subgraph Windows Build Performance
         A["Windows"] --> B["ARM64 Toolchains"];
         A --> C["Swift Package Manager"];
-        C --> D["Parallel Builds (Default)"];
+        C --> D["Parallel Builds <br> (Default)"];
         D --> E["Improved Build Performance"];
     end
     
