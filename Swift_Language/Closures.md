@@ -1,4 +1,3 @@
-
 ---
 source_url: "https://github.com/swiftlang/swift-book/blob/main/TSPL.docc/LanguageGuide/Closures.md"
 created: 2025-01-05 03:50:26
