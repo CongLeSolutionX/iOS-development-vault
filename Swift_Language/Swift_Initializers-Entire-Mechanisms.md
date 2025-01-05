@@ -65,6 +65,34 @@ graph TD
     K --> M{Enable Default and Inheritance};
     B --> N{No Indeterminate State};
     style A fill:#f9f,stroke:#333,stroke-width:2px
+```
+
+
+---
+
+
+```mermaid
+---
+config:
+  layout: elk
+  look: handDrawn
+  theme: dark
+---
+graph TD
+    A[Initialization] --> B{Set Initial Values};
+    A --> C{Perform One-Time Setup};
+    B --> D{Stored Properties};
+    C --> E{Required Before Use};
+    D --> F{Initial Value Assignment};
+    F --> G{Initializer};
+    F --> H{Default Property Value};
+    G -- Like special methods --> I(init keyword);
+    I -- No return value --> J{Correct Initialization};
+    H -- Part of property's definition --> K{Ties to Declaration};
+    K --> L{Shorter, Clearer Initializers};
+    K --> M{Enable Default and Inheritance};
+    B --> N{No Indeterminate State};
+    style A fill:#f9f,stroke:#333,stroke-width:2px
 
 subgraph Basic_Initializer
     O[Fahrenheit Structure]
