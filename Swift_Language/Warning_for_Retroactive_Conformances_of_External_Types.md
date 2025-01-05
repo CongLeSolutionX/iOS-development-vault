@@ -27,6 +27,12 @@ Here's a breakdown of the concepts and their visualization:
 ## 1. The Problem: Retroactive Conformances
 
 ```mermaid
+---
+config:
+  layout: elk
+  look: handDrawn
+  theme: dark
+---
 graph LR
     subgraph ModuleA["Module A"]
         A(TypeA)
@@ -68,6 +74,12 @@ class ModuleA,ModuleB,ModuleC detail;
 ## 2. The Conflict: Multiple Conformances
 
 ```mermaid
+---
+config:
+  layout: elk
+  look: handDrawn
+  theme: dark
+---
 graph LR
     subgraph ModuleA["Module A"]
         A(TypeA)
@@ -114,6 +126,12 @@ class ModuleA,ModuleB,ModuleC,ModuleD detail;
 ## 3. Undefined Behavior: Example
 
 ```mermaid
+---
+config:
+  layout: elk
+  look: handDrawn
+  theme: dark
+---
 graph LR
     subgraph Foundation["Foundation Framework"]
         A(Date)
@@ -151,6 +169,12 @@ class Foundation,MyModule detail;
 ## 4. The Warning
 
 ```mermaid
+---
+config:
+  layout: elk
+  look: handDrawn
+  theme: dark
+---
 graph LR
     subgraph MyModule["My Module"]
         A(extension Date: Identifiable)
@@ -175,6 +199,12 @@ class MyModule detail;
 ## 5. The Solution: `@retroactive` Attribute
 
 ```mermaid
+---
+config:
+  layout: elk
+  look: handDrawn
+  theme: dark
+---
 graph LR
     subgraph MyModule["My Module"]
         style MyModule fill:#c5cf,stroke:#333,stroke-width:2px
@@ -199,6 +229,12 @@ class MyModule detail;
 ## 6. Exceptions to the Warning
 
 ```mermaid
+---
+config:
+  layout: elk
+  look: handDrawn
+  theme: dark
+---
 graph LR
     subgraph Case1["Clang Module Overlay"]
         A["Clang Module Type"]
@@ -276,6 +312,12 @@ style Case4 fill:#c5ff,stroke:#333,stroke-width:2px
 ## 7. Alternative (Source Compatible)
 
 ```mermaid
+---
+config:
+  layout: elk
+  look: handDrawn
+  theme: dark
+---
 graph LR
     subgraph MyModule["My Module"]
         A("extension Foundation.Date: Swift.Identifiable")
