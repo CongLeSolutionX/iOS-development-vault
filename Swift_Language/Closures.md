@@ -26,6 +26,12 @@ Here's a plan:
 Let's start creating the diagrams based on these points.
 
 ```mermaid
+---
+config:
+  layout: elk
+  look: handDrawn
+  theme: dark
+---
 graph LR
     A[Closure Expression] --> B{Parameters};
     B --> C(Optional);
