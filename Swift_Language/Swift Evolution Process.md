@@ -93,24 +93,19 @@ graph TD
 
 
 ```mermaid
-config:
-  layout: elk
-  look: handDrawn
-  theme: dark
----
 graph TD
-    subgraph How to Propose a Change
+    subgraph How_to_Propose_a_Change["How to Propose a Change"]
         direction TB
-        A["Check Prior Proposals (Forums, Rejected List)"] --> B{Consider Goals of Upcoming Swift Release};
-        B --> C{"Socialize the Idea (Pitches Forum)"};
-        C --> D{Develop Proposal & Implementation};
-        D --> E{"Expand Sketch to Formal Proposal (Template)"};
-        E --> F{Open Draft PR in swift-evolution Repo};
-        F --> G{Announce PR on Forums};
-        G --> H{"Refine Proposal (Feedback)"};
-        H --> I{Work on Implementation};
-        I --> J{Working Implementation Required for Review};
-        J --> K{"Request a Review (Mark PR as Ready)"};
+        A["Check Prior Proposals <br> (Forums, Rejected List)"] --> B{"Consider Goals of Upcoming Swift Release"};
+        B --> C{"Socialize the Idea <br> (Pitches Forum)"};
+        C --> D{"Develop Proposal & Implementation"};
+        D --> E{"Expand Sketch to Formal Proposal <br> (Template)"};
+        E --> F{"Open Draft PR in swift-evolution Repo"};
+        F --> G{"Announce PR on Forums"};
+        G --> H{"Refine Proposal <br> (Feedback)"};
+        H --> I{"Work on Implementation"};
+        I --> J{"Working Implementation Required for Review"};
+        J --> K{"Request a Review <br> (Mark PR as Ready)"};
     end
     
 ```
@@ -130,20 +125,15 @@ graph TD
 
 
 ```mermaid
-config:
-  layout: elk
-  look: handDrawn
-  theme: dark
----
 graph TD
-    subgraph What Goes into a Review
+    subgraph What_Goes_into_a_Review["What Goes into a Review"]
         direction TB
-        A[What is your evaluation of the proposal?] --> B;
-        C[Is the problem significant enough?] --> B;
-        D[Does this fit with the feel of Swift?] --> B;
-        E[Comparison to other languages/libraries?] --> B;
-        F[How much effort did you put into the review?] --> B;
-        B{State explicitly whether proposal should be accepted};
+        A["What is your evaluation of the proposal?"] --> B;
+        C["Is the problem significant enough?"] --> B;
+        D["Does this fit with the feel of Swift?"] --> B;
+        E["Comparison to other languages/libraries?"] --> B;
+        F["How much effort did you put into the review?"] --> B;
+        B{"State explicitly whether proposal should be accepted"};
     end
 ```
 
@@ -160,7 +150,7 @@ config:
   theme: dark
 ---
 flowchart LR
-    subgraph Review Process
+    subgraph Review_Process["Review Process"]
         direction TB
         A[Review Manager Accepts PR] --> B{Proposal Enters Review Queue};
         B --> C{Review Manager Schedules Review};
@@ -168,7 +158,7 @@ flowchart LR
         D --> E{Community Provides Feedback};
         E --> F{Authors Respond to Feedback};
         F --> G{Evolution Workgroup Determines Consensus};
-        G --> H{"Decision Made (Accept/Reject/Revise)"};
+        G --> H{"Decision Made <br> (Accept/Reject/Revise)"};
         H --> I{Review Manager Reports Decision};
         I --> J{Proposal State Updated};
     end
@@ -220,11 +210,11 @@ config:
   theme: dark
 ---
 graph TD
-    subgraph Types of Evolution Documents
+    subgraph Types_of_Evolution_Documents["Types of Evolution Documents"]
         direction TB
-        A[Evolution Proposal] --> B{"Specific Proposed Change (Detailed)"};
+        A[Evolution Proposal] --> B{"Specific Proposed Change <br> (Detailed)"};
         C[Evolution Roadmap] --> D{"Concrete Plan for Complex Change (Separate Proposals)"};
-        E[Evolution Vision] --> F{"High-Level Design for Broad Topic (Goals & Program of Work)"};
+        E[Evolution Vision] --> F{"High-Level Design for Broad Topic <br>(Goals & Program of Work)"};
         F -- Requires Approval by --> G(Appropriate Evolution Workgroup);
         G --> E;
     end
@@ -243,7 +233,7 @@ config:
   theme: dark
 ---
 graph TD
-    subgraph Community Participation
+    subgraph Community_Participation["Community Participation"]
         direction TB
         A[Evolution Section of Swift Forums] --> B{Propose Ideas};
         A --> C{Discuss Proposals};
