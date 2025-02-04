@@ -788,7 +788,7 @@ It details the attribute's scope of application (function, extension, potentiall
 config:
   layout: elk
   look: handDrawn
-  theme: forest
+  theme: dark
 ---
 graph TD
     subgraph Reentrancy_Control["Future Direction: Non-Reentrancy with &#64;reentrant Attribute"]
@@ -869,7 +869,7 @@ It outlines the scope of reentrancy, its benefits (deadlock reduction), compares
 config:
   layout: elk
   look: handDrawn
-  theme: forest
+  theme: dark
 ---
 graph TD
     subgraph Task_Chain_Reentrancy["Future Direction:<br>Task-Chain Reentrancy"]
@@ -948,7 +948,7 @@ It describes how actor inheritance would have worked, its constraints, and the r
 config:
   layout: elk
   look: handDrawn
-  theme: forest
+  theme: dark
 ---
 graph TD
     subgraph Actor_Inheritance["Alternatives Considered: Actor Inheritance (Removed)"]
@@ -1014,7 +1014,7 @@ To explain the design choice regarding access to `let` (immutable) properties of
 config:
   layout: elk
   look: handDrawn
-  theme: firest
+  theme: dark
 ---
 graph TD
     subgraph Cross_Actor_Lets["Alternatives Considered:<br>Cross-Actor 'lets' Access"]
@@ -1076,5 +1076,182 @@ graph TD
     *   **Struct Memberwise Initializers are `internal`:**  Implicitly generated memberwise initializers have module-level scope.
     *   **Class Inheritance & `open`:**  Defaults around class inheritance and overriding within the same module versus across modules (using `open`).
     *   **Consistent Theme:**  Highlights a recurring theme in Swift's design: prioritize simpler, less verbose syntax and more permissive defaults for in-module code, while requiring more explicit syntax and enforcing stronger boundaries for interactions across modules to promote encapsulation, library evolution, and more robust software design.
+
+---
+
+
+Based on my comprehensive review, I'll strategically explain the remaining valuable technical concepts from the Swift Actors proposal using Mermaid syntax.
+
+These concepts are crucial for a complete understanding but haven't been as visually emphasized in the prior diagrams.
+
+First, let's illustrate the **`Actor` Protocol** itself and its core purpose:
+
+
+## Diagram 15: The `Actor` Protocol
+
+### Diagram Type: Graph/Diagram with Subgraphs
+
+### Purpose:
+To detail the `Actor` protocol itself, its definition, what it refines, its initial blank nature, and its primary purposes within the Swift Concurrency model.
+
+
+```mermaid
+---
+config:
+  layout: elk
+  look: handDrawn
+  theme: dark
+---
+graph TD
+    subgraph Actor_Protocol["The 'Actor' Protocol"]
+    style Actor_Protocol fill:#a2fa,stroke:#333,stroke-width:1px
+        A[protocol Actor] --> B[Refines 'AnyObject' and 'Sendable']
+        B --> C["Reference Type Requirement (AnyObject)"]
+        B --> D["Sendable Conformance (Implicitly for Actor Types)"]
+        A --> E["Marker Protocol<br>(Initially Blank)"]
+        E --> F["No explicit requirements in base protocol"]
+        E --> G["Place for future extensions<br>(e.g., Custom Executors)"]
+
+        H[Purpose] --> I[Type Erasure for Actors]
+        I --> J[Write Generic Code over all Actor Types]
+        I --> K[Protocol Constraints for Actor-Specific APIs]
+        H --> L[Extensibility for Actor Types]
+        L --> M[Define Extensions on 'Actor' protocol, available to all actors]
+
+    end
+```
+
+### Explanation
+
+*   **Protocol Definition:** The `Actor` protocol is defined as `protocol Actor`.
+    *   **Refines `AnyObject` and `Sendable`:** It inherits from both `AnyObject` (meaning it's a reference type protocol) and `Sendable` (indicating that actor instances are safe to share across concurrency domains).  This `Sendable` conformance is *implicit* for all actor types; you don't need to explicitly declare it.
+    *   **Marker Protocol (Initially Blank):** In its base form, the `Actor` protocol is essentially a *marker protocol*. It doesn't initially define any explicit requirements (methods, associated types, etc.).
+    *   **Future Extensibility:** The `Actor` protocol is intentionally designed to be extensible in the future. It serves as a designated place to add new requirements that are common to all actors (or categories of actors). A primary example mentioned is the future integration of "Custom Executors" (via the [Custom Executors proposal][customexecs]), where the `Actor` protocol will be extended to incorporate executor-related requirements.
+*   **Purpose of the `Actor` Protocol:**
+    *   **Type Erasure for Actors:** The main purpose is to provide a form of *type erasure* specifically for actors.  It allows you to treat any actor type generically through the `Actor` protocol.
+    *   **Generic Code over Actors:** Enables writing generic code (functions, algorithms, data structures) that can work uniformly with any type that is an actor.
+    *   **Protocol Constraints:** Useful for setting protocol constraints where you need to specify that a generic type parameter must be an actor (e.g., `func process<T: Actor>(actor: T)`).
+    *   **Extensibility for Actor Types:**  Allows extensions *on the `Actor` protocol itself*. Any extension methods, properties, etc., defined in an extension of `Actor` become available to *all* actor types, providing a way to add shared behavior to all actors.
+
+---
+
+Next, let's briefly highlight **Source Compatibility**, **ABI Stability**, and **API Resilience** impact.
+
+
+## Diagram 16: Source Compatibility, ABI Stability, and API Resilience
+
+### Diagram Type: Graph/Diagram with Subgraphs
+
+### Purpose:
+To summarize the impact of the Actors feature on source code compatibility, ABI (Application Binary Interface) stability, and API resilience, based on the document's statements.
+
+
+```mermaid
+---
+config:
+  layout: elk
+  look: handDrawn
+  theme: neutral
+---
+graph TD
+    subgraph Compatibility_Stability_Resilience["Source Compatibility, ABI Stability, API Resilience"]
+    style Compatibility_Stability_Resilience fill:#c335,stroke:#333,stroke-width:1px
+
+        A[Source Compatibility] --> B[Mostly Additive]
+        B --> C["'actor' keyword is new, but contextual<br>(non-breaking)"]
+        B --> D[Actor isolation rules apply to *new* code using actors]
+        B --> E[Existing code largely unaffected]
+
+        F[ABI Stability Effect] --> G[Purely ABI Additive]
+        G --> H[No changes to existing ABI]
+        G --> I[Actor isolation is static,<br>not part of ABI]
+
+        J[API Resilience Effect] --> K[Actor Isolation Changes are API Breaking]
+        K --> L[Class <-> Actor conversion is breaking]
+        K --> M[Changing actor isolation of public member is breaking]
+        K --> N[Actor isolation is part of the API contract]
+
+    end
+```
+
+### Explanation
+
+*   **Source Compatibility:**
+    *   **Mostly Additive:** The Actors feature is designed to be largely *source compatible*.
+    *   **`actor` Keyword is Contextual:** The introduction of the `actor` keyword is contextual, meaning it's not expected to conflict with or break existing Swift code that might have used "actor" as an identifier in other contexts.
+    *   **New Code Impact:** The actor isolation rules and semantics primarily impact *new* Swift code that begins to use `actor` types and concurrency features.
+    *   **Existing Code Unaffected:**  Existing Swift code that doesn't use actors should generally be unaffected by the introduction of this feature.
+*   **ABI Stability Effect:**
+    *   **Purely ABI Additive:** The addition of actors is ABI-stable in the sense that it's purely *additive* to the Swift ABI.
+    *   **No Existing ABI Changes:**  It does not alter or break the existing Swift ABI.
+    *   **Static Isolation, Not ABI:**  Actor isolation itself is a *static*, compile-time concept. It's enforced by the compiler but is not directly represented as part of the binary ABI itself.
+*   **API Resilience Effect:**
+    *   **Actor Isolation Changes are API Breaking:**  In contrast to ABI stability, changes to *actor isolation* characteristics are considered *API-breaking*.
+    *   **Class/Actor Conversion Breaking:** You cannot change a class to an actor or vice-versa in a public API without breaking API compatibility, as this fundamentally changes the type's concurrency behavior.
+    *   **Changing Member Isolation Breaking:** Similarly, changing the actor isolation of a *public* declaration (e.g., making a public method `nonisolated` or actor-isolated, or changing the isolation level) is also an API-breaking change.
+    *   **Isolation as API Contract:**  This highlights that *actor isolation* is considered a core part of the API contract for actor types. Clients of an actor API rely on and expect the specific isolation guarantees provided by that API.
+
+---
+
+Finally, while less about "concepts", it's valuable to mention the **Implementation Note** about serial executors within Actors for completeness.
+
+
+## Diagram 17: Implementation Note - Actors and Serial Executors
+
+### Diagram Type: Graph/Diagram with Subgraphs
+
+### Purpose:
+To explain the implementation detail of how Swift actors are underpinned by serial executors to achieve serialized execution and message processing, highlighting similarities and key differences from `DispatchQueue`.
+
+
+
+```mermaid
+---
+config:
+  layout: elk
+  look: handDrawn
+  theme: neutral
+---
+graph TD
+    subgraph Implementation_Note_Serial_Executor["Implementation Note:<br>Actors and Serial Executors"]
+    style Implementation_Note_Serial_Executor fill:#a293,stroke:#333,stroke-width:1px
+
+        A[Actor Instance] --> B[Contains Serial Executor]
+        B --> C[Responsible for running actor-isolated tasks]
+        B --> D[Enforces Serialized Execution within the Actor]
+
+        E[Messages in Mailbox] --> F[Partial Tasks for Async Calls]
+        F --> G[Stored in Actor's Mailbox]
+        F --> H[Executor retrieves messages one-at-a-time from mailbox]
+        H --> I[Processes messages serially]
+
+        J["Conceptual Similarity to DispatchQueue<br>(Serial)"] --> K[But with Important Differences]
+        K --> L["Not Guaranteed FIFO<br>(First-In-First-Out)"]
+        L --> M[Priority Escalation to avoid priority inversions]
+        K --> N[Lighter-weight Queue Implementation than Dispatch]
+        N --> O[Optimized for Swift 'async' functions]
+        N --> P[Better performance for actor message processing]
+
+    end
+    
+```
+
+
+### Explanation
+
+*   **Actor Instance and Serial Executor:**
+    *   **Serial Executor Inside:** Each actor instance internally contains its own *serial executor*.
+    *   **Task Execution:** This serial executor is responsible for actually running the actor-isolated tasks (pieces of code corresponding to asynchronous calls to the actor).
+    *   **Serialized Execution Enforcement:** The serial nature of the executor is the mechanism that enforces serialized execution within the actor, ensuring that only one piece of actor-isolated code runs at any given time.
+*   **Messages and Mailbox:**
+    *   **Messages as Partial Tasks:** When an asynchronous call is made to an actor, it's translated into a "message."  At the implementation level, these messages are *partial tasks*.
+    *   **Actor's Mailbox:** These partial tasks are placed into the actor's "mailbox"—a queue-like structure associated with each actor instance.
+    *   **Executor Retrieves and Processes Serially:** The actor's serial executor then retrieves messages from the mailbox one at a time, in some order, and processes them serially, ensuring no concurrency within the actor's isolated domain.
+*   **Conceptual Similarity to `DispatchQueue` (Serial) but with Key Differences:**
+    *   **Conceptual Similarity:** The actor's serial executor is conceptually similar to a serial `DispatchQueue` (from Grand Central Dispatch). Both provide a mechanism for executing tasks serially on a single thread/execution context.
+    *   **Not Guaranteed FIFO (First-In-First-Out):**  *Unlike* a serial `DispatchQueue`, actor executors are *not* guaranteed to be strictly FIFO. The order in which messages are processed from the mailbox is not necessarily the order they were enqueued.
+    *   **Priority Escalation:** Swift's actor runtime aims to mitigate priority inversions (where a high-priority task gets blocked by a lower-priority one) using techniques like *priority escalation* when selecting which task to run next from the actor's mailbox.  This is another key difference from standard serial `DispatchQueues`, which are usually strict FIFO.
+    *   **Lighter-Weight Implementation:** Actor executors are implemented using a *lighter-weight* queue implementation than `DispatchQueue`.  This is done to optimize performance for Swift's `async` functions and actor message processing.
+    *   **Performance Optimization:** The lighter-weight queue and the runtime optimizations are intended to make actor message processing more efficient and take full advantage of the `async/await` concurrency model.
 
 ---
