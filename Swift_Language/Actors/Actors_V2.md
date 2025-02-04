@@ -126,7 +126,7 @@ To visually explain how Actor Isolation works and the rules governing Cross-Acto
 config:
   layout: elk
   look: handDrawn
-  theme: forest
+  theme: dark
 ---
 graph TD
     A["Actor Instance"];
@@ -231,7 +231,7 @@ To illustrate the concept of reentrancy in actors, specifically how asynchronous
 config:
   layout: elk
   look: handDrawn
-  theme: forest
+  theme: dark
 ---
 sequenceDiagram
 	autonumber
@@ -296,7 +296,7 @@ To illustrate how non-reentrant actors can lead to deadlocks, especially in scen
 config:
   layout: elk
   look: handDrawn
-  theme: forest
+  theme: dark
 ---
 sequenceDiagram
     participant Client_Task_A as Client Task A
@@ -351,7 +351,7 @@ To clarify how the `@Sendable` attribute affects the isolation context of closur
 config:
   layout: elk
   look: handDrawn
-  theme: forest
+  theme: dark
 ---
 graph TD
     A["Closure Created in Actor-Isolated Context"];
@@ -418,7 +418,7 @@ To outline the rules and constraints around actors conforming to protocols, diff
 config:
   layout: elk
   look: handDrawn
-  theme: forest
+  theme: dark
 ---
 graph TD
     A["Actor Type"];
