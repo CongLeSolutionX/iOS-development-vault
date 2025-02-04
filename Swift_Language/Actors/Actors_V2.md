@@ -768,3 +768,313 @@ graph TD
     *   **Swift's `self` Isolation Focus:** Synchronous actor-isolated code is intended to be called *only* on `self` (within Swift actor methods) to maintain the isolation guarantees. Objective-C calls from outside would violate this.
 
 ---
+
+Let's continue with diagrams for the "Future Directions" and "Alternatives Considered" sections.
+We'll start with **Future Directions** and specifically the concept of **Non-Reentrancy** using the `@reentrant` attribute.
+
+
+## Diagram 11: Future Direction - Non-Reentrancy with `@reentrant` Attribute
+
+### Diagram Type: Graph/Diagram with Subgraphs
+
+### Purpose:
+To explain the proposed `@reentrant` attribute, a future direction for controlling actor reentrancy.
+It details the attribute's scope of application (function, extension, potentially actor type), the reentrancy options (`@reentrant` and `@reentrant(never)`), attribute resolution hierarchy, and mentions an alternative syntax `await(blocking)`.
+
+
+
+```mermaid
+---
+config:
+  layout: elk
+  look: handDrawn
+  theme: forest
+---
+graph TD
+    subgraph Reentrancy_Control["Future Direction: Non-Reentrancy with &#64;reentrant Attribute"]
+    style Reentrancy_Control fill:#f395,stroke:#333,stroke-width:1px
+
+        A[&#64;reentrant Attribute] --> B{Scope of Application}
+        B --> C{Function Level}
+        C --> D["&#64;reentrant func f() async { ... }"]
+        C --> E["&#64;reentrant(never) func f() async { ... }"]
+        C --> F[Controls reentrancy for specific function]
+
+        B --> G{Extension Level}
+        G --> H["&#64;reentrant extension ActorType { ... }"]
+        G --> I["&#64;reentrant(never) extension ActorType { ... }"]
+        G --> J["Applies reentrancy to all actor-isolated functions in extension (unless overridden)"]
+
+        B --> K{Actor Type Level}
+        %% The case below is less likely as per doc example, but conceptually possible
+        K --> L["&#64;reentrant actor ActorType { ... }"]
+        %% The case below is less likely as per doc example, but conceptually possible
+        K --> M["&#64;reentrant(never) actor ActorType { ... }"]
+        K --> N[Potentially applies to all actor-isolated members in the actor]
+
+        O[Reentrancy Options] --> P["&#64;reentrant (default)"]
+        P --> Q[Reentrant Suspension Points]
+        O --> R["&#64;reentrant(never)"]
+        R --> S[Non-Reentrant Suspension Points]
+        S --> T[Actor blocks other messages during suspension of non-reentrant function]
+        S --> U[Exemption: Async calls on 'self' within non-reentrant functions are allowed to prevent self-deadlock]
+
+        V[Attribute Resolution Hierarchy] --> W[1. Declaration itself]
+        V --> X["2. Enclosing Extension (if member of extension)"]
+        V --> Y["3. Actor Type Definition (if member of type or extension)"]
+        V --> Z[First suitable &#64;reentrant attribute found in hierarchy determines reentrancy]
+        V --> AA[Default Reentrancy: If no &#64;reentrant attribute found, function is reentrant]
+
+
+        AB["Alternative Syntax (Mentioned)"] --> AC["await(blocking) friend.tell(opinion, heldBy: self)"]
+        AC --> AD[Potential alternative for non-reentrant await calls, more localized control]
+        AC --> AE[Not attribute-based, directly specifies blocking behavior at call site]
+
+    end
+    
+```
+
+### Explanation
+
+*   **`@reentrant` Attribute Scope:** The diagram outlines the different levels at which the `@reentrant` attribute could be applied to control reentrancy:
+    *   **Function Level:** Applied directly to individual `async` functions (`@reentrant func`, `@reentrant(never) func`). Controls reentrancy for that specific function only.
+    *   **Extension Level:** Applied to extensions of actor types (`@reentrant extension ActorType`, `@reentrant(never) extension ActorType`). Sets the default reentrancy behavior for all actor-isolated functions within that extension (unless a function explicitly overrides it with its own `@reentrant` attribute).
+    *   **Actor Type Level:** Conceptually, though less emphasized in the document's examples, `@reentrant` could potentially be applied to the `actor` type itself to set a default reentrancy behavior for all its actor-isolated members.
+*   **Reentrancy Options:** Describes the two primary options provided by the `@reentrant` attribute:
+    *   **`@reentrant` (or just `@reentrant` without arguments - default):**  Indicates standard reentrant behavior. Suspension points within functions marked `@reentrant` (or by default) are reentrant, allowing interleaving.
+    *   **`@reentrant(never)`:**  Indicates *non*-reentrant behavior. Suspension points in `@reentrant(never)` functions become non-reentrant. While a `@reentrant(never)` function is suspended, the actor will *not* process other messages from its mailbox until the function completes execution and resumes. A critical exception is made for asynchronous calls made directly on `self` within a `@reentrant(never)` function – these are allowed to proceed to prevent self-deadlock situations.
+*   **Attribute Resolution Hierarchy:** Explains how the compiler determines the reentrancy setting for an actor-isolated function when `@reentrant` attributes are used at different scopes. It follows a priority order:
+    1.  **Declaration itself:**  The `@reentrant` attribute on the function itself takes highest precedence.
+    2.  **Enclosing Extension:** If not on the function, check for `@reentrant` on the enclosing extension (if the function is in an extension).
+    3.  **Actor Type Definition:**  If not found on the function or extension, check for `@reentrant` on the actor type definition itself.
+    The first `@reentrant` attribute found in this hierarchy determines the reentrancy. If *no* `@reentrant` attribute is found anywhere in the hierarchy for an actor-isolated function, the default is *reentrant* behavior.
+*   **Alternative Syntax (`await(blocking)`):** Mentions a possible alternative syntax, `await(blocking) friend.tell(...)`. This syntax would provide more localized control over reentrancy at individual `await` call sites, rather than using attributes to set broader reentrancy policies.  It would directly indicate a blocking `await` call, making the non-reentrant behavior explicit at the point of call.
+
+---
+
+Now, let's create a diagram to explain **Task-Chain Reentrancy**, another future direction.
+
+
+## Diagram 12: Future Direction - Task-Chain Reentrancy
+
+### Diagram Type: Graph/Diagram with Subgraphs
+
+### Purpose:
+To explain the concept of "task-chain reentrancy" as a potential future direction.
+It outlines the scope of reentrancy, its benefits (deadlock reduction), compares it to other reentrancy types, and discusses the implementation challenges and uncertainties that led to it not being included in the current proposal.
+
+
+```mermaid
+---
+config:
+  layout: elk
+  look: handDrawn
+  theme: forest
+---
+graph TD
+    subgraph Task_Chain_Reentrancy["Future Direction:<br>Task-Chain Reentrancy"]
+    style Task_Chain_Reentrancy fill:#c3c2,stroke:#333,stroke-width:1px
+
+        A[Task-Chain Reentrancy] --> B{Reentrancy Scope}
+        B --> C[Limited Reentrancy]
+        C --> D[Reentrant calls allowed only within the same Task or its Child Tasks]
+        C --> E[Restricts reentrancy from unrelated tasks]
+        C --> F[Aims to mimic synchronous call stack reentrancy behavior]
+
+
+        G[Benefit:<br>Reduced Deadlocks] --> H["Prevents deadlocks in 'conversations' or call chains between actors"]
+        H --> I["Example:<br>Mutual recursion scenarios (isEven/isOdd actors)"]
+        G --> J[Still prevents broader interleaving issues from unrelated tasks]
+
+        K[Contrast with Other Reentrancy Types] --> L["Reentrant<br>(current default)"]
+        L --> M["Reentrant from any context, potential for more interleaving, more complex reasoning"]
+        K --> N["Non-Reentrant (&#64;reentrant(never))"]
+        N --> O[No reentrancy, simpler reasoning within actor, higher risk of deadlocks]
+
+        P[Implementation Challenges] --> Q[Efficient Runtime Implementation]
+        P --> R[Tracking task hierarchies and call chains for reentrancy checks]
+        P --> S[Potential Performance Overhead]
+
+        T[Uncertainty & Orleans Experience] --> U[Lack of large-scale trials]
+        T --> V["Orleans attempted 'call-chain reentrancy' but removed it"]
+        T --> W[Unclear if issue was the concept or specific implementation]
+        T --> X[Currently not included in proposal due to these uncertainties and challenges]
+
+        Y[Possible &#64;reentrant Attribute Extension] --> Z["&#64;reentrant(task)"]
+        Z --> AA[Potential syntax to opt-in to task-chain reentrancy]
+    end
+    
+```
+
+### Explanation
+
+*   **Task-Chain Reentrancy Scope:**  Defines the core idea of task-chain reentrancy:
+    *   **Limited Reentrancy:** Reentrancy is not simply on or off, but scoped to the current `Task` hierarchy.
+    *   **Same Task or Children Only:** Reentrant calls are only allowed if they originate from the same `Task` or any of its child tasks.
+    *   **Restricts Unrelated Task Interleaving:** This approach aims to prevent reentrancy from completely unrelated concurrent tasks, limiting interleaving to "conversations" within a task family.
+    *   **Mimics Synchronous Call Stack:** The goal is to better mirror the reentrant behavior of synchronous code, where mutual recursion within a call stack is natural and expected.
+*   **Benefits: Reduced Deadlocks:** Explains the primary advantage of task-chain reentrancy:
+    *   **Prevents Call Chain Deadlocks:** Specifically targeted at resolving deadlocks that can occur in scenarios where actors call back into each other in conversational patterns or in mutually recursive functions (like the `isEven`/`isOdd` example).
+    *   **Balanced Approach:** It aims to provide a balance – reducing deadlock risks associated with non-reentrancy, but still offering more controlled reentrancy than the fully reentrant default.
+*   **Contrast with Other Reentrancy Types:**  Positions task-chain reentrancy relative to:
+    *   **Reentrant (Current Default):**  Reentrant from *any* context, potentially leading to more complex concurrency reasoning due to broader interleaving possibilities.
+    *   **Non-Reentrant (`@reentrant(never)`):** No reentrancy, which simplifies reasoning within a single actor's execution, but increases the risk of deadlocks in inter-actor interactions.
+*   **Implementation Challenges:**  Highlights the technical hurdles in implementing task-chain reentrancy:
+    *   **Efficient Runtime Implementation:**  Requires a runtime system capable of efficiently tracking task hierarchies.
+    *   **Task Hierarchy Tracking:**  Need mechanisms to determine if an incoming call is part of the current task chain.
+    *   **Performance Overhead:**  Potential performance costs associated with runtime task tracking and reentrancy checks.
+*   **Uncertainty & Orleans Experience:**  Addresses why task-chain reentrancy is a "future direction" and not in the current proposal:
+    *   **Limited Real-World Experience:**  The approach hasn't been widely tested or used at scale.
+    *   **Orleans's Removed Feature:** Points to the experience of the Orleans project, which attempted a similar "call-chain reentrancy" feature but eventually removed it, raising concerns about practicality or implementation difficulties.
+    *   **Unclear Issues:**  It's not fully clear if Orleans's removal was due to a fundamental flaw in the concept or issues with their specific implementation approach.
+    *   **Current Status: Future Consideration:**  Due to these uncertainties and implementation complexities, task-chain reentrancy is left as a potential future enhancement, not part of the initial actor proposal.
+*   **Possible `@reentrant` Attribute Extension (`@reentrant(task)`):** Suggests a potential syntax extension to the `@reentrant` attribute, such as `@reentrant(task)`, as a way to opt into task-chain reentrancy if it were to be added in the future.
+
+---
+
+Now we move to "Alternatives Considered" starting with **Actor Inheritance**.
+
+## Diagram 13: Alternatives Considered - Actor Inheritance (Removed)
+
+### Diagram Type: Graph/Diagram with Subgraphs
+
+### Purpose:
+To explain "Actor Inheritance," a feature that was initially considered but ultimately removed from the proposal.
+It describes how actor inheritance would have worked, its constraints, and the reasons for its removal (complexity vs. usefulness).
+
+
+```mermaid
+---
+config:
+  layout: elk
+  look: handDrawn
+  theme: forest
+---
+graph TD
+    subgraph Actor_Inheritance["Alternatives Considered: Actor Inheritance (Removed)"]
+    style Actor_Inheritance fill:#a33a,stroke:#333,stroke-width:1px
+
+        A["Actor Inheritance (Initial Proposal)"] --> B{Similar to Class Inheritance}
+        B --> C[Actors could inherit from other Actors]
+        B --> D["Followed class inheritance rules (with actor-specific constraints)"]
+
+        E[Actor Inheritance Constraints] --> F["No Inheritance from Classes<br>(and vice-versa)"]
+        F --> G[Actors and Classes in separate hierarchies]
+        E --> H[Overriding Isolation Rule]
+        H --> I[Overriding declaration must not be *more* isolated than overridden]
+        H --> J[e.g., cannot override a non-isolated method with an actor-isolated one]
+
+        K[Rationale for Removal] --> L[Conceptual Cost Outweighed Usefulness]
+        L --> M[Complexity in understanding and reasoning about inheritance + actor isolation]
+        L --> N[Perceived limited practical benefit for actor-specific use cases]
+        L --> O[Feature could be reintroduced later if need arises]
+
+        P[Example of Overriding Isolation Rule] --> Q[BaseActor]
+        Q --> R["nonisolated func baseMethod()"]
+        P --> S["DerivedActor : BaseActor"]
+        S --> T["func baseMethod() // OK: overriding with same isolation"]
+        S --> U["nonisolated func baseMethod() // OK: overriding to non-isolated is allowed (same isolation)"]
+        S --> V["actorisolated func baseMethod() // NOT OK: overriding to *more* isolated is prohibited"]
+
+    end
+```
+
+### Explanation
+
+*   **Actor Inheritance (Initial Concept):**  Describes the basic idea of actor inheritance as it was initially envisioned:
+    *   **Class-like Inheritance:** Actor inheritance would have been modeled similarly to class inheritance in Swift.
+    *   **Actor Subclasses:** Actors could inherit from other actors, creating a hierarchy.
+    *   **Class Inheritance Rules:** Would generally follow the established rules of class inheritance (method overriding, etc.), with some actor-specific additions for isolation.
+*   **Actor Inheritance Constraints:** Outlines the specific limitations and rules introduced to make actor inheritance compatible with actor isolation:
+    *   **No Class/Actor Mix-and-Match Inheritance:** Actors could not inherit from classes, and classes could not inherit from actors. The two type kinds would remain in separate inheritance hierarchies.
+    *   **Overriding Isolation Rule:**  A crucial constraint on overriding in actor inheritance—an overriding declaration (method, property, etc.) *must not be more isolated* than the overridden declaration. Isolation level could only stay the same or become *less* restrictive in subclasses.  You could not override a `nonisolated` method and make it actor-isolated; doing so would violate the Liskov Substitution Principle in the context of actor isolation.
+*   **Rationale for Removal:** Explains the reasons why actor inheritance was ultimately removed from the proposal:
+    *   **Conceptual Cost vs. Usefulness Evaluation:**  The Swift evolution process determined that the perceived conceptual complexity of actor inheritance outweighed its practical usefulness in typical actor-based programming scenarios.
+    *   **Complexity Increase:**  Adding inheritance to actors added significant complexity in terms of understanding the interaction of inheritance hierarchies with actor isolation, making the overall model harder to learn and reason about.
+    *   **Limited Demonstrated Benefit:** The community and design team didn't see a compelling set of use cases for actor inheritance that would justify the added complexity.  Actor composition and protocol conformance were deemed sufficient for most actor-related modeling needs.
+    *   **Potential Reintroduction:**  The document notes that actor inheritance is not entirely off the table and *could* be revisited and re-introduced as a future feature if compelling use cases and demand emerge later.
+*   **Example of Overriding Isolation Rule:** Provides a code-like example to illustrate the "not more isolated" overriding rule:
+    *   **`BaseActor` and `DerivedActor` Example:** Shows a hypothetical `BaseActor` with a `nonisolated func baseMethod()`.  `DerivedActor` inheriting from `BaseActor` can override `baseMethod()` as either `nonisolated` (same or less isolation, OK) or just `func` (implicitly actor-isolated - NOT OK, because it would be *more* isolated than the base class method).
+
+---
+
+Finally in "Alternatives Considered", let's create a diagram for **Cross-Actor `let`s**.
+
+
+## Diagram 14: Alternatives Considered - Cross-Actor `let`s Access
+
+### Diagram Type: Graph/Diagram with Subgraphs
+
+### Purpose:
+To explain the design choice regarding access to `let` (immutable) properties of actors from outside their isolation domain, particularly the distinction between same-module and cross-module access, and the rationales related to library evolution and progressive disclosure.
+
+
+```mermaid
+---
+config:
+  layout: elk
+  look: handDrawn
+  theme: firest
+---
+graph TD
+    subgraph Cross_Actor_Lets["Alternatives Considered:<br>Cross-Actor 'lets' Access"]
+    style Cross_Actor_Lets fill:#c3f4,stroke:#333,stroke-width:1px
+
+        A[Cross-Actor 'let' Access] --> B{Module Scope}
+        B -- Same Module (Defining Module) --> C[Synchronous Access Allowed]
+        C --> D["e.g., print(account.accountNumber) within BankActors module"]
+        C --> E[Simpler syntax within the module]
+
+        B -- Different Module (Outside Module) --> F["Asynchronous Access Required<br>(await)"]
+        F --> G[e.g., await account.accountNumber from another module]
+        F --> H[Ensures future flexibility for library evolution]
+
+        I[Rationale:<br>Library Evolution & Progressive Disclosure] --> J[Library Evolution]
+        J --> K[Allows changing 'let' to 'var' in future without breaking clients outside module]
+        J --> L[Existing clients already use async access, unaffected by 'let' -> 'var' change]
+
+        I --> M[Progressive Disclosure]
+        M --> N[Simpler syntax within module for common use cases]
+        M --> O[Avoids immediate need for 'nonisolated' for immutable state in basic actor usage]
+        M --> P["Advanced feature 'nonisolated' for explicit synchronous access control (SE-0313)"]
+
+        Q["Contrast with Earlier Proposal<br>(All Async Access)"] --> R[Original Accepted Proposal:<br>All cross-actor 'let' access was asynchronous]
+        Q --> S[Experience showed usability issues and teachability challenges]
+        Q --> T[Developers confronted with 'nonisolated' too early]
+        Q --> U[Overly restrictive for immutable, inherently concurrency-safe 'let' properties]
+
+        V[Analogy to Other Swift Features] --> W[Similar module-based distinctions in Swift]
+        W --> X["Access Control<br>(internal default)"]
+        W --> Y["Struct Memberwise Initializers<br>(internal default)"]
+        W --> Z["Class Inheritance & Overriding<br>(module-based defaults for 'open')"]
+        W --> AA[Consistent Swift approach:<br>Simplify in-module, be explicit for cross-module]
+
+    end
+    
+```
+
+
+### Explanation
+
+*   **Cross-Actor `let` Access Based on Module Scope:**  Illustrates the key difference in how `let` properties of actors are accessed depending on whether the access is from within the *same module* where the actor is defined or from a *different module*:
+    *   **Same Module (Defining Module):** Synchronous access is *allowed* (e.g., `print(account.accountNumber)` within the `BankActors` module). This provides simpler syntax for in-module usage.
+    *   **Different Module (Outside Module):** Asynchronous access (`await`) is *required* (e.g., `await account.accountNumber` from another module). This enforces asynchronous boundaries for cross-module interactions.
+*   **Rationale: Library Evolution & Progressive Disclosure:** Explains the primary motivations behind this design:
+    *   **Library Evolution:**
+        *   **`let` to `var` Flexibility:** Requiring asynchronous access *outside the module* maintains the library author's ability to change a public `let accountNumber` to a `var accountNumber` in a future version without breaking binary compatibility or requiring recompilation of client code in *other modules*. Because clients in other modules are already using `await`, they are insulated from this implementation detail change.
+        *   **Preserves Swift's Evolution Policy:** This approach is consistent with Swift's broader philosophy of prioritizing library evolution stability and maximizing the flexibility of library authors to evolve their code without causing widespread breakages in client code.
+    *   **Progressive Disclosure:**
+        *   **Simpler In-Module Syntax:** Synchronous access within the module provides a smoother learning curve and less verbose syntax for common in-module actor interactions.
+        *   **`nonisolated` Avoidance (Initially):**  For basic actor usage within a module with immutable state (`let` properties), developers don't immediately *need* to grapple with the more advanced `nonisolated` keyword.
+        *   **`nonisolated` for Explicit Control (SE-0313):**  The `nonisolated` keyword (introduced in a separate proposal [SE-0313]) remains available as an more advanced, explicit mechanism for developers to *intentionally* allow synchronous cross-actor access to *immutable* state when they are prepared to commit to that interface stability.
+*   **Contrast with Earlier Proposal (All Async Access):** Points out that an earlier accepted version of the proposal took a more restrictive approach:
+    *   **Original Proposal - All Async `let` Access:** Initially, *all* cross-actor access to `let` properties, even within the same module, was *required* to be asynchronous.
+    *   **Usability and Teachability Concerns:** Experience with this stricter model revealed usability problems and made the actor model harder to teach and adopt. Developers were immediately faced with `await` and sometimes felt it was overly cumbersome for accessing inherently safe `let` properties. Also, immediately pushing users to `nonisolated` went against progressive disclosure principles.
+    *   **Overly Restrictive for Immutable `lets`:**  The all-async-access rule was seen as too restrictive, particularly given that immutable `let` properties of `Sendable` types are conceptually safe for concurrent access.
+*   **Analogy to Other Swift Features:**  Draws parallels to how Swift handles module boundaries in other language features to reinforce the consistency of this design choice:
+    *   **Access Control Defaults to `internal`:** Module-level scope as the default for access control.
+    *   **Struct Memberwise Initializers are `internal`:**  Implicitly generated memberwise initializers have module-level scope.
+    *   **Class Inheritance & `open`:**  Defaults around class inheritance and overriding within the same module versus across modules (using `open`).
+    *   **Consistent Theme:**  Highlights a recurring theme in Swift's design: prioritize simpler, less verbose syntax and more permissive defaults for in-module code, while requiring more explicit syntax and enforcing stronger boundaries for interactions across modules to promote encapsulation, library evolution, and more robust software design.
+
+---
