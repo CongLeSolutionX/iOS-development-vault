@@ -35,7 +35,7 @@ To provide a high-level overview of the Actor Model and its key features in Swif
 config:
   layout: elk
   look: handDrawn
-  theme: forest
+  theme: dark
 ---
 graph TD
     A[Actor];
