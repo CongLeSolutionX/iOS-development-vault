@@ -1255,3 +1255,307 @@ graph TD
     *   **Performance Optimization:** The lighter-weight queue and the runtime optimizations are intended to make actor message processing more efficient and take full advantage of the `async/await` concurrency model.
 
 ---
+
+## Code implementation
+
+Let's create Swift code implementations for each of the concepts we've discussed, following best practices and using the latest resources for Swift concurrency.
+
+### 1. Actor Definition and Basic Structure
+
+```swift
+import Foundation
+
+actor BankAccount {
+    let accountNumber: Int
+    var balance: Double
+
+    init(accountNumber: Int, initialDeposit: Double) {
+        self.accountNumber = accountNumber
+        self.balance = initialDeposit
+    }
+
+    // Actor-isolated method
+    func deposit(amount: Double) {
+        balance += amount
+        print("Account \(accountNumber): Deposited \(amount), new balance is \(balance)")
+    }
+
+    // Actor-isolated method
+    func withdraw(amount: Double) {
+        if balance >= amount {
+            balance -= amount
+            print("Account \(accountNumber): Withdrawn \(amount), new balance is \(balance)")
+        } else {
+            print("Account \(accountNumber): Insufficient funds to withdraw \(amount)")
+        }
+    }
+
+    // Actor-isolated computed property (example)
+    var accountDetails: String {
+        return "Account Number: \(accountNumber), Balance: \(balance)"
+    }
+}
+
+// Usage
+func exampleBasicActor() async {
+    let myAccount = BankAccount(accountNumber: 12345, initialDeposit: 100.0)
+
+    await myAccount.deposit(amount: 50.0)
+    await myAccount.withdraw(amount: 20.0)
+    print(await myAccount.accountDetails) // Asynchronous access to actor property
+}
+
+Task {
+    await exampleBasicActor()
+}
+```
+
+**Explanation**
+
+*   **`actor BankAccount`:**  Demonstrates the basic syntax for declaring an actor.
+*   **`let accountNumber`, `var balance`:** Shows actor properties, both immutable (`let`) and mutable (`var`).
+*   **`init(...)`:**  Illustrates an initializer within an actor.
+*   **`deposit(amount:)`, `withdraw(amount:)`:** Example of actor-isolated methods that operate on the actor's state (`balance`).
+*   **`accountDetails`:**  Example of an actor-isolated computed property.
+*   **`await myAccount.deposit(...)`:**  Shows how to correctly call actor-isolated methods asynchronously using `await`.
+*   **`await myAccount.accountDetails`:** Demonstrates asynchronous access to an actor-isolated property from outside the actor.
+
+### 2. Actor Isolation (Preventing Direct External Access)
+
+```swift
+actor IsolatedCounter {
+    private var count = 0
+
+    func increment() {
+        count += 1
+    }
+
+    func currentCount() -> Int {
+        return count
+    }
+}
+
+func demonstrateActorIsolationError() async {
+    let counter = IsolatedCounter()
+
+    // Error: Actor-isolated property 'count' can only be referenced on 'self'
+    // print(counter.count) // This would cause a compile-time error
+
+    await counter.increment() // Correct: Asynchronous call to actor-isolated method
+    print("Current count: \(await counter.currentCount())") // Correct: Asynchronous call to actor-isolated method
+}
+
+Task {
+    await demonstrateActorIsolationError()
+}
+```
+
+**Explanation**
+
+*   **`private var count`:**  Emphasizes that even `private` properties are still actor-isolated and protected.
+*   **`print(counter.count)` (commented out error):**  Illustrates the compiler error you would get if you try to directly access `counter.count` from outside the actor. This is the core of actor isolation.
+*   **`await counter.increment()` and `await counter.currentCount()`:** Shows the correct way to interact with the actor's state through its actor-isolated methods using asynchronous calls and `await`.
+
+### 3. Cross-Actor References (Asynchronous Calls)
+
+```swift
+actor AccountHolder {
+    let name: String
+    init(name: String) { self.name = name }
+
+    func notifyTransfer(fromAccount: BankAccount, amount: Double) async {
+        print("\(name): Received notification of transfer of \(amount) from account \(fromAccount.accountNumber)")
+    }
+}
+
+actor BankAccount {
+    // ... (BankAccount definition from example 1) ...
+
+    func transfer(amount: Double, to otherAccount: BankAccount, holder: AccountHolder) async throws {
+        if balance >= amount {
+            balance -= amount
+            await otherAccount.deposit(amount: amount) // Cross-actor async call (to mutable state)
+            await holder.notifyTransfer(fromAccount: self, amount: amount) // Cross-actor async call
+            print("Transfer of \(amount) from \(accountNumber) to \(otherAccount.accountNumber) completed")
+        } else {
+            throw BankAccountError.insufficientFunds
+        }
+    }
+}
+
+enum BankAccountError: Error {
+    case insufficientFunds
+}
+
+func demonstrateCrossActorReferences() async {
+    let account1 = BankAccount(accountNumber: 54321, initialDeposit: 200.0)
+    let account2 = BankAccount(accountNumber: 98765, initialDeposit: 50.0)
+    let holder2 = AccountHolder(name: "Alice")
+
+    do {
+        try await account1.transfer(amount: 75.0, to: account2, holder: holder2) // Cross-actor call to account1's method
+    } catch {
+        print("Transfer failed: \(error)")
+    }
+}
+
+Task {
+    await demonstrateCrossActorReferences()
+}
+```
+
+**Explanation**
+
+*   **`AccountHolder` actor:**  Introduced a second actor to demonstrate cross-actor interactions.
+*   **`transfer(amount:to:holder:)` in `BankAccount`:**  The `transfer` method now interacts with *another* `BankAccount` (`otherAccount`) and an `AccountHolder` (`holder`).
+*   **`await otherAccount.deposit(amount: amount)`:** A key example of a cross-actor *asynchronous* call.  We use `await` because we are calling a method on `otherAccount`, which is a different actor instance. Accessing `otherAccount`'s mutable state (`balance` in `deposit`) *must* be asynchronous.
+*   **`await holder.notifyTransfer(...)`:**  Another cross-actor asynchronous call to the `AccountHolder` actor.
+
+### 4. Cross-Actor References (Immutable `let` properties - Same Module vs. Different Module)
+
+For demonstrating this, we need to separate code into modules. Let's assume two Swift files within the same module initially, and then adapt for a "different module" scenario conceptually:
+
+**Within the Same Module (e.g., `BankModule` - conceptually):**
+
+```swift
+// BankAccounts.swift (within BankModule)
+
+public actor BankAccount {
+    public let accountNumber: Int // Public immutable property
+    var balance: Double // Mutable balance
+
+    public init(accountNumber: Int, initialDeposit: Double) { // Public initializer
+        self.accountNumber = accountNumber
+        self.balance = initialDeposit
+    }
+
+    public func getAccountNumber() -> Int { // Public actor-isolated method, synchronous
+        return accountNumber // Synchronous access to 'let' - OK within module
+    }
+}
+
+// ExampleUsage.swift (within BankModule - same module)
+
+func accessImmutablePropertyInModule() async {
+    let account = BankAccount(accountNumber: 11122, initialDeposit: 500)
+    print("Account Number (sync in module): \(account.accountNumber)") // Synchronous access - OK in same module
+    print("Account Number (async in module): \(await account.accountNumber)") // Also OK (though async is not needed here within module for 'let')
+    print("Account Number (via method): \(account.getAccountNumber())") // Synchronous call to sync method - OK in same module
+
+    print("Account Details: Account #\(account.accountNumber)") // OK: Synchronous access to 'let' in module
+    print("Account Details (async): Account #\(await account.accountNumber)") // Also OK: Async access to 'let'
+}
+
+Task {
+    await accessImmutablePropertyInModule()
+}
+```
+
+**Explanation (Same Module)**
+
+*   **`public let accountNumber`:**  Made `accountNumber` public and `let` (immutable).
+*   **`account.accountNumber` (synchronous access):**  Inside the same conceptual module (`BankModule`), synchronous access to `account.accountNumber` is allowed.
+*   **`await account.accountNumber` (asynchronous access):** Asynchronous access also works (though not strictly necessary for `let` within the same module).
+*   **`account.getAccountNumber()`:**  Demonstrates calling a synchronous actor-isolated method, which can synchronously return the `let` property within the module.
+
+**Conceptual "Different Module" Scenario:**
+
+If `ExampleUsage.swift` were in a *different module* (e.g., `ClientAppModule`) than `BankAccounts.swift` (`BankModule`), then:
+
+```swift
+// ExampleUsage.swift (in ClientAppModule - different module)
+import BankModule // Assume BankAccount is in a separate module
+
+func accessImmutablePropertyOutOfModule() async {
+    let account = BankAccount(accountNumber: 11122, initialDeposit: 500)
+
+    // Error: Cannot synchronously access immutable 'let' outside the actor's module
+    // print("Account Number (sync out of module): \(account.accountNumber)") // Compile Error - Out of Module, 'let' access is async
+
+    print("Account Number (async out of module): \(await account.accountNumber)") // Correct: Asynchronous access - REQUIRED out of module
+    print("Account Number (via method - async): \(await account.getAccountNumber())") //  Must also be async if called cross-module
+}
+
+Task {
+    await accessImmutablePropertyOutOfModule()
+}
+```
+
+**Explanation (Different Module - Conceptual):**
+
+*   **`import BankModule`:** Simulates being in a different module by importing the `BankModule` where `BankAccount` is defined.
+*   **`print(account.accountNumber)` (commented out error):** Trying to access `account.accountNumber` *synchronously* from a different module would result in a *compile-time error*.
+*   **`await account.accountNumber` (asynchronous access - required):**  To access the `let accountNumber` from a different module, you *must* use `await`.  This enforces asynchronous cross-module access to immutable actor properties, ensuring future library evolution compatibility.
+*   **`await account.getAccountNumber()` (async method call):**  Calling even a synchronous actor method, when it's a cross-module call, still requires `await`.
+
+### 5. Closures in Actors (Sendable vs. Non-Sendable)
+
+```swift
+import Foundation
+
+actor ClosureExampleActor {
+    var internalState = 0
+
+    func executeWithDetachedTask() {
+        Task.detached { // Requires @Sendable closure - Non-Isolated Closure
+            // Error if synchronous access: Actor-isolated mutable state can only be referenced on 'self'
+            await self.incrementStateDetached() // Must use async to access actor state
+            print("Detached Task: State is now \(await self.getState())")
+        }
+    }
+
+    func executeWithForEach(accounts: [BankAccount]) async {
+        accounts.forEach { account in // Non-@Sendable closure - Actor-Isolated Closure
+            // Synchronous access OK within forEach closure (actor-isolated)
+            withdrawAndDeposit(from: self, to: account, amount: 10)
+        }
+        print("ForEach Completed: Internal state \(internalState)") // Accessing actor state synchronously - OK (still in actor contex)
+    }
+
+
+    private func incrementStateDetached() async { // Actor isolated method called from detached Task
+        internalState += 1
+    }
+
+    private func getState() async -> Int { // Actor isolated method to get state
+        return internalState
+    }
+
+    // Helper synchronous actor method to simulate withdraw and deposit within forEach
+    private func withdrawAndDeposit(from actor: ClosureExampleActor, to account: BankAccount, amount: Int) {
+       actor.internalState -= amount // Synchronous access OK (within forEach - actor isolated closure)
+        Task {
+            await account.deposit(amount: Double(amount)) // Cross-actor async call
+        }
+    }
+}
+
+
+func demonstrateClosuresInActors() async {
+    let closureActor = ClosureExampleActor()
+    let account1 = BankAccount(accountNumber: 99887, initialDeposit: 100)
+    let account2 = BankAccount(accountNumber: 33445, initialDeposit: 100)
+
+    closureActor.executeWithDetachedTask() // Non-isolated closure example
+    await closureActor.executeWithForEach(accounts: [account1, account2]) // Actor-isolated closure example
+
+    // Wait a bit to allow detached tasks to complete (for output to be clearer)
+    try? await Task.sleep(nanoseconds: 1_000_000_000) // 1 second
+}
+
+
+Task {
+    await demonstrateClosuresInActors()
+}
+```
+
+**Explanation:**
+
+*   **`executeWithDetachedTask()`:**  Demonstrates a `@Sendable` closure context (`Task.detached`).
+    *   **`Task.detached { ... }`:** The closure passed to `Task.detached` is required to be `@Sendable`, making it *non-isolated*.
+    *   **`await self.incrementStateDetached()`:** Inside the `detached` closure, you *must* use `await` to access actor state (`internalState`). Synchronous access would cause an error.
+*   **`executeWithForEach(accounts:)`:** Demonstrates a non-`@Sendable` closure context (`accounts.forEach { ... }`).
+    *   **`accounts.forEach { account in ... }`:** The closure passed to `forEach` is *not* required to be `@Sendable`. Therefore, it's *actor-isolated*.
+    *   **`withdrawAndDeposit(...)` call:** Inside the `forEach` closure, the `withdrawAndDeposit` method (which accesses `actor.internalState` synchronously) can be called *synchronously*. This is because the `forEach` closure is actor-isolated to `closureActor`, and thus synchronous access to `closureActor`'s state `internalState` is valid on `self` (which, in this case, is implicitly the actor instance `closureActor` because the closure is actor-isolated to it).
+
+These code examples provide practical illustrations of the core concepts of Swift Actors that we've discussed and diagrammed. Remember to compile and run these examples in an environment that supports Swift concurrency (Swift 5.5 or later, with concurrency enabled).
