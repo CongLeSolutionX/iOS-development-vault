@@ -118,7 +118,7 @@ flowchart TD
 
 
     subgraph Whitespace
-    style Whitespace fill:#ccf,stroke:#333,stroke-width:1px,stroke-dasharray:5 5
+    style Whitespace fill:#c355,stroke:#333,stroke-width:1px,stroke-dasharray:5 5
         W --> WA
         W --> WB
         W --> WC
@@ -129,7 +129,7 @@ flowchart TD
     end
 
     subgraph Comments
-    style Comments fill:#ccf,stroke:#333,stroke-width:1px,stroke-dasharray:5 5
+    style Comments fill:#c299,stroke:#333,stroke-width:1px,stroke-dasharray:5 5
         CM --> CMA
         CMA --> CMA1
         CM --> CMB
