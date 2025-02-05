@@ -65,7 +65,7 @@ This enhanced mind map now provides a more structured process overview and riche
 config:
   layout: elk
   look: handDrawn
-  theme: forest
+  theme: dark
 ---
 flowchart TD
     A["Start:<br>Source File"];
