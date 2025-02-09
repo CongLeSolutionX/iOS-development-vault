@@ -6,6 +6,14 @@ version: "2.0"
 license(s): MIT, CC BY 4.0
 ---
 
+
+> This content is dual-licensed under your choice of the following licenses:
+> 1.  **MIT License:** For the code implementations in Swift and Mermaid provided in this document.
+> 2.  **Creative Commons Attribution 4.0 International License (CC BY 4.0):** For all other content, including the text, explanations, and the Mermaid diagrams and illustrations.
+
+---
+
+
 Below is a collection of enhanced versions of diagrams and illustrations aim to cover the core technical concepts of Semantic Versioning described in the original source document, using a combination of flowcharts, class diagrams, sequence diagrams, tables, textual examples, and a mind map-like structure to enhance understanding and visual clarity.
 
 

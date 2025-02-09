@@ -8,6 +8,12 @@ license(s): MIT, CC BY 4.0
 
 # MVVM-C in Swift
 
+> This content is dual-licensed under your choice of the following licenses:
+> 1.  **MIT License:** For the code implementations in Swift and Mermaid provided in this document.
+> 2.  **Creative Commons Attribution 4.0 International License (CC BY 4.0):** For all other content, including the text, explanations, and the Mermaid diagrams and illustrations.
+
+---
+
 Below is a version of the **MVVM-C (Model-View-ViewModel-Coordinator)** architecture diagram for Swift and iOS development. This rendition emphasizes accurate naming conventions and clarifies the relationships between components for better understanding.
 
 ```mermaid

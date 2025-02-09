@@ -9,6 +9,12 @@ license(s): MIT, CC BY 4.0
 
 # Swift-generated header file - Mermaid Diagrams of the Code Content
 
+> This content is dual-licensed under your choice of the following licenses:
+> 1.  **MIT License:** For the code implementations in Swift and Mermaid provided in this document.
+> 2.  **Creative Commons Attribution 4.0 International License (CC BY 4.0):** For all other content, including the text, explanations, and the Mermaid diagrams and illustrations.
+
+---
+
 Below are Mermaid diagrams representing the content explained content in file: 
 Reversing_Engineer_through_Interfaces/Swift-generated_header_file-Explaination-in-depth.md.
 

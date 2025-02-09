@@ -7,6 +7,13 @@ license(s): MIT, CC BY 4.0
 ---
 
 
+> This content is dual-licensed under your choice of the following licenses:
+> 1.  **MIT License:** For the code implementations in Swift and Mermaid provided in this document.
+> 2.  **Creative Commons Attribution 4.0 International License (CC BY 4.0):** For all other content, including the text, explanations, and the Mermaid diagrams and illustrations.
+
+---
+
+
 Below is a collection of enhanced diagrams and illustrations, which providing a more complete, clear, and effective visual representation of [Swift's Lexical Structure](https://github.com/swiftlang/swift-book/blob/main/TSPL.docc/ReferenceManual/LexicalStructure.md).
 
 The diagrams and illustrations below are optimized versions of [their previous first versions in this doc](./Lexical_Structure_V1.md)

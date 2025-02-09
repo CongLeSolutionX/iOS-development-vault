@@ -7,6 +7,13 @@ license(s): MIT, CC BY 4.0
 ---
 
 
+> This content is dual-licensed under your choice of the following licenses:
+> 1.  **MIT License:** For the code implementations in Swift and Mermaid provided in this document.
+> 2.  **Creative Commons Attribution 4.0 International License (CC BY 4.0):** For all other content, including the text, explanations, and the Mermaid diagrams and illustrations.
+
+---
+
+
 The document on Swift's [Lexical Structure](https://github.com/swiftlang/swift-book/blob/main/TSPL.docc/ReferenceManual/LexicalStructure.md) describes the basic building blocks of the Swift language - tokens - and how they are formed from characters.
 
 To visually represent this, I'll use a variety of Mermaid diagrams, focusing on flowcharts and mind maps to illustrate the parsing process and categorize different lexical elements. 
