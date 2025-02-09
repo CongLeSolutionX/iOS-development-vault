@@ -127,7 +127,7 @@ This project is licensed under the [MIT License](LICENSE), which allows you to u
 This software is licensed under the [MIT License](LICENSE). You may use, copy, modify, merge, publish, distribute, and sublicense it, provided that you include the original license in all copies or substantial portions of the software.
 
 ### Documentation License
-The documentation and other creative materials for this project are licensed under the [Creative Commons Attribution 4.0 International License](LICENSE-docs). You are free to share, adapt, and use the documentation, as long as you give appropriate credit to the original authors.
+The documentation and other creative materials for this project are licensed under the [Creative Commons Attribution 4.0 International License](LICENSE-CC-BY). You are free to share, adapt, and use the documentation, as long as you give appropriate credit to the original authors.
 
 
 ## Contact
