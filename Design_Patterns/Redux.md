@@ -19,6 +19,13 @@ copyright: Copyright (c) 2025 Cong Le. All Rights Reserved.
 Below is a Mermaid diagram that illustrates the Redux architecture in Swift and iOS development. This diagram visualizes the core components and their interactions, highlighting the unidirectional data flow that Redux promotes.
 
 ```mermaid
+---
+title: Redux in Swift
+config:
+  layout: elk
+  look: handDrawn
+  theme: dark
+---
 graph TD
     %% Define the main components
     A[View / UI Components] -->|Dispatches Actions| B[Store]

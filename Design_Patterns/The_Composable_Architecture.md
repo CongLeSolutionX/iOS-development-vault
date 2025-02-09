@@ -21,6 +21,13 @@ Below is a Mermaid diagram that illustrates the architecture of The Composable A
 
 
 ```mermaid
+---
+title: The Composable Architecture in SwiftUI
+config:
+  layout: elk
+  look: handDrawn
+  theme: dark
+---
 graph TD
     %% TCA Core Components
     A[The Composable Architecture - TCA] --> B[State]

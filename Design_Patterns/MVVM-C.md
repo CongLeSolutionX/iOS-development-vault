@@ -18,7 +18,13 @@ copyright: Copyright (c) 2025 Cong Le. All Rights Reserved.
 Below is a version of the **MVVM-C (Model-View-ViewModel-Coordinator)** architecture diagram for Swift and iOS development. This rendition emphasizes accurate naming conventions and clarifies the relationships between components for better understanding.
 
 ```mermaid
-%% MVVM-C Architecture Diagram - Alternative Version
+---
+title: MVVM-C Architecture Diagram - Alternative Version
+config:
+  layout: elk
+  look: handDrawn
+  theme: dark
+---
 
 graph LR
     %% Core Components

@@ -18,6 +18,13 @@ copyright: Copyright (c) 2025 Cong Le. All Rights Reserved.
 Below is a **Mermaid** diagram that visually represents the **Model-View-Controller (MVC)** architecture. This illustration captures the core components of MVC, their interactions, and how they collaborate within an iOS application developed using Swift.
 
 ```mermaid
+---
+title: MVC in Swift
+config:
+  layout: elk
+  look: handDrawn
+  theme: dark
+---
 graph TD
 
     %% MVC Architecture Core Components

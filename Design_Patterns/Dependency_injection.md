@@ -19,6 +19,13 @@ copyright: Copyright (c) 2025 Cong Le. All Rights Reserved.
 Below is a Mermaid **Class Diagram** that visually represents the **Dependency Injection (DI) architecture**. This diagram illustrates how different components interact through DI, highlighting protocols, concrete implementations, view controllers, and how dependencies are injected. Additionally, it includes mock services for testing purposes.
 
 ```mermaid
+---
+title: Dependency Injection
+config:
+  layout: elk
+  look: handDrawn
+  theme: dark
+---
 classDiagram
     %% Protocol Definition
     class NetworkServiceProtocol {

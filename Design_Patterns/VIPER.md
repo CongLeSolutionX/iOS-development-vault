@@ -18,6 +18,12 @@ copyright: Copyright (c) 2025 Cong Le. All Rights Reserved.
 Below is a **Mermaid** illustration that visualizes the **VIPER** architecture as discussed in the comprehensive guide. This class diagram showcases the relationships and interactions between the primary VIPER components: **View**, **Interactor**, **Presenter**, **Entity**, and **Router**.
 
 ```mermaid
+---
+title: VIPER in Swift
+config:
+  look: handDrawn
+  theme: dark
+---
 classDiagram
     %% VIPER Components
     class View {
@@ -126,6 +132,12 @@ classDiagram
 You can further enhance the diagram by adding more details, such as method signatures or additional components, depending on the complexity of your application. Here's an expanded version with more interactions:
 
 ```mermaid
+---
+title: VIPER in Swift - Enhanced version
+config:
+  look: handDrawn
+  theme: dark
+---
 classDiagram
     %% VIPER Components
     class View {

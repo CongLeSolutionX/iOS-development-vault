@@ -16,6 +16,13 @@ copyright: Copyright (c) 2025 Cong Le. All Rights Reserved.
 
 
 ```mermaid
+---
+title: Connecting Design Patterns in iOS Development - Style 1
+config:
+  layout: elk
+  look: handDrawn
+  theme: dark
+---
 graph LR
     A[Identify the core problem] --> B{Is the problem related to}
     B -- Creating objects --> C[Creational]
@@ -102,7 +109,14 @@ graph LR
 
 # Connecting Design Patterns in iOS Development - Style 2
 
-```mermaid 
+```mermaid
+---
+title: Connecting Design Patterns in iOS Development - Style 2
+config:
+  layout: elk
+  look: handDrawn
+  theme: dark
+---
 graph LR
     A[Identify the core problem] --> B{Is the problem related to};
     B -- Creating objects --> C[Creational];
@@ -161,6 +175,13 @@ graph LR
 
  
 ```mermaid
+---
+title: Connecting Design Patterns in iOS Development - Style 3
+config:
+  layout: elk
+  look: handDrawn
+  theme: dark
+---
 graph LR
     A[Identify the core<br>problem] --> B{Is the<br>problem<br>related to};
     B -- Creating objects --> C(Creational);
