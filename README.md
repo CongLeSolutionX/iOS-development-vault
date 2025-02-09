@@ -1,8 +1,14 @@
 # iOS-development-vault
-These notes cover a wide array of subjects with varying levels of depth and detail. I aim to present iOS development concepts and practices using visual representations.
 
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)  [![License: CC BY 4.0](https://licensebuttons.net/l/by/4.0/88x31.png)](LICENSE-CC-BY)
 
 ---
+Copyright (c) 2025 Cong Le. All Rights Reserved.
+
+---
+
+These notes cover a wide array of subjects with varying levels of depth and detail. I aim to present iOS development concepts and practices using visual representations.
+
 ## Demo
 Below is a sample of note in this repo.
 
