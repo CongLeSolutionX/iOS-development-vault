@@ -15,6 +15,13 @@ copyright: Copyright (c) 2025 Cong Le. All Rights Reserved.
 ---
 
 ```mermaid
+---
+title: The Objective-C View Controller - The View Lifecycle Steps
+config:
+  layout: elk
+  look: handDrawn
+  theme: dark
+---
 flowchart TD
     A[initWithNibName:bundle:] --> B[loadView]
     B --> C[viewDidLoad]

@@ -20,17 +20,23 @@ copyright: Copyright (c) 2025 Cong Le. All Rights Reserved.
 To fully grasp how **Objective-C components** integrate with **SwiftUI and Swift**, this diagram highlights the **interaction and bridging mechanisms** between Objective-C and Swift within the app lifecycle.
 
 ```mermaid
-%% Objective-C and Swift Integration Diagram
+---
+title: Objective-C and Swift Integration Diagram
+config:
+  layout: elk
+  look: handDrawn
+  theme: dark
+---
 graph LR
     subgraph Objective-C
-        AppDelegateObjC["AppDelegate (Objective-C)"]
-        ViewControllerObjC["ViewController (Objective-C)"]
+        AppDelegateObjC["AppDelegate<br>(Objective-C)"]
+        ViewControllerObjC["ViewController<br>(Objective-C)"]
     end
 
     subgraph SwiftUI
-        AppDelegateSwift["AppDelegate (Swift)"]
+        AppDelegateSwift["AppDelegate<br>(Swift)"]
         SwiftUIApplication["SwiftUI App"]
-        ContentView["ContentView (SwiftUI)"]
+        ContentView["ContentView<br>(SwiftUI)"]
     end
 
     %% Bridging

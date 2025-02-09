@@ -18,6 +18,13 @@ copyright: Copyright (c) 2025 Cong Le. All Rights Reserved.
 Below is a **Mermaid** diagram that illustrates the **SwiftUI View Lifecycle** along with related functions. This diagram provides a visual representation of the key stages and methods involved in the lifecycle of a SwiftUI view.
 
 ```mermaid
+---
+title: SwiftUI View lifecycle - The View Lifecycle Steps
+config:
+  layout: elk
+  look: handDrawn
+  theme: dark
+---
 flowchart TD
     A[View Initialization] --> B[Body Computation]
     B --> C[Rendering on Screen]
@@ -66,13 +73,6 @@ flowchart TD
     - Manage and react to changes in state data.
 - **`viewDidLoad`, `viewWillAppear`, `viewDidDisappear`**
     - While more common in UIKit, understanding their equivalents in SwiftUI helps bridge concepts.
-
-
----
-**Licenses:**
-
-- **MIT License:**  [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE) - Full text in [LICENSE](LICENSE) file.
-- **Creative Commons Attribution 4.0 International:** [![License: CC BY 4.0](https://licensebuttons.net/l/by/4.0/88x31.png)](LICENSE-CC-BY) - Legal details in [LICENSE-CC-BY](LICENSE-CC-BY) and at [Creative Commons official site](http://creativecommons.org/licenses/by/4.0/).
 
 
 ---

@@ -17,6 +17,13 @@ copyright: Copyright (c) 2025 Cong Le. All Rights Reserved.
 
 
 ```mermaid
+---
+title: iOS App Lifecycle Management
+config:
+  layout: elk
+  look: handDrawn
+  theme: dark
+---
 graph LR
     subgraph "Introduction to iOS App Lifecycle Management"
         A[What is the App Lifecycle?] --> B{Why is Lifecycle Management Important?}

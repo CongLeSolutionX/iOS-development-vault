@@ -21,7 +21,13 @@ copyright: Copyright (c) 2025 Cong Le. All Rights Reserved.
 This diagram captures the overarching states of an iOS application managed primarily by UIKit, with explicit inclusion of **Objective-C delegate methods** and the **bridging between Objective-C and Swift**.
 
 ```mermaid
-%% High-Level iOS Application Lifecycle Diagram with Objective-C Integration
+---
+title: High-Level Application Lifecycle Diagram
+config:
+  layout: elk
+  look: handDrawn
+  theme: dark
+---
 stateDiagram-v2
     %% Define styles
     classDef lifecycleStarts fill:#6c8ebf,stroke:#333,stroke-width:2px,roundedCorners
@@ -33,20 +39,20 @@ stateDiagram-v2
     %% Application Lifecycle States
     [*] --> NotRunning : Launch
     
-    NotRunning --> Inactive : application didFinishLaunchingWithOptions (Objective-C)
-    Inactive --> Active : applicationDidBecomeActive (Objective-C)
+    NotRunning --> Inactive : application didFinishLaunchingWithOptions<br>(Objective-C)
+    Inactive --> Active : applicationDidBecomeActive<br>(Objective-C)
     
-    Active --> Inactive : applicationWillResignActive (Objective-C) \n(e.g., Incoming Call, User Presses Home/Lock)
-    Inactive --> Active : applicationDidBecomeActive (Objective-C)
+    Active --> Inactive : applicationWillResignActive<br>(Objective-C)<br>(e.g., Incoming Call, User Presses Home/Lock)
+    Inactive --> Active : applicationDidBecomeActive<br>(Objective-C)
     
-    Active --> Background : applicationDidEnterBackground  (Objective-C) \n(Home Button Pressed / App Switch)
-    Inactive --> Background : applicationDidEnterBackground (Objective-C) \n(Move to Background)
+    Active --> Background : applicationDidEnterBackground<br>(Objective-C)<br>(Home Button Pressed / App Switch)
+    Inactive --> Background : applicationDidEnterBackground<br>(Objective-C)<br>(Move to Background)
     
     Background --> Suspended : No Active Tasks
     Background --> NotRunning : System Terminates App
     Suspended --> NotRunning : System Terminates App
     
-    Suspended --> Inactive : Relaunch App (State Restoration)
+    Suspended --> Inactive : Relaunch App<br>(State Restoration)
     
     %% Objective-C Methods Node
     %% ObjCMethods["Objective-C UIApplicationDelegate Methods"]:::ObjCProcess

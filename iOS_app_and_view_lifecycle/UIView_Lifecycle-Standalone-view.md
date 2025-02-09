@@ -16,6 +16,13 @@ copyright: Copyright (c) 2025 Cong Le. All Rights Reserved.
 
 
 ```mermaid
+---
+title: The UIView lifecycle in UIKit - The View Lifecycle Steps
+config:
+  layout: elk
+  look: handDrawn
+  theme: dark
+---
 graph TD
     A[UIView Initialization] --> B["init(frame:)"]
     A --> C["init(coder:)"]

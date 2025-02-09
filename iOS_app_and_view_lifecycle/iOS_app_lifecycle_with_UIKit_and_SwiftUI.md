@@ -17,6 +17,13 @@ copyright: Copyright (c) 2025 Cong Le. All Rights Reserved.
 
 
 ```mermaid
+---
+title: iOS Application Lifecycle - UIKit
+config:
+  layout: elk
+  look: handDrawn
+  theme: dark
+---
 graph LR
     subgraph "iOS Application Lifecycle (UIKit)"
         NotRunning["Not Running"]:::lifecycleStarts --> AppLaunch["App Launches"]:::UIKitProcess
@@ -73,7 +80,13 @@ another overview diagram version:
 
 
 ```mermaid
-%% Diagram of iOS Application Lifecycle with SwiftUI View Lifecycle using Mermaid
+---
+title: Diagram of iOS Application Lifecycle with SwiftUI View Lifecycle using Mermaid
+config:
+  layout: elk
+  look: handDrawn
+  theme: dark
+---
 graph TD
     %% Define styles
     classDef lifecycleStarts fill:#6c8ebf,stroke:#333,stroke-width:2px,roundedCorners, color:#ffffff
@@ -182,7 +195,13 @@ Each diagram highlights different facets of the lifecycle, and their interconnec
 This diagram captures the overarching states of an iOS application managed primarily by UIKit. It outlines how the app transitions between different states from launch to termination.
 
 ```mermaid
-%% High-Level iOS Application Lifecycle Diagram
+---
+title: High-Level iOS Application Lifecycle Diagram
+config:
+  layout: elk
+  look: handDrawn
+  theme: dark
+---
 stateDiagram-v2
     [*] --> NotRunning : Launch
 
@@ -218,7 +237,13 @@ stateDiagram-v2
 SwiftUI introduces the concept of **scene phases**, which align with the app's lifecycle states but are managed within the SwiftUI framework. This diagram illustrates how SwiftUI observes and responds to changes in the app's scene phase.
 
 ```mermaid
-%% SwiftUI Scene Phase Lifecycle Diagram
+---
+title: SwiftUI Scene Phase Lifecycle Diagram
+config:
+  layout: elk
+  look: handDrawn
+  theme: dark
+---
 stateDiagram-v2
     [*] --> SwiftUIApplication : Initialize SwiftUI
 
@@ -244,7 +269,13 @@ stateDiagram-v2
 This diagram focuses on the lifecycle of individual SwiftUI views within the active application state. It showcases how views appear, disappear, and update in response to state changes.
 
 ```mermaid
-%% SwiftUI View Lifecycle Diagram
+---
+title: SwiftUI View Lifecycle Diagram
+config:
+  layout: elk
+  look: handDrawn
+  theme: dark
+---
 stateDiagram-v2
     Active --> MainViewAppear : MainView.onAppear()
     MainViewAppear --> MainViewDisappear : MainView.onDisappear()
@@ -271,6 +302,13 @@ stateDiagram-v2
 
 
 ```mermaid
+---
+title: The iOS application lifecycle with multiple scenes in various states
+config:
+  layout: elk
+  look: handDrawn
+  theme: dark
+---
 stateDiagram-v2
     [*] --> NotRunning
 

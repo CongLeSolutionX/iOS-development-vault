@@ -27,6 +27,13 @@ These diagrams illustrate the class hierarchy, inheritance, protocols, and relat
 This diagram shows the inheritance relationships between the classes and protocols.
 
 ```mermaid
+---
+title: Class Hierarchy Diagram
+config:
+  layout: elk
+  look: handDrawn
+  theme: dark
+---
 %%   Notes:
 %%   - Blue Solid arrows (`--|>`) represent inheritance.
 %%   - Green Dashed arrows (`..|>`) represent protocol conformance.
@@ -161,6 +168,13 @@ Styling Relationships:
 
 
 ```mermaid
+---
+title: Flowchart Diagram
+config:
+  layout: elk
+  look: handDrawn
+  theme: dark
+---
 flowchart TD
     AppDelegate --> |Inherits| UIResponder
     AppDelegate -.-> |Conforms| UIApplicationDelegate
@@ -196,6 +210,13 @@ flowchart TD
 This diagram illustrates how `AppDelegate` and `SceneDelegate` interact with the application and scene lifecycles.
 
 ```mermaid
+---
+title: App Lifecycle and Delegate Methods
+config:
+  layout: elk
+  look: handDrawn
+  theme: dark
+---
 sequenceDiagram
 
     participant App as UIApplication
@@ -256,6 +277,13 @@ sequenceDiagram
 This diagram shows how `VideoCapture` handles video frames from the camera.
 
 ```mermaid
+---
+title: Video Capture Flow
+config:
+  layout: elk
+  look: handDrawn
+  theme: dark
+---
 sequenceDiagram
     participant Camera as AVCaptureSession
     participant VC as VideoCapture
@@ -282,6 +310,13 @@ sequenceDiagram
 This diagram represents user interactions within `YOLOViewController`.
 
 ```mermaid
+---
+title: YOLOViewController User Interactions
+config:
+  layout: elk
+  look: handDrawn
+  theme: dark
+---
 flowchart TD
     subgraph YOLOViewController
         %% Background style for subgraph YOLOViewController
@@ -321,6 +356,13 @@ linkStyle 0,1,2,3,4,5,6 stroke:#00FF00,stroke-width:3px,stroke-dasharray:5 5
 This class diagram focuses on protocol conformance and delegates.
 
 ```mermaid
+---
+title: Class Relationships and Protocol Conformance
+config:
+  layout: elk
+  look: handDrawn
+  theme: dark
+---
 %%   Notes:
 %%   - Blue arrows (`--|>`) represent inheritance.
 %%   - Green arrows (`..|>`) represent protocol conformance.
@@ -373,6 +415,13 @@ classDiagram
 This diagram highlights how certain methods are overridden in subclasses.
 
 ```mermaid
+---
+title: Method Overrides and Extensions
+config:
+  layout: elk
+  look: handDrawn
+  theme: dark
+---
 %% %%   Notes:
 %% %%   - Blue arrows (`--|>`) represent inheritance.
 %% %%   - Green arrows (`..|>`) represent protocol conformance.
@@ -464,6 +513,13 @@ flowchart TD
 This diagram represents the overall architecture, highlighting the adherence to the MVC pattern.
 
 ```mermaid
+---
+title: Application Architecture Overview
+config:
+  layout: elk
+  look: handDrawn
+  theme: dark
+---
 flowchart LR
     subgraph Model
         style Model fill:#5FF3,stroke:#23F,stroke-width:2px
@@ -501,6 +557,13 @@ flowchart LR
 This diagram shows how delegates are used within the app, particularly with `VideoCapture`.
 
 ```mermaid
+---
+title: Protocols and Delegates Implementation
+config:
+  layout: elk
+  look: handDrawn
+  theme: dark
+---
 %%   Notes:
 %%   - Blue arrows (`--|>`) represent inheritance.
 %%   - Green arrows (`..|>`) represent protocol conformance.

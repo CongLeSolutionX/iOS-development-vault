@@ -19,6 +19,13 @@ Let's break down the explanation of the Swift-generated header file into a set o
 ## Diagram 1: Overall Structure of the Header File
 
 ```mermaid
+---
+title: Overall Structure of the Header File
+config:
+  layout: elk
+  look: handDrawn
+  theme: dark
+---
 graph LR
     A[Header File: MyApp-Swift.h] --> B{Preprocessor Directives};
     A --> C{Includes};
@@ -51,6 +58,13 @@ graph LR
 ## Diagram 2: Preprocessor Directives Details
 
 ```mermaid
+---
+title: Preprocessor Directives Details
+config:
+  layout: elk
+  look: handDrawn
+  theme: dark
+---
 graph LR
     A[Preprocessor Directives] --> B[Header Guards];
     A --> C[Compiler Pragmas];
@@ -68,6 +82,13 @@ graph LR
 ## Diagram 3: Includes Section
 
 ```mermaid
+---
+title: Includes Section
+config:
+  layout: elk
+  look: handDrawn
+  theme: dark
+---
 graph LR
     A[Includes] --> B[System Headers];
     A --> C[Platform Specific Headers];
@@ -96,6 +117,13 @@ style A fill:#a1fa;
 ## Diagram 4: Swift Type Definitions
 
 ```mermaid
+---
+title: Swift Type Definitions
+config:
+  layout: elk
+  look: handDrawn
+  theme: dark
+---
 graph LR
     A[Swift Type Definitions] --> B[Vector Type Aliases];
         B --> B1[("typedef float swift_float2 ...")];
@@ -111,6 +139,13 @@ style A fill:#a1af;
 
 
 ```mermaid
+---
+title: Macros Section
+config:
+  layout: elk
+  look: handDrawn
+  theme: dark
+---
 graph LR
     A[Macros] --> B[Swift Compatibility Macros];
     A --> C[Type Declaration Macros];
@@ -152,6 +187,13 @@ style A fill:#f1aa;
 ## Diagram 6: Objective-C Class Definitions
 
 ```mermaid
+---
+title: Objective-C Class Definitions
+config:
+  layout: elk
+  look: handDrawn
+  theme: dark
+---
 graph LR
     A[Objective-C Class Definitions] --> B[Interfaces];
     
@@ -240,6 +282,13 @@ linkStyle default stroke:#262,stroke-width:3px
 ## Diagram 7: External Source Symbol Attributes
 
 ```mermaid
+---
+title: External Source Symbol Attributes
+config:
+  layout: elk
+  look: handDrawn
+  theme: dark
+---
 graph LR
     A[External Source Symbol Attributes] --> B[Clang Attributes];
     B --> B1["#if __has_attribute(external_source_symbol) ... #endif"];
