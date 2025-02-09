@@ -6,6 +6,12 @@ version: "1.0"
 license(s): MIT, CC BY 4.0
 ---
 
+> This content is dual-licensed under your choice of the following licenses:
+> 1.  **MIT License:** For the code implementations in Swift and Mermaid provided in this document.
+> 2.  **Creative Commons Attribution 4.0 International License (CC BY 4.0):** For all other content, including the text, explanations, and the Mermaid diagrams and illustrations.
+
+---
+
 
 Below is a breakdown of the diagrams I will create, aligning with [the original documentation](https://github.com/swiftlang/swift-evolution/blob/main/proposals/0364-retroactive-conformance-warning.md):
 
@@ -31,7 +37,7 @@ Here's a breakdown of the concepts and their visualization:
 config:
   layout: elk
   look: handDrawn
-  theme: dark
+  theme: neutral
 ---
 graph LR
     subgraph ModuleA["Module A"]
@@ -78,7 +84,7 @@ class ModuleA,ModuleB,ModuleC detail;
 config:
   layout: elk
   look: handDrawn
-  theme: dark
+  theme: default
 ---
 graph LR
     subgraph ModuleA["Module A"]
@@ -130,7 +136,7 @@ class ModuleA,ModuleB,ModuleC,ModuleD detail;
 config:
   layout: elk
   look: handDrawn
-  theme: dark
+  theme: default
 ---
 graph LR
     subgraph Foundation["Foundation Framework"]

@@ -7,6 +7,11 @@ license(s): MIT, CC BY 4.0
 
 
 # SwiftUI Data Passing Mechanisms Cheat Sheet
+> This content is dual-licensed under your choice of the following licenses:
+> 1.  **MIT License:** For the code implementations in Swift and Mermaid provided in this document.
+> 2.  **Creative Commons Attribution 4.0 International License (CC BY 4.0):** For all other content, including the text, explanations, and the Mermaid diagrams and illustrations.
+
+---
 
 Efficiently managing data flow is essential for building robust SwiftUI applications. This cheat sheet offers a concise overview of the primary data passing mechanisms in SwiftUI, complete with syntax examples. For more detailed explanations and advanced use cases, please refer to [**Mastering State Management in SwiftUI: A Comprehensive Guide**](#).
 
