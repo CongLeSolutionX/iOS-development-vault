@@ -23,6 +23,7 @@ Below is a collection of enhanced versions of diagrams and illustrations aim to 
 
 ```mermaid
 ---
+title: Semantic Versioning - Core Concept
 config:
   layout: elk
   look: handDrawn
@@ -115,8 +116,8 @@ graph LR
 
 ```mermaid
 ---
+title: Version Number Components
 config:
-  layout: elk
   look: handDrawn
   theme: dark
 ---
@@ -182,8 +183,8 @@ classDiagram
 
 ```mermaid
 ---
+title: Version Precedence
 config:
-  layout: elk
   look: handDrawn
   theme: forest
 ---
@@ -299,6 +300,7 @@ Breakdown:
 
 ```mermaid
 ---
+title: BNF Grammar Visual Structure
 config:
   layout: elk
   look: handDrawn
@@ -398,6 +400,7 @@ graph LR
 
 ```mermaid
 ---
+title: Benefits of Semantic Versioning
 config:
   layout: elk
   look: handDrawn

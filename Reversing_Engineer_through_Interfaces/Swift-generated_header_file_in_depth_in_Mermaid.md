@@ -3,6 +3,7 @@ created: 2024-12-15 12:35:11
 author: Cong Le
 version: "1.5"
 license(s): MIT, CC BY 4.0
+copyright: Copyright (c) 2025 Cong Le. All Rights Reserved.
 ---
 
 

@@ -25,6 +25,7 @@ This diagram illustrates the fundamental decision process for incrementing the v
 
 ```mermaid
 ---
+title: Semantic Versioning - Core Concept
 config:
   layout: elk
   look: handDrawn
@@ -80,8 +81,8 @@ This diagram represents the structure of a Semantic Version number, highlighting
 
 ```mermaid
 ---
+title: Version Number Components
 config:
-  layout: elk
   look: handDrawn
   theme: dark
 ---
@@ -141,6 +142,7 @@ This diagram illustrates the process of comparing two Semantic Versions to deter
 
 ```mermaid
 ---
+title: Version Precedence
 config:
   layout: elk
   look: handDrawn
@@ -263,6 +265,7 @@ We can use a nested graph to represent the benefits like a mind map.
 
 ```mermaid
 ---
+title: Benefits of Semantic Versioning
 config:
   layout: elk
   look: handDrawn
