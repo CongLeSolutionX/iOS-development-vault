@@ -286,4 +286,11 @@ sequenceDiagram
 
 These diagrams collectively illustrate how `AsyncSequence` and `AsyncIteratorProtocol` work together, how `for await in` works under the hood, and how the standard library extends these protocols. They help visualize the concepts of asynchronous sequences in Swift, making the complexities easier to understand. The new functions for transforming, reducing, compacting and manipulating `AsyncSequence`s makes the code concise, easy to read, and very familiar to the users with synchronous `Sequence` protocol.
 
+
+---
+**Licenses:**
+
+- **MIT License:**  [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE) - Full text in [LICENSE](LICENSE) file.
+- **Creative Commons Attribution 4.0 International:** [![License: CC BY 4.0](https://licensebuttons.net/l/by/4.0/88x31.png)](LICENSE-CC-BY) - Legal details in [LICENSE-CC-BY](LICENSE-CC-BY) and at [Creative Commons official site](http://creativecommons.org/licenses/by/4.0/).
+
 ---

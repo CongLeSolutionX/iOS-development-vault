@@ -349,4 +349,11 @@ This header file is essential for enabling Objective-C code within your app to i
 The provided code is a crucial part of the Swift and Objective-C interoperability layer in your iOS application. It ensures that classes, methods, and properties defined in Swift are accessible from Objective-C code, enabling seamless integration between the two languages. Understanding the structure and content of this header file can help you better manage mixed-language projects and troubleshoot any related issues.
 
 
+
+---
+**Licenses:**
+
+- **MIT License:**  [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE) - Full text in [LICENSE](LICENSE) file.
+- **Creative Commons Attribution 4.0 International:** [![License: CC BY 4.0](https://licensebuttons.net/l/by/4.0/88x31.png)](LICENSE-CC-BY) - Legal details in [LICENSE-CC-BY](LICENSE-CC-BY) and at [Creative Commons official site](http://creativecommons.org/licenses/by/4.0/).
+
 ---

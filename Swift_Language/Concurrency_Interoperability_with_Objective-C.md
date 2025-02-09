@@ -1246,5 +1246,11 @@ class G NoRoute;
 * If an ObjC method of Superclass has both async and completion handler signatures, subclasses are only allowed to override one of them.
 * For method overridding, compiler infers `@objc dynamic` to avoid problems with the new generated async methods. Warning is raised to user if that happens.
 
----
 
+---
+**Licenses:**
+
+- **MIT License:**  [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE) - Full text in [LICENSE](LICENSE) file.
+- **Creative Commons Attribution 4.0 International:** [![License: CC BY 4.0](https://licensebuttons.net/l/by/4.0/88x31.png)](LICENSE-CC-BY) - Legal details in [LICENSE-CC-BY](LICENSE-CC-BY) and at [Creative Commons official site](http://creativecommons.org/licenses/by/4.0/).
+
+---

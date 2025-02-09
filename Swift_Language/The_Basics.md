@@ -256,4 +256,9 @@ graph TD
 These diagrams aim to provide visual summaries of the concepts explained in the Swift documentation. You can use them to enhance understanding and make the documentation more engaging. Remember that the level of detail in each diagram can be adjusted based on the specific focus and audience.
 
 ---
+**Licenses:**
 
+- **MIT License:**  [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE) - Full text in [LICENSE](LICENSE) file.
+- **Creative Commons Attribution 4.0 International:** [![License: CC BY 4.0](https://licensebuttons.net/l/by/4.0/88x31.png)](LICENSE-CC-BY) - Legal details in [LICENSE-CC-BY](LICENSE-CC-BY) and at [Creative Commons official site](http://creativecommons.org/licenses/by/4.0/).
+
+---

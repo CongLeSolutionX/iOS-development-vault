@@ -586,5 +586,11 @@ flowchart TB
 
 The optimized Operators diagram now offers a more direct and understandable flowchart for operator type classification based on whitespace. The enhanced "Operator Characters" subgraph provides richer detail and clarity about valid characters for custom operators.
 
----
 
+---
+**Licenses:**
+
+- **MIT License:**  [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE) - Full text in [LICENSE](LICENSE) file.
+- **Creative Commons Attribution 4.0 International:** [![License: CC BY 4.0](https://licensebuttons.net/l/by/4.0/88x31.png)](LICENSE-CC-BY) - Legal details in [LICENSE-CC-BY](LICENSE-CC-BY) and at [Creative Commons official site](http://creativecommons.org/licenses/by/4.0/).
+
+---

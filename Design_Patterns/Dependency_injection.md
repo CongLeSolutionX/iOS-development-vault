@@ -108,4 +108,11 @@ classDiagram
 - **Testing Advantages:** By depending on protocols rather than concrete implementations, it's easy to substitute real services with mock services during testing, enhancing the testability of your components.
 - **Flexibility and Maintainability:** If you need to change the implementation of a service (e.g., switch from `NetworkService` to another networking library), you can do so without modifying the classes that depend on the service, provided they rely on the protocol.
 
+
+---
+**Licenses:**
+
+- **MIT License:**  [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE) - Full text in [LICENSE](LICENSE) file.
+- **Creative Commons Attribution 4.0 International:** [![License: CC BY 4.0](https://licensebuttons.net/l/by/4.0/88x31.png)](LICENSE-CC-BY) - Legal details in [LICENSE-CC-BY](LICENSE-CC-BY) and at [Creative Commons official site](http://creativecommons.org/licenses/by/4.0/).
+
 ---

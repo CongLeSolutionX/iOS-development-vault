@@ -79,5 +79,11 @@ The diagram emphasizes the unidirectional data flow inherent in Redux:
 4. **State Publication**: The updated State is published back to the View, ensuring the UI reflects the latest state.
 5. **Reactive Updates**: The Combine Framework facilitates reactive updates, subscribing the View to State changes.
 
----
 
+---
+**Licenses:**
+
+- **MIT License:**  [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE) - Full text in [LICENSE](LICENSE) file.
+- **Creative Commons Attribution 4.0 International:** [![License: CC BY 4.0](https://licensebuttons.net/l/by/4.0/88x31.png)](LICENSE-CC-BY) - Legal details in [LICENSE-CC-BY](LICENSE-CC-BY) and at [Creative Commons official site](http://creativecommons.org/licenses/by/4.0/).
+
+---

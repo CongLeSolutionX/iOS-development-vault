@@ -419,4 +419,11 @@ linkStyle 0,1,2,3,4,5,6,7,8,9,10,11,12,13,14 stroke:#33,stroke-width:2px;
 
 The retroactive conformance warning is a safeguard against subtle and hard-to-debug issues. By using the `@retroactive` attribute or fully qualified names (as a fallback), you can manage these scenarios consciously, while allowing the Swift compiler to prevent you from running into unexpected behaviors. This also provides guidance for library authors about where they introduce conformances, and what risks they incur.
 
+
+---
+**Licenses:**
+
+- **MIT License:**  [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE) - Full text in [LICENSE](LICENSE) file.
+- **Creative Commons Attribution 4.0 International:** [![License: CC BY 4.0](https://licensebuttons.net/l/by/4.0/88x31.png)](LICENSE-CC-BY) - Legal details in [LICENSE-CC-BY](LICENSE-CC-BY) and at [Creative Commons official site](http://creativecommons.org/licenses/by/4.0/).
+
 ---

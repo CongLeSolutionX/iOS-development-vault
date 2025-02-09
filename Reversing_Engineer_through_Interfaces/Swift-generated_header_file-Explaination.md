@@ -84,4 +84,11 @@ This generated header file is critical for interoperability between Swift and Ob
 
 This header file is generated automatically by Xcode, and while you rarely need to modify it manually, it's essential to understand its structure and purpose when working with mixed Swift and Objective-C projects.
 
+
+---
+**Licenses:**
+
+- **MIT License:**  [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE) - Full text in [LICENSE](LICENSE) file.
+- **Creative Commons Attribution 4.0 International:** [![License: CC BY 4.0](https://licensebuttons.net/l/by/4.0/88x31.png)](LICENSE-CC-BY) - Legal details in [LICENSE-CC-BY](LICENSE-CC-BY) and at [Creative Commons official site](http://creativecommons.org/licenses/by/4.0/).
+
 ---

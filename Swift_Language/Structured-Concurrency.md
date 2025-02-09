@@ -321,4 +321,11 @@ linkStyle 2 stroke:#933,stroke-width:3px;
 *   **Priorities:** These can be set on tasks to influence the scheduler.
 *   **Executors:** The mechanism that actually runs the tasks (thread pools etc)
 
+
+---
+**Licenses:**
+
+- **MIT License:**  [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE) - Full text in [LICENSE](LICENSE) file.
+- **Creative Commons Attribution 4.0 International:** [![License: CC BY 4.0](https://licensebuttons.net/l/by/4.0/88x31.png)](LICENSE-CC-BY) - Legal details in [LICENSE-CC-BY](LICENSE-CC-BY) and at [Creative Commons official site](http://creativecommons.org/licenses/by/4.0/).
+
 ---
