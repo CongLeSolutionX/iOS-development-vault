@@ -4,7 +4,15 @@ created: 2025-1-1 03:50:26
 author: Cong Le
 version: "1.0"
 license(s): MIT, CC BY 4.0
+copyright: Copyright (c) 2025 Cong Le. All Rights Reserved.
 ---
+
+> This content is dual-licensed under your choice of the following licenses:
+> 1.  **MIT License:** For the code implementations in Swift and Mermaid provided in this document.
+> 2.  **Creative Commons Attribution 4.0 International License (CC BY 4.0):** For all other content, including the text, explanations, and the Mermaid diagrams and illustrations.
+
+---
+
 
 
 The mermaid diagram below is my attempt to translate and to explain the initialization process from the official original documentation on [Swift Initialization](https://docs.swift.org/swift-book/documentation/the-swift-programming-language/initialization). This is still a work in progress.

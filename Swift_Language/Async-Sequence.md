@@ -4,6 +4,7 @@ created: 2024-12-31 03:50:26
 author: Cong Le
 version: "1.0"
 license(s): MIT, CC BY 4.0
+copyright: Copyright (c) 2025 Cong Le. All Rights Reserved.
 ---
 
 > This content is dual-licensed under your choice of the following licenses:

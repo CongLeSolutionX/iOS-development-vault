@@ -4,8 +4,14 @@ created: 2025-01-05 03:50:26
 author: Cong Le
 version: "1.0"
 license(s): MIT, CC BY 4.0
+copyright: Copyright (c) 2025 Cong Le. All Rights Reserved.
 ---
 
+> This content is dual-licensed under your choice of the following licenses:
+> 1.  **MIT License:** For the code implementations in Swift and Mermaid provided in this document.
+> 2.  **Creative Commons Attribution 4.0 International License (CC BY 4.0):** For all other content, including the text, explanations, and the Mermaid diagrams and illustrations.
+
+---
 
 Below is a breakdown of the diagrams I will create, aligning with [the original documentation](https://github.com/swiftlang/swift-book/blob/main/TSPL.docc/LanguageGuide/TheBasics.md):
 
