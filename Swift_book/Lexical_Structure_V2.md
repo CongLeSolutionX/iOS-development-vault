@@ -70,6 +70,7 @@ This enhanced mind map now provides a more structured process overview and riche
 
 ```mermaid
 ---
+title: Whitespace and Comments
 config:
   layout: elk
   look: handDrawn
@@ -168,6 +169,7 @@ The flowchart is now more detailed and structured. The visual grouping of whites
 
 ```mermaid
 ---
+title: Identifiers
 config:
   layout: elk
   look: handDrawn
@@ -510,6 +512,7 @@ The restructured Literals mind map is now much more organized and easier to navi
 
 ```mermaid
 ---
+title: Operators
 config:
   layout: elk
   look: handDrawn
@@ -519,15 +522,15 @@ flowchart TB
     A["Start:<br>Operator Scan"];
     B{"Whitespace Left?"};
     C{"Whitespace Right?"};
-    D{"Followed by Dot `.`?"};
+    D{"Followed by Dot '.'?"};
     E["Infix Operator"];
     F["Postfix Operator"];
     G["Prefix Operator"];
 
 
-    H["End:<br>Operator Token (Infix)"];
-    I["End:<br>Operator Token (Postfix)"];
-    J["End:<br>Operator Token (Prefix)"];
+    H["End:<br>Operator Token<br>(Infix)"];
+    I["End:<br>Operator Token<br>(Postfix)"];
+    J["End:<br>Operator Token<br>(Prefix)"];
 
 
     A --> B
@@ -544,11 +547,11 @@ flowchart TB
 
 
     OC["Operator Start Chars"];
-    OCA["ASCII: `/=+-!*%<> &|^~?`"];
-    OCB["Unicode: Math, Symbols, Dingbats"];
+    OCA["ASCII:<br>/=+-!*%<> &|^~?"];
+    OCB["Unicode:<br>Math, Symbols, Dingbats"];
 
     OC_dot["Dot Operator Start"];
-    OCD["`. <br> (Can have more dots)`"];
+    OCD[".<br>(Can have more dots)"];
 
 
     OC_combine["Combining Unicode<br>(after 1st char)"];

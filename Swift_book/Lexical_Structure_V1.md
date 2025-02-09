@@ -62,6 +62,7 @@ This mind map provides a high-level view of the lexical structure process in Swi
 
 ```mermaid
 ---
+title: Whitespace and Comments
 config:
   layout: elk
   look: handDrawn
@@ -89,9 +90,9 @@ flowchart TD
     WG("U+0000 Null");
 
     CM["Comments"];
-    CMA["Single-line `//`"];
+    CMA["Single-line '//'"];
     CMA1["Until Line Break<br>(U+000A/U+000D)"];
-    CMB["Multi-line `/* ... */`"];
+    CMB["Multi-line '/* ... */'"];
     CMB1["Nested Allowed"];
     CMB2["Balanced Markers Required"];
     CMC["Treated as Whitespace"];
@@ -162,6 +163,7 @@ This flowchart illustrates the Swift compiler's handling of whitespace and comme
 
 ```mermaid
 ---
+title: Identifiers
 config:
   layout: elk
   look: handDrawn
@@ -171,7 +173,7 @@ flowchart TB
     A["Start:<br>Identifier Scan"];
     B{"First Character?"};
     C{"Letter (A-Z, a-z)?"};
-    D{"Underscore `_`?"};
+    D{"Underscore '_'?"};
     E{"Unicode BMP Non-Combining?"};
     F{"Unicode Outside BMP<br>(Not Private Use)?"};
     G["Valid Head"];
@@ -190,7 +192,7 @@ flowchart TB
     O["Check for Reserved Words"];
     
     P{"Is Reserved Word?"};
-    Q{"Backticks? \`word\`"};
+    Q{"Backticks?<br>\'word\'"};
     
     S["Valid Identifier"];
     
@@ -203,8 +205,8 @@ flowchart TB
     SIA1["Internal Convention"];
     SIB["Double Underscore Prefix"];
     SIB1["Reserved for Compiler/Stdlib"];
-    SIC["Implicit Parameters `$0`, `$1`, ..."];
-    SID["Property Wrapper Projection `$variable`"];
+    SIC["Implicit Parameters<br>'$0', '$1', ..."];
+    SID["Property Wrapper Projection<br>'$variable'"];
     
     A --> B
     B --> C
@@ -634,6 +636,7 @@ This comprehensive mind map breaks down Swift literals by type: Integer, Floatin
 
 ```mermaid
 ---
+title: Operators
 config:
   layout: elk
   look: handDrawn
@@ -652,9 +655,9 @@ flowchart TB
     J["Prefix Operator"];
     K["Infix Operator"];
 
-    L["End:<br>Operator Token (Infix)"];
-    M["End:<br>Operator Token (Postfix)"];
-    N["End:<br>Operator Token (Prefix)"];
+    L["End:<br>Operator Token<br>(Infix)"];
+    M["End:<br>Operator Token<br>(Postfix)"];
+    N["End:<br>Operator Token<br>(Prefix)"];
 
 
     A --> B
