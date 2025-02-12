@@ -1,10 +1,10 @@
 ---
 created: 2025-02-11 05:48:19
-original source: https://developer.apple.com/documentation/foundation/url_loading_system/fetching_website_data_into_memory
 author: Cong Le
 version: "1.0"
 license(s): MIT, CC BY 4.0
 copyright: Copyright (c) 2025 Cong Le. All Rights Reserved.
+original source: https://developer.apple.com/documentation/foundation/url_loading_system/fetching_website_data_into_memory
 ---
 
 
