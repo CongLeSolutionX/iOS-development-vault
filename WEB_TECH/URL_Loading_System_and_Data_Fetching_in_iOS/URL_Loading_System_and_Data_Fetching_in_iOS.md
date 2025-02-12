@@ -279,6 +279,10 @@ flowchart TB
 ```
 
 
+Here is the example of this diagram when render on a macOS machine look like: 
+
+![Task_Execution_Flow_Diagram](/WEB_TECH/URL_Loading_System_and_Data_Fetching_in_iOS/Task_Execution_Flow_Diagram.png)
+
 ---
 
 
