@@ -22,11 +22,12 @@ Below are different syntax to render the diagram from section `Detailed Sequence
 ----
 
 
-
-
 ## 3. Detailed Sequence Diagram: Completion Handler Flow for Data Task
 
 This sequence diagram provides a more granular view of the data task completion handler process, including detailed steps for error checking, response validation, and data processing.
+
+
+### Version 1
 
 ```mermaid
 ---
@@ -99,6 +100,11 @@ sequenceDiagram
     
 ```
 
+
+---
+
+
+### Version 2
 
 Here is another version of this diagram.
 
@@ -187,6 +193,11 @@ sequenceDiagram
     
 ```
 
+
+---
+
+
+### Version 3
 
 and another version of this diagram with more color segmentations.
 
@@ -302,6 +313,12 @@ sequenceDiagram
     
 ```
 
+
+---
+
+
+### Version 4
+
 Another version of this diagram:
 
 
@@ -403,10 +420,9 @@ sequenceDiagram
     
 ```
 
+---
 
-----
-
-### This is an extra section for this diagram
+### Version 5
 
 Here's the sequence diagram redrawn to emphasize the different processes within the Completion Handler using rectangular boxes of different colors. This should visually segment the error handling, response validation, and data processing stages.
 
