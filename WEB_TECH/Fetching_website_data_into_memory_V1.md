@@ -16,7 +16,11 @@ copyright: Copyright (c) 2025 Cong Le. All Rights Reserved.
 
 ----
 
-# 1. Diagram: Task Type Choice
+
+Below is a collection of diagrams and illustrations on explaining how  `URLSessionDataTask` fetching website data accordingly to the original Apple documentation article at [here](https://developer.apple.com/documentation/foundation/url_loading_system/fetching_website_data_into_memory).
+
+
+## 1. Diagram: Task Type Choice
 
 
 *   **Purpose:** To clearly differentiate between `URLSessionDataTask` and `URLSessionDownloadTask` based on their use cases, as introduced in the overview.
@@ -61,7 +65,7 @@ graph TD
 
 ---
 
-# 2. Diagram: Session Configuration Options
+## 2. Diagram: Session Configuration Options
 
 
 
@@ -106,7 +110,7 @@ graph TD
 
 ---
 
-# 3. Diagram: Completion Handler Flow (Recreation of Figure 1)
+## 3. Diagram: Completion Handler Flow (Recreation of Figure 1)
 
 
 
@@ -142,7 +146,7 @@ sequenceDiagram
 
 ----
 
-# 4. Diagram: Delegate Flow (Recreation of Figure 2)
+## 4. Diagram: Delegate Flow (Recreation of Figure 2)
 
 
 *   **Purpose:** To illustrate the process of using a delegate to receive transfer details and results with `URLSessionDataTask`.
@@ -182,7 +186,7 @@ sequenceDiagram
 
 ---
 
-# 5. Diagram: Delegate Protocol Hierarchy
+## 5. Diagram: Delegate Protocol Hierarchy
 
 
 
@@ -258,7 +262,7 @@ classDiagram
 
 ----
 
-# 6. Table: Comparison of Completion Handler vs Delegate
+## 6. Table: Comparison of Completion Handler vs Delegate
 
 
 *   **Purpose:** To summarize the key differences and trade-offs between using completion handlers and delegates for `URLSessionDataTask`.
