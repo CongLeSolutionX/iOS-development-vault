@@ -431,7 +431,8 @@ This diagram illustrates different types of MSL functions and the attributes tha
 ```mermaid
 ---
 config:
-  theme: forest
+  look: handDrawn
+  theme: dark
 ---
 sequenceDiagram
 	autonumber
