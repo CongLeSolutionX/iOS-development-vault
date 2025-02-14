@@ -45,11 +45,11 @@ graph LR
     Q --> S[Source Files];
     Q --> T[Packages];
     
-    style A fill:#f9f,stroke:#333,stroke-width:2px
-    style B fill:#ccf,stroke:#333,stroke-width:1px
-    style F fill:#ccf,stroke:#333,stroke-width:1px
-    style K fill:#ccf,stroke:#333,stroke-width:1px
-    style Q fill:#ccf,stroke:#333,stroke-width:1px
+    style A fill:#f39f,stroke:#333,stroke-width:2px
+    style B fill:#c3cf,stroke:#333,stroke-width:1px
+    style F fill:#c3cf,stroke:#333,stroke-width:1px
+    style K fill:#c3cf,stroke:#333,stroke-width:1px
+    style Q fill:#c3cf,stroke:#333,stroke-width:1px
 ```
 
 **Explanation:** This flowchart provides a high-level overview of access control, its purpose, the elements it applies to, access levels, and the core concepts involved in Swift programming.
