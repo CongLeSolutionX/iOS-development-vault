@@ -339,43 +339,69 @@ config:
 ---
 sequenceDiagram
     autonumber
-    participant Client
-    participant Server
-    participant LocalDB
+    box rgb(20, 22, 111) Client
+        participant Client
+    end
+    
+    box rgb(20, 22, 55) Server
+        participant Server
+    end
+    
+    box rgb(200, 22, 20) LocalDB
+        participant LocalDB
+    end
 
+    rect rgb(21, 105, 255)
     opt Pull Synchronization
-        Client->>Server: Request Updates (Last Sync Timestamp)
+        Client->>Server: Request Updates<br>(Last Sync Timestamp)
         Server->>Server: Check for Changes
+        rect rgb(220, 151, 55)
         alt Changes Found
-            Server-->>Client: Send Changes (Delta)
+            rect rgb(20, 151, 55)
+            Server-->>Client: Send Changes<br>(Delta)
             Client->>LocalDB: Apply Changes
+            end
         else No Changes
+            rect rgb(80, 105, 25)
             Server-->>Client: No Updates
+            end
+        end
         end
     end
-
-    opt Push Synchronization (e.g., Firebase Cloud Messaging)
-        Server->>Server: Data Changes
-        Server->>Client: Push Notification (Data Update)
-        Client->>Server: Request Full Data (if needed)
-         Server-->>Client: Send Data
-        Client->>LocalDB: Apply Changes
     end
 
-     opt Hybrid Synchronization
-        Client->>Server: Request Updates (Last Sync Timestamp)
-          Server->>Server: Check for Changes
-           alt Changes Found
-            Server-->>Client: Send Changes (Delta)
-              Client->>LocalDB: Apply Changes
-           else No Changes
-               Server-->>Client: No Updates
-           end
+    rect rgb(21, 105, 255)
+    opt Push Synchronization<br>(e.g., Firebase Cloud Messaging)
+        Server->>Server: Data Changes
+        Server->>Client: Push Notification<br>(Data Update)
+        Client->>Server: Request Full Data<br>(if needed)
+        Server-->>Client: Send Data
+        Client->>LocalDB: Apply Changes
+    end
+    end
+
+    rect rgb(21, 105, 255)
+    opt Hybrid Synchronization
+        Client->>Server: Request Updates<br>(Last Sync Timestamp)
+            Server->>Server: Check for Changes
+            rect rgb(220, 151, 55)
+            alt Changes Found
+                rect rgb(20, 151, 55)
+                Server-->>Client: Send Changes<br>(Delta)
+                Client->>LocalDB: Apply Changes
+                end
+            else No Changes
+                rect rgb(80, 105, 25)
+                Server-->>Client: No Updates
+                end
+            end
+            end
         Server->>Server: Critical Data Changes
-        Server->>Client: Push Notification (Critical Update)
+        Server->>Client: Push Notification<br>(Critical Update)
         Client->>Server: Request Specific Data
         Server-->>Client: Send Data
         Client->>LocalDB: Apply Changes
+    end
     end
 ```
 
