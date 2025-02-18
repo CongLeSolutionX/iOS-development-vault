@@ -27,7 +27,7 @@ config:
   theme: dark
 ---
 flowchart TD
-    subgraph Problem["Problem: Online-Only Apps"]
+    subgraph Problem["Problem:<br>Online-Only Apps"]
         A[User Request] --> B(Network Request);
         B -- "Network Failure" --> C[App Failure/Error];
         B -- "Slow Network" --> D[Poor User Experience];
@@ -53,7 +53,7 @@ flowchart TD
     end
 
     subgraph New_Architectural_Design["Architectural Design (MVP/MVVM)"]
-        J["Model (Network Dependent)"];
+        J["Model<br>(Network Dependent)"];
         K[View];
         L[Presenter/ViewModel];
         J --"Network"--> K;
@@ -86,7 +86,7 @@ config:
   theme: dark
 ---
 flowchart TD
-    subgraph Problem["Problem: Network Dependence"]
+    subgraph Problem["Problem:<br>Network Dependence"]
       A[User Request] --> B{Network Available?};
       B -- No --> C[App Failure/Limited Functionality];
       B -- Yes --> D[Network Request];
@@ -107,9 +107,9 @@ flowchart TD
     end
 
     subgraph Solutions["Solutions: Caching"]
-        J["HTTP Caching (Retrofit/NSURLCache)"];
+        J["HTTP Caching<br>(Retrofit/NSURLCache)"];
         K[Shared Preferences/UserDefaults];
-        L["SQLite/Core Data (Limited Use)"];
+        L["SQLite/Core Data<br>(Limited Use)"];
         M[Presenter/ViewModel-Level Cache];
         style J fill:#c3c9,stroke:#333,stroke-width:2px
         style K fill:#c3c9,stroke:#333,stroke-width:2px
@@ -156,7 +156,7 @@ config:
   theme: dark
 ---
 flowchart TD
-    subgraph Problem["Problem: Limited Offline Access"]
+    subgraph Problem["Problem:<br>Limited Offline Access"]
         A[User Action] --> B{Network Available?};
         B -- No --> C[Limited Functionality/Old Data];
         B -- Yes --> D[Network Request];
@@ -174,8 +174,8 @@ flowchart TD
           style H fill:#f379,stroke:#333,stroke-width:2px
     end
 
-    subgraph Solutions["Solutions: Persistence & Sync"]
-        I["Local Database (SQLite/Core Data/Realm)"];
+    subgraph Solutions["Solutions:<br>Persistence & Sync"]
+        I["Local Database<br>(SQLite/Core Data/Realm)"];
         J[Offline Operation Queue];
         K[Synchronization Service];
         L[Conflict Resolution Strategies];
@@ -198,9 +198,9 @@ flowchart TD
     end
 
     subgraph New_Architectural_Design["Architectural Design (Offline-First)"]
-        M["Persistent Model (Local Database)"];
-        N["Application Logic (Sync, Conflict Resolution)"];
-        O["View (Reactive Updates)"];
+        M["Persistent Model<br>(Local Database)"];
+        N["Application Logic<br>(Sync, Conflict Resolution)"];
+        O["View<br>(Reactive Updates)"];
         P[Network Manager];
         M <--> N;
         N --> O;
@@ -246,7 +246,7 @@ config:
   theme: dark
 ---
 flowchart TD
-    subgraph Problem["Problem: Scalability & Complexity"]
+    subgraph Problem["Problem:<br>Scalability & Complexity"]
         A[Large Dataset];
         B[Complex Sync Logic];
         C[High User Load];
@@ -266,11 +266,11 @@ flowchart TD
         style G fill:#f379,stroke:#333,stroke-width:2px
     end
 
-    subgraph Solutions["Solutions: Microservices & Advanced Sync"]
+    subgraph Solutions["Solutions:<br>Microservices &<br> Advanced Sync"]
         H[Microservices Architecture];
         I[Event-Driven Architecture];
-        J["CRDTs (Conflict-free Replicated Data Types)"];
-        K["GraphQL (with Subscriptions)"];
+        J["CRDTs<br>(Conflict-free Replicated Data Types)"];
+        K["GraphQL<br>(with Subscriptions)"];
         L[Dedicated Offline Service];
         style H fill:#91ff,stroke:#333,stroke-width:2px
         style I fill:#91ff,stroke:#333,stroke-width:2px
@@ -283,7 +283,7 @@ flowchart TD
         M[API Gateway];
         N[Offline Service];
         O[Other Microservices];
-        P["Event Bus (Kafka/RabbitMQ)"];
+        P["Event Bus<br>(Kafka/RabbitMQ)"];
         Q[Service Discovery];
 
         M --> N;
