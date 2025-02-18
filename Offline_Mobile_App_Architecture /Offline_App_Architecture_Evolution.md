@@ -24,15 +24,15 @@ copyright: Copyright (c) 2025 Cong Le. All Rights Reserved.
 config:
   layout: elk
   look: handDrawn
-  theme: default
+  theme: dark
 ---
 flowchart TD
     subgraph Problem["Problem: Online-Only Apps"]
         A[User Request] --> B(Network Request);
         B -- "Network Failure" --> C[App Failure/Error];
         B -- "Slow Network" --> D[Poor User Experience];
-        style C fill:#f96,stroke:#333,stroke-width:2px
-        style D fill:#ffcc00,stroke:#333,stroke-width:2px
+        style C fill:#f396,stroke:#333,stroke-width:2px
+        style D fill:#fc09,stroke:#333,stroke-width:2px
 
     end
 
@@ -40,16 +40,16 @@ flowchart TD
         E["Single Point of Failure (Network)"];
         F[High Latency];
         G[Data Loss Potential];
-      style E fill:#f79,stroke:#333,stroke-width:2px
-        style F fill:#f79,stroke:#333,stroke-width:2px
-        style G fill:#f79,stroke:#333,stroke-width:2px
+      style E fill:#f379,stroke:#333,stroke-width:2px
+        style F fill:#f379,stroke:#333,stroke-width:2px
+        style G fill:#f379,stroke:#333,stroke-width:2px
     end
 
     subgraph Solutions["Initial Solutions (Limited)"]
         H[Basic Error Handling];
         I[Retry Mechanisms];
-          style H fill:#ccffcc,stroke:#333,stroke-width:2px
-         style I fill:#ccffcc,stroke:#333,stroke-width:2px
+          style H fill:#c329,stroke:#333,stroke-width:2px
+         style I fill:#c329,stroke:#333,stroke-width:2px
     end
 
     subgraph New_Architectural_Design["Architectural Design (MVP/MVVM)"]
@@ -59,7 +59,7 @@ flowchart TD
         J --"Network"--> K;
         L <-.-> J;
         L <--> K;
-        style J fill:#bbf,stroke:#333,stroke-width:2px
+        style J fill:#b3bf,stroke:#333,stroke-width:2px
     end
 
     Problem --> Bottlenecks;
