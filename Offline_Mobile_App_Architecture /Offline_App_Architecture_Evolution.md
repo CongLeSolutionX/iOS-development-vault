@@ -83,7 +83,7 @@ flowchart TD
 config:
   layout: elk
   look: handDrawn
-  theme: default
+  theme: dark
 ---
 flowchart TD
     subgraph Problem["Problem: Network Dependence"]
@@ -91,8 +91,8 @@ flowchart TD
       B -- No --> C[App Failure/Limited Functionality];
       B -- Yes --> D[Network Request];
       D -- "Slow" --> E[Slow Response];
-      style C fill:#f96,stroke:#333,stroke-width:2px
-      style E fill:#ffcc00,stroke:#333,stroke-width:2px
+      style C fill:#f396,stroke:#333,stroke-width:2px
+      style E fill:#b339,stroke:#333,stroke-width:2px
     end
 
     subgraph Bottlenecks["Bottlenecks"]
@@ -100,10 +100,10 @@ flowchart TD
         G[Cache Size Limits];
         H[Data Consistency Issues];
         I[Limited Offline Functionality];
-        style F fill:#f79,stroke:#333,stroke-width:2px
-        style G fill:#f79,stroke:#333,stroke-width:2px
-        style H fill:#f79,stroke:#333,stroke-width:2px
-        style I fill:#f79,stroke:#333,stroke-width:2px
+        style F fill:#f379,stroke:#333,stroke-width:2px
+        style G fill:#f379,stroke:#333,stroke-width:2px
+        style H fill:#f379,stroke:#333,stroke-width:2px
+        style I fill:#f379,stroke:#333,stroke-width:2px
     end
 
     subgraph Solutions["Solutions: Caching"]
@@ -111,10 +111,10 @@ flowchart TD
         K[Shared Preferences/UserDefaults];
         L["SQLite/Core Data (Limited Use)"];
         M[Presenter/ViewModel-Level Cache];
-        style J fill:#ccffcc,stroke:#333,stroke-width:2px
-        style K fill:#ccffcc,stroke:#333,stroke-width:2px
-        style L fill:#ccffcc,stroke:#333,stroke-width:2px
-        style M fill:#ccffcc,stroke:#333,stroke-width:2px
+        style J fill:#c3c9,stroke:#333,stroke-width:2px
+        style K fill:#c3c9,stroke:#333,stroke-width:2px
+        style L fill:#c3c9,stroke:#333,stroke-width:2px
+        style M fill:#c3c9,stroke:#333,stroke-width:2px
     end
 
     subgraph New_Architectural_Design["Architectural Design (Caching Layer)"]
@@ -125,7 +125,7 @@ flowchart TD
         P <-.-> N;
         P <--> O;
 
-        style N fill:#bbf,stroke:#333,stroke-width:2px
+        style N fill:#b3b5,stroke:#333,stroke-width:2px
     end
 
     Problem --> Bottlenecks;
@@ -153,14 +153,14 @@ flowchart TD
 config:
   layout: elk
   look: handDrawn
-  theme: default
+  theme: dark
 ---
 flowchart TD
     subgraph Problem["Problem: Limited Offline Access"]
         A[User Action] --> B{Network Available?};
         B -- No --> C[Limited Functionality/Old Data];
         B -- Yes --> D[Network Request];
-        style C fill:#ffcc00,stroke:#333,stroke-width:2px
+        style C fill:#f919,stroke:#333,stroke-width:2px
     end
 
     subgraph Bottlenecks["Bottlenecks"]
@@ -168,10 +168,10 @@ flowchart TD
         F[Conflict Resolution];
         G[Storage Management];
         H[Ensuring Data Consistency];
-          style E fill:#f79,stroke:#333,stroke-width:2px
-          style F fill:#f79,stroke:#333,stroke-width:2px
-          style G fill:#f79,stroke:#333,stroke-width:2px
-          style H fill:#f79,stroke:#333,stroke-width:2px
+          style E fill:#f379,stroke:#333,stroke-width:2px
+          style F fill:#f379,stroke:#333,stroke-width:2px
+          style G fill:#f379,stroke:#333,stroke-width:2px
+          style H fill:#f379,stroke:#333,stroke-width:2px
     end
 
     subgraph Solutions["Solutions: Persistence & Sync"]
@@ -179,10 +179,10 @@ flowchart TD
         J[Offline Operation Queue];
         K[Synchronization Service];
         L[Conflict Resolution Strategies];
-          style I fill:#ccffcc,stroke:#333,stroke-width:2px
-          style J fill:#ccffcc,stroke:#333,stroke-width:2px
-          style K fill:#ccffcc,stroke:#333,stroke-width:2px
-          style L fill:#ccffcc,stroke:#333,stroke-width:2px
+          style I fill:#c5f9,stroke:#333,stroke-width:2px
+          style J fill:#c5f9,stroke:#333,stroke-width:2px
+          style K fill:#c5f9,stroke:#333,stroke-width:2px
+          style L fill:#c5f9,stroke:#333,stroke-width:2px
 
     end
 
@@ -191,10 +191,10 @@ flowchart TD
         CS2[Client Wins]
         CS3[Server Wins]
         CS4[Custom Logic]
-          style CS1 fill:#99ccff,stroke:#333,stroke-width:1px
-          style CS2 fill:#99ccff,stroke:#333,stroke-width:1px
-          style CS3 fill:#99ccff,stroke:#333,stroke-width:1px
-          style CS4 fill:#99ccff,stroke:#333,stroke-width:1px
+          style CS1 fill:#91ff,stroke:#333,stroke-width:1px
+          style CS2 fill:#91ff,stroke:#333,stroke-width:1px
+          style CS3 fill:#91ff,stroke:#333,stroke-width:1px
+          style CS4 fill:#91ff,stroke:#333,stroke-width:1px
     end
 
     subgraph New_Architectural_Design["Architectural Design (Offline-First)"]
@@ -206,10 +206,10 @@ flowchart TD
         N --> O;
         N <--> P;
 
-          style M fill:#bbf,stroke:#333,stroke-width:2px
-          style N fill:#bbf,stroke:#333,stroke-width:2px
-          style O fill:#bbf,stroke:#333,stroke-width:2px
-          style P fill:#bbf,stroke:#333,stroke-width:2px
+          style M fill:#b3bf,stroke:#333,stroke-width:2px
+          style N fill:#b3bf,stroke:#333,stroke-width:2px
+          style O fill:#b3bf,stroke:#333,stroke-width:2px
+          style P fill:#b3bf,stroke:#333,stroke-width:2px
     end
 
     Problem --> Bottlenecks;
@@ -243,16 +243,16 @@ flowchart TD
 config:
   layout: elk
   look: handDrawn
-  theme: default
+  theme: dark
 ---
 flowchart TD
     subgraph Problem["Problem: Scalability & Complexity"]
         A[Large Dataset];
         B[Complex Sync Logic];
         C[High User Load];
-      style A fill:#ffcc00,stroke:#333,stroke-width:2px
-        style B fill:#ffcc00,stroke:#333,stroke-width:2px
-        style C fill:#ffcc00,stroke:#333,stroke-width:2px
+      style A fill:#f889,stroke:#333,stroke-width:2px
+        style B fill:#f889,stroke:#333,stroke-width:2px
+        style C fill:#f889,stroke:#333,stroke-width:2px
     end
 
     subgraph Bottlenecks["Bottlenecks"]
@@ -260,10 +260,10 @@ flowchart TD
         E[Difficult to Maintain];
         F[Limited Scalability];
         G["Single Point of Failure (Server)"];
-        style D fill:#f79,stroke:#333,stroke-width:2px
-        style E fill:#f79,stroke:#333,stroke-width:2px
-        style F fill:#f79,stroke:#333,stroke-width:2px
-        style G fill:#f79,stroke:#333,stroke-width:2px
+        style D fill:#f379,stroke:#333,stroke-width:2px
+        style E fill:#f379,stroke:#333,stroke-width:2px
+        style F fill:#f379,stroke:#333,stroke-width:2px
+        style G fill:#f379,stroke:#333,stroke-width:2px
     end
 
     subgraph Solutions["Solutions: Microservices & Advanced Sync"]
@@ -272,11 +272,11 @@ flowchart TD
         J["CRDTs (Conflict-free Replicated Data Types)"];
         K["GraphQL (with Subscriptions)"];
         L[Dedicated Offline Service];
-        style H fill:#ccffcc,stroke:#333,stroke-width:2px
-        style I fill:#ccffcc,stroke:#333,stroke-width:2px
-        style J fill:#ccffcc,stroke:#333,stroke-width:2px
-        style K fill:#ccffcc,stroke:#333,stroke-width:2px
-        style L fill:#ccffcc,stroke:#333,stroke-width:2px
+        style H fill:#91ff,stroke:#333,stroke-width:2px
+        style I fill:#91ff,stroke:#333,stroke-width:2px
+        style J fill:#91ff,stroke:#333,stroke-width:2px
+        style K fill:#91ff,stroke:#333,stroke-width:2px
+        style L fill:#91ff,stroke:#333,stroke-width:2px
     end
 
     subgraph New_Architectural_Design["Architectural Design (Microservices)"]
@@ -292,11 +292,11 @@ flowchart TD
         O --"Events"--> P;
         P --> Q;
 
-        style M fill:#bbf,stroke:#333,stroke-width:2px
-        style N fill:#bbf,stroke:#333,stroke-width:2px
-        style O fill:#bbf,stroke:#333,stroke-width:2px
-        style P fill:#bbf,stroke:#333,stroke-width:2px
-        style Q fill:#bbf,stroke:#333,stroke-width:2px
+        style M fill:#b3b5,stroke:#333,stroke-width:2px
+        style N fill:#b3b5,stroke:#333,stroke-width:2px
+        style O fill:#b3b5,stroke:#333,stroke-width:2px
+        style P fill:#b3b5,stroke:#333,stroke-width:2px
+        style Q fill:#b3b5,stroke:#333,stroke-width:2px
     end
 
     Problem --> Bottlenecks;
@@ -331,7 +331,14 @@ flowchart TD
 ## 5. Synchronization Detail: Pull vs. Push vs. Hybrid - Sequence Diagram
 
 ```mermaid
+---
+config:
+  layout: elk
+  look: handDrawn
+  theme: dark
+---
 sequenceDiagram
+    autonumber
     participant Client
     participant Server
     participant LocalDB
