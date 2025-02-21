@@ -25,6 +25,7 @@ This version now attempts to be more exhaustive by incorporating more dataset-re
 
 ```mermaid
 ---
+title: Expanded License Types for Datasets and Models on Hugging Face
 config:
   theme: dark
 ---

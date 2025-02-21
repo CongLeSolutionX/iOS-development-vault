@@ -42,6 +42,7 @@ The following mindmap visualizes the hierarchical structure of these license cat
 
 ```mermaid
 ---
+title: Hugging Face Hub Licenses
 config:
   theme: dark
 ---
