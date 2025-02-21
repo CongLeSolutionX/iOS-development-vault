@@ -20,7 +20,7 @@ reference_source: "https://huggingface.co/docs/hub/en/repositories-licenses"
 
 ## Visualizing Hugging Face Hub Licenses
 
-This document provides a visual and categorized overview of the licenses listed for use on the Hugging Face Hub and beyond.  The aim is to clarify the types of licenses available and their relationships through Mermaid diagrams.
+This document provides a visual and categorized overview of the licenses listed for use on the Hugging Face Hub and beyond. The aim is to clarify the types of licenses available and their relationships through Mermaid diagrams.
 
 ### Broad Categories of Licenses
 
