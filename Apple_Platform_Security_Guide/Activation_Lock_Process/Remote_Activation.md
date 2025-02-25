@@ -82,7 +82,7 @@ graph LR
         F --> G
         style M fill:#FC17,stroke:#333,stroke-width:1px;
     end
-    style E fill:#90EE90,stroke:#333,stroke-width:1px;
+    style E fill:#90EE,stroke:#333,stroke-width:1px;
     style F fill:#F729,stroke:#333,stroke-width:1px;
     style H fill:#F955,stroke:#333,stroke-width:1px;
 
