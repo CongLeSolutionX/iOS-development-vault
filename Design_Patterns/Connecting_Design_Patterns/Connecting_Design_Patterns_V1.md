@@ -282,6 +282,133 @@ graph LR
 
 ```
 
+
+---
+
+## Style 4 - Customized fonts and text colors 
+
+```mermaid
+---
+title: Design Patterns
+config:
+  layout: elk
+  look: handDrawn
+  theme: dark
+---
+%%{
+  init: {
+    'fontFamily': 'verdana',
+    'themeVariables': {
+      'primaryColor': '#BB2528',
+      'primaryTextColor': '#f529',
+      'primaryBorderColor': '#7C0000',
+      'lineColor': '#F8B229',
+      'secondaryColor': '#006100',
+      'tertiaryColor': '#fff'
+    }
+  }
+}%%
+graph LR
+    A[Identify the core<br>problem] --> B{Is the<br>problem<br>related to};
+    B -- Creating objects --> C(Creational);
+    B -- Assembling objects --> D(Structural);
+    B -- Object interactions/<br>responsibilities --> E(Behavioral);
+
+    subgraph "Creational Patterns"
+        direction LR
+        C --> CR1[Need single instance<br><font color="#e9afaf">Ensure only one instance of a class</font>] --> S(Singleton);
+        C --> CR2[Decouple object creation from usage<br><font color="#e9afaf">Define interface for creating objects</font>] --> FM(Factory Method);
+        C --> CR3[Create families of related objects<br><font color="#e9afaf">Interface for creating families of objects</font>] --> AF(Abstract Factory);
+        C --> CR4[Create duplicate objects<br><font color="#e9afaf">Create objects by cloning</font>] --> P(Prototype);
+        C --> CR5[Construct complex objects step by step<br><font color="#e9afaf">Separate construction from representation</font>] --> BLD(Builder);
+    end
+
+    subgraph "Structural Patterns"
+        direction LR
+        D --> ST1[Simplify complex subsystems<br><font color="#e9afaf">Provide a high-level interface</font>] --> F(Facade);
+        D --> ST2[Make incompatible interfaces compatible<br><font color="#e9afaf">Allow classes with incompatible interfaces to work together</font>] --> AD(Adapter);
+        D --> ST3[Represent part-whole hierarchies<br><font color="#e9afaf">Compose objects into tree structures</font>] --> CP(Composite);
+        D --> ST4[Control access to objects<br><font color="#e9afaf">Provide a surrogate or placeholder</font>] --> PR(Proxy);
+        D --> ST5[Dynamically add/remove behavior<br><font color="#e9afaf">Attach responsibilities dynamically</font>] --> DC(Decorator);
+        D --> ST6[Decouple abstraction from implementation<br><font color="#e9afaf">Separate interface from implementation</font>] --> BR(Bridge);
+    end
+
+    subgraph "Behavioral Patterns"
+        direction LR
+        E --> BH1[Define a family of algorithms<br><font color="#e9afaf">Encapsulate algorithms in classes</font>] --> STG(Strategy)
+        E --> BH2[Define algorithm skeleton,<br> defer steps to subclasses.<br><font color="#e9afaf">Define the skeleton of an algorithm</font>] --> TM(Template Method)
+        E --> BH3[Encapsulate requests as objects<br><font color="#e9afaf">Encapsulate a request as an object</font>] --> CMD(Command)
+        E --> BH4[Separate operations from<br>objects they operate on<br><font color="#e9afaf">Represent an operation to be performed on elements of an object structure</font>] --> V(Visitor)
+        E --> BH5[Encapsulate state-specific behavior<br><font color="#e9afaf">Allow an object to alter its behavior when its internal state changes</font>] --> STE(State)
+        E --> BH6[Maintain a consistent state by<br>being notified of changes<br><font color="#e9afaf">Define a one-to-many dependency</font>] --> O(Observer)
+        E --> BH7[Traverse collections without<br>exposing internals<br><font color="#e9afaf">Access the elements of an aggregate object sequentially</font>] --> I(Iterator)
+    end
+
+    style CR1 fill:#1f1111,stroke:#fed7aa
+    style CR2 fill:#1f1111,stroke:#fed7aa
+    style CR3 fill:#1f1111,stroke:#fed7aa
+    style CR4 fill:#1f1111,stroke:#fed7aa
+    style CR5 fill:#1f1111,stroke:#fed7aa
+
+    style ST1 fill:#1f1111,stroke:#fed7aa
+    style ST2 fill:#1f1111,stroke:#fed7aa
+    style ST3 fill:#1f1111,stroke:#fed7aa
+    style ST4 fill:#1f1111,stroke:#fed7aa
+    style ST5 fill:#1f1111,stroke:#fed7aa
+    style ST6 fill:#1f1111,stroke:#fed7aa
+
+    style BH1 fill:#121f91,stroke:#82b366
+    style BH2 fill:#121f91,stroke:#82b366
+    style BH3 fill:#121f91,stroke:#82b366
+    style BH4 fill:#121f91,stroke:#82b366
+    style BH5 fill:#121f91,stroke:#82b366
+    style BH6 fill:#121f91,stroke:#82b366
+    style BH7 fill:#121f91,stroke:#82b366
+
+    style S fill:#e1d5,stroke:#1a73a6
+    style FM fill:#e1d5,stroke:#1a73a6
+    style AF fill:#e1d5,stroke:#1a73a6
+    style P fill:#e1d5,stroke:#1a73a6
+    style BLD fill:#e1d5,stroke:#1a73a6
+
+    style F fill:#818129,stroke:#9673a6
+    style AD fill:#818129,stroke:#9673a6
+    style CP fill:#818129,stroke:#9673a6
+    style PR fill:#818129,stroke:#9673a6
+    style DC fill:#818129,stroke:#9673a6
+    style BR fill:#818129,stroke:#9673a6
+
+    style STG fill:#d51114,stroke:#82b366
+    style TM fill:#d51114,stroke:#82b366
+    style CMD fill:#d51114,stroke:#82b366
+    style V fill:#d51114,stroke:#82b366
+    style STE fill:#d51114,stroke:#82b366
+    style O fill:#d51114,stroke:#82b366
+    style I fill:#d51114,stroke:#82b366
+
+    style C fill:#c111f3,stroke:#824c68
+    style D fill:#623ddd,stroke:#fbbd20
+    style E fill:#911297,stroke:#4d884d
+    style B fill:#e91f11,stroke:#b85450
+    style A fill:#4e899f,stroke:#6c8ebf
+
+    S -.-> SI1(Single instance<br><font color="#9673a6">Global access point, lazy initialization</font>)
+    FM -.-> SI2(Single instance<br><font color="#9673a6">Can return singleton, but not enforced</font>)
+    FM -.-> IM(Implement<br>using<br><font color="#9673a6">Abstract classes or interfaces</font>)
+    FM -.-> CFD(Configure factory<br>dynamically<br><font color="#9673a6">Subclasses decide which class to instantiate</font>)
+    CFD -.-> SI3(Single instance<br><font color="#9673a6">Flexibility in object creation</font>)
+    CP -.-> CC(Creating composites<br><font color="#9673a6">Recursive composition</font>)
+
+    DC -.-> AR(Add responsibility<br>to objects<br><font color="#9673a6">Without subclassing</font>)
+    DC -.-> OU(Often uses<br><font color="#9673a6">Composition</font>)
+    CP -.-> CU(Composed using<br><font color="#9673a6">Tree structure</font>)
+    CP --> CSSVG(Chaining skin versus guts<br><font color="#9673a6">Leafs and composites, uniform interface</font>)
+
+    STG -.-> DAS(Define algorithm<br>steps<br><font color="#9673a6">Interchangeable algorithms</font>)
+
+```
+
+
 ---
 **Licenses:**
 
