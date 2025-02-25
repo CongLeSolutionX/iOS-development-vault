@@ -285,7 +285,7 @@ graph LR
 
 ---
 
-## Style 4 - Customized fonts and text colors 
+# Style 4 - Customized fonts and text colors 
 
 ```mermaid
 ---
