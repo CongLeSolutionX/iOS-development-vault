@@ -32,9 +32,23 @@ This class diagram is enhanced to provide even more clarity on the attributes, m
 ---
 title: Enhanced Core Components Class Diagram
 config:
+  layout: elk
   look: handDrawn
   theme: dark
 ---
+%%{
+  init: {
+    'fontFamily': 'verdana',
+    'themeVariables': {
+      'primaryColor': '#BB2528',
+      'primaryTextColor': '#f529',
+      'primaryBorderColor': '#7C0000',
+      'lineColor': '#F8B229',
+      'secondaryColor': '#006100',
+      'tertiaryColor': '#fff'
+    }
+  }
+}%%
 classDiagram
     class URLSession {
         +configuration: URLSessionConfiguration
