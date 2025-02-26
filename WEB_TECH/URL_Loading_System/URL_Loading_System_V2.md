@@ -275,9 +275,12 @@ config:
 sequenceDiagram
     autonumber
     participant App
-    participant URLSession
-    participant URLSessionDelegate
-    participant CompletionHandler
+
+    box rgb(20, 22, 55) The Process
+        participant URLSession
+        participant URLSessionDelegate
+        participant CompletionHandler
+    end
 
     App->>URLSession: Create URLSessionTask <br> (e.g., dataTask)
     App->>URLSession: task.resume()
@@ -285,7 +288,9 @@ sequenceDiagram
 
     URLSession-->>URLSession: Initiate Network Request<br>(Asynchronous)
 
+    
     par Delegate Handling Path
+        rect rgb(20, 50, 20)
         URLSession-->>URLSessionDelegate: ... Delegate Calls Begin ...
         activate URLSessionDelegate
         URLSession-->>URLSessionDelegate: urlSession(_:task:willPerformHTTPRedirection:...)
@@ -294,14 +299,18 @@ sequenceDiagram
         URLSession-->>URLSessionDelegate: urlSession(_:task:didCompleteWithError:) <br> (Final Completion)
         URLSessionDelegate-->>App: Delegate Methods Handle <br> Events & Data Progressively
         deactivate URLSessionDelegate
+        end
     and Completion Handler Path
-        opt Completion Handler is Used (No Delegate Set)
+        rect rgb(50, 100, 50)
+        opt Completion Handler is Used<br>(No Delegate Set)
             URLSession-->>CompletionHandler: ... Completion Handler Invoked ONCE ...
             activate CompletionHandler
-            CompletionHandler-->>App: Completion Handler Block <br> Executes ONCE after Task Completion<br> Provides: Data, Response, Error (All at once)
+            CompletionHandler-->>App: Completion Handler Block <br> Executes ONCE after Task Completion<br> Provides: Data, Response, Error<br>(All at once)
             deactivate CompletionHandler
         end
+        end
     end
+    
 
     deactivate URLSession
     App->>App: Process Final Results <br> (Data Aggregated by Delegate, <br> or from Completion Handler)
