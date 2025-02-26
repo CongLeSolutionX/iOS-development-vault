@@ -190,10 +190,13 @@ config:
 sequenceDiagram
     autonumber
     participant App
-    participant URLSession
-    participant URLSessionDelegate
-    participant URLSessionDataTask
-    participant Server
+
+    box rgb(20, 22, 55) The Process
+        participant URLSession
+        participant URLSessionDelegate
+        participant URLSessionDataTask
+        participant Server
+    end
 
     App->>URLSession: Create URLSession(config, delegate, queue)
     App->>URLSession: Create dataTask(with:url)
@@ -205,14 +208,21 @@ sequenceDiagram
     activate URLSessionDelegate
     URLSession-->>URLSessionDelegate: urlSession(_:dataTask:didReceive:response:completionHandler:)
     URLSessionDelegate->>URLSessionDelegate: Validate Response<br>(Status, MIME Type)
+    
+    rect rgb(20, 15, 255)
     alt Response Valid
+        rect rgb(10, 150, 200)
         URLSessionDelegate-->>URLSession: completionHandler(.allow)
+        end
     else Response Invalid
+        rect rgb(10, 150, 200)
         URLSessionDelegate-->>URLSession: completionHandler(.cancel)
         Server-->>URLSessionDataTask: [Transfer Cancelled]
         URLSession-->>URLSessionDelegate: urlSession(_:task:didCompleteWithError:)
         URLSessionDelegate-->>App: Handle Error<br>(if any from cancellation)
         Note over App, Server: Transfer Terminated
+        end
+    end
     end
     deactivate URLSessionDelegate
 
@@ -233,10 +243,17 @@ sequenceDiagram
     activate URLSessionDelegate
     URLSession-->>URLSessionDelegate: urlSession(_:task:didCompleteWithError:)
     URLSessionDelegate->>URLSessionDelegate: Check for `error` parameter
+    
+    rect rgb(20, 15, 255)
     alt No Error
+        rect rgb(10, 150, 200)
         URLSessionDelegate->>App: Process Received Data Buffer
+        end
     else Error Present
+        rect rgb(10, 150, 200)
         URLSessionDelegate-->>App: Handle Client/Server Error
+        end
+    end
     end
     deactivate URLSessionDelegate
     
@@ -258,6 +275,19 @@ config:
   look: handDrawn
   theme: dark
 ---
+%%{
+  init: {
+    'fontFamily': 'verdana',
+    'themeVariables': {
+      'primaryColor': '#BB2528',
+      'primaryTextColor': '#f529',
+      'primaryBorderColor': '#7C0000',
+      'lineColor': '#F8B229',
+      'secondaryColor': '#006100',
+      'tertiaryColor': '#fff'
+    }
+  }
+}%%
 classDiagram
     direction BT
     class URLSessionDelegate {
@@ -303,10 +333,10 @@ classDiagram
     URLSessionTaskDelegate <|-- URLSessionDataDelegate : Inherits from &<br>extends for data
     URLSessionTaskDelegate <|-- URLSessionDownloadDelegate : Inherits from &<br>extends for downloads
 
-    style URLSessionDelegate fill:#f3cf,stroke:#333,stroke-width:1px
-    style URLSessionTaskDelegate fill:#f3cc,stroke:#333,stroke-width:1px
-    style URLSessionDataDelegate fill:#c3cf,stroke:#333,stroke-width:1px
-    style URLSessionDownloadDelegate fill:#c3fc,stroke:#333,stroke-width:1px
+    style URLSessionDelegate fill:#ff11,stroke:#333,stroke-width:1px
+    style URLSessionTaskDelegate fill:#ff11,stroke:#333,stroke-width:1px
+    style URLSessionDataDelegate fill:#ff11,stroke:#333,stroke-width:1px
+    style URLSessionDownloadDelegate fill:#ff11,stroke:#333,stroke-width:1px
     
 ```
 
