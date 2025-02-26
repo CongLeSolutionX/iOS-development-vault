@@ -233,16 +233,11 @@ flowchart TB
 
     M --> P["App Continues <br>or Task Ends"]
 
-
-    style BA fill:#c3c5,stroke:#333,stroke-width:1px
-    style CA fill:#c3c5,stroke:#333,stroke-width:1px
-    style DA fill:#c3c5,stroke:#333,stroke-width:1px
-    style EE fill:#c3c5,stroke:#333,stroke-width:1px
-    style FA fill:#c3c5,stroke:#333,stroke-width:1px
+    classDef Style_for_Elements_in_Process_2 fill:#2935,stroke:#333,stroke-width:1px
+    class BA,CA,DA,EE,FA Style_for_Elements_in_Process_2
+    
 
     classDef Style_for_Elements_in_Process_1 fill:#f335,stroke:#333,stroke-width:1px
-
-
     class G,H,HA,HB,HC,HD,I,J,K,L,N,O Style_for_Elements_in_Process_1
 
 ```
