@@ -476,23 +476,8 @@ Understanding the segue life cycle is essential for creating custom segues.
 ---
 title: Segue Life Cycle (for Custom Segues)
 config:
-  layout: elk
-  look: handDrawn
   theme: dark
 ---
-%%{
-  init: {
-    'fontFamily': 'verdana',
-    'themeVariables': {
-      'primaryColor': '#BB2528',
-      'primaryTextColor': '#f529',
-      'primaryBorderColor': '#7C0000',
-      'lineColor': '#F8B229',
-      'secondaryColor': '#006100',
-      'tertiaryColor': '#fff'
-    }
-  }
-}%%
 sequenceDiagram
     autonumber
     participant UIKit
