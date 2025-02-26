@@ -33,11 +33,24 @@ title: Enhanced Architecture Overview - Component Relationships
 config:
   layout: elk
   look: handDrawn
-  theme: default
+  theme: dark
 ---
+%%{
+  init: {
+    'fontFamily': 'verdana',
+    'themeVariables': {
+      'primaryColor': '#BB2528',
+      'primaryTextColor': '#f529',
+      'primaryBorderColor': '#7C0000',
+      'lineColor': '#F8B229',
+      'secondaryColor': '#006100',
+      'tertiaryColor': '#fff'
+    }
+  }
+}%%
 graph LR
     subgraph ViewController["UIViewController"]
-    style ViewController fill:#f0f2f5,stroke:#333,stroke-width:1.2px
+    style ViewController fill:#f0f2,stroke:#333,stroke-width:1.2px
         A["ViewController Instance"];
         B("GameView Container");
         D("GameView<br>[UIView]");
@@ -62,17 +75,17 @@ graph LR
     D --> H:::internalComponent
     E --> I:::internalComponent
 
-    classDef internal fill:#e3eef9,stroke:#ccc,stroke-width:1px,stroke-dasharray: 5 5;
-    classDef component fill:#d0e8ff,stroke:#333,stroke-width:1.1px;
-    classDef container fill:#e8f0fe,stroke:#333,stroke-width:1px;
-    classDef internalComponent fill:#f8f8ff,stroke:#ccc,stroke-width:1px,stroke-dasharray: 3 3;
+    classDef internal fill:#e399,stroke:#ccc,stroke-width:1px,stroke-dasharray: 5 5;
+    classDef component fill:#d0ef,stroke:#333,stroke-width:1.1px;
+    classDef container fill:#e844,stroke:#333,stroke-width:1px;
+    classDef internalComponent fill:#f8f5,stroke:#ccc,stroke-width:1px,stroke-dasharray: 3 3;
 
     class A internal
     class B,C container
     class D,E component
     class F,G,H,I internalComponent
 
-    linkStyle 0,1,2,3  stroke-width:1.5px;
+    linkStyle 0,1,2,3 stroke-width:1.5px;
     
 ```
 
