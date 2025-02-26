@@ -177,76 +177,73 @@ config:
   look: handDrawn
   theme: dark
 ---
+%%{
+  init: {
+    'fontFamily': 'verdana',
+    'themeVariables': {
+      'primaryColor': '#BB2528',
+      'primaryTextColor': '#f529',
+      'primaryBorderColor': '#7C0000',
+      'lineColor': '#F8B229',
+      'secondaryColor': '#006100',
+      'tertiaryColor': '#fff'
+    }
+  }
+}%%
 flowchart TB
     subgraph App_Process["App Process"]
-    A[Start App] --> B{Configure Session?};
-    B -- Yes --> BA["Choose Session Configuration <br>(Default, Ephemeral,<br>Background)"];
-    BA --> C[Create URLSession <br>with Configuration];
-    B -- No --> CA[Use Default <br>URLSession.shared];
-    CA --> C
+        A[Start App] --> B{Configure Session?}
+        B -- Yes --> BA["Choose Session Configuration <br>(Default, Ephemeral,<br>Background)"]
+        BA --> C[Create URLSession <br>with Configuration]
+        B -- No --> CA[Use Default <br>URLSession.shared]
+        CA --> C
 
-    C --> D{Create Task?};
-    D -- Yes --> DA["Choose Task Type <br>(Data, Download, Upload,<br>Stream, WebSocket)"];
-    DA --> E["Create URLSessionTask <br>(in Suspended State)"];
-    D -- No --> Z[Idle, Waiting for Tasks];
+        C --> D{Create Task?}
+        D -- Yes --> DA["Choose Task Type <br>(Data, Download, Upload,<br>Stream, WebSocket)"]
+        DA --> E["Create URLSessionTask <br>(in Suspended State)"]
+        D -- No --> Z[Idle, Waiting for Tasks]
 
+        E --> F{Start Task Execution?}
+        F -- Yes --> FA["Call task.resume()"]
+        FA --> G["Task Enters <br>Running State<br>(Asynchronous Operation)"]
+        F -- No --> EE[Task Remains Suspended]
+        EE --> F
+        G --> H{Task Completion <br>or Interruption?}
 
-    E --> F{Start Task Execution?};
-    F -- Yes --> FA["Call task.resume()"];
-    FA --> G["Task Enters <br>Running State <br> (Asynchronous Operation)"];
-    F -- No --> EE[Task Remains Suspended];
-    EE --> F
-    G --> H{Task Completion <br>or Interruption?};
+        H -- Success<br>(DataTask) --> HA[Data Received]
+        H -- Success<br>(DownloadTask) --> HB[File Downloaded <br>to Temporary Location]
+        H -- Error/Cancel --> HC["Task Enters <br>Canceling/Completed <br>State with Error"]
+        H -- Interruption<br>(Suspend) --> HD["Task Enters <br>Suspended State<br>(Can Resume Later)"]
 
-
-    H -- Success<br>(DataTask) --> HA[Data Received];
-    H -- Success<br>(DownloadTask) --> HB[File Downloaded <br>to Temporary Location];
-    H -- Error/Cancel --> HC["Task Enters <br>Canceling/Completed <br>State with Error"];
-    H -- Interruption<br>(Suspend) --> HD["Task Enters <br>Suspended State <br> (Can Resume Later)"];
-
-
-    HA --> I{"Handle Data <br> (Delegate or <br>Completion Handler)"};
-    HB --> J{"Handle Downloaded File <br>(Delegate or <br>Completion Handler)"};
-    HC --> K{"Handle Error <br> (Delegate or <br>Completion Handler)"};
-    I --> L[Task Enters <br>Completed State];
-    J --> L;
-    K --> L;
-    L --> M[End Task Lifecycle];
-
+        HA --> I{"Handle Data <br> (Delegate or <br>Completion Handler)"}
+        HB --> J{"Handle Downloaded File <br>(Delegate or <br>Completion Handler)"}
+        HC --> K{"Handle Error <br> (Delegate or <br>Completion Handler)"}
+        I --> L[Task Enters <br>Completed State]
+        J --> L
+        K --> L
+        L --> M[End Task Lifecycle]
     end
 
     subgraph URL_Loading_System_and_Network["URL Loading System & Network"]
-    G --> N["Network Request <br>in Progress <br>(Asynchronous)"];
-    N --> H;
-    HB --> O["File Saved <br>by System <br>(Download Task)"];
-    O --> J;
+        G --> N["Network Request <br>in Progress <br>(Asynchronous)"]
+        N --> H
+        HB --> O["File Saved <br>by System <br>(Download Task)"]
+        O --> J
     end
 
-    M --> P[App Continues <br>or Task Ends];
+    M --> P["App Continues <br>or Task Ends"]
 
 
-    style BA fill:#c3cf,stroke:#333,stroke-width:1px
-    style CA fill:#c3cf,stroke:#333,stroke-width:1px
-    style DA fill:#c3cf,stroke:#333,stroke-width:1px
-    style EE fill:#c3cf,stroke:#333,stroke-width:1px
-    style FA fill:#c3cf,stroke:#333,stroke-width:1px
+    style BA fill:#c3c5,stroke:#333,stroke-width:1px
+    style CA fill:#c3c5,stroke:#333,stroke-width:1px
+    style DA fill:#c3c5,stroke:#333,stroke-width:1px
+    style EE fill:#c3c5,stroke:#333,stroke-width:1px
+    style FA fill:#c3c5,stroke:#333,stroke-width:1px
+
+    classDef Style_for_Elements_in_Process_1 fill:#f335,stroke:#333,stroke-width:1px
 
 
-    style G fill:#f3cc,stroke:#333,stroke-width:1px
-    style H fill:#f3cc,stroke:#333,stroke-width:1px
-    style HA fill:#f3cc,stroke:#333,stroke-width:1px
-    style HB fill:#f3cc,stroke:#333,stroke-width:1px
-    style HC fill:#f3cc,stroke:#333,stroke-width:1px
-    style HD fill:#f3cc,stroke:#333,stroke-width:1px
-    style I fill:#f3cc,stroke:#333,stroke-width:1px
-    style J fill:#f3cc,stroke:#333,stroke-width:1px
-    style K fill:#f3cc,stroke:#333,stroke-width:1px
-    style L fill:#f3cc,stroke:#333,stroke-width:1px
-    style N fill:#f3cc,stroke:#333,stroke-width:1px
-    style O fill:#f3cc,stroke:#333,stroke-width:1px
-
-
-    linkStyle 0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30 stroke-width:2px,stroke:#333,fill:none
+    class G,H,HA,HB,HC,HD,I,J,K,L,N,O Style_for_Elements_in_Process_1
 
 ```
 
