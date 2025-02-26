@@ -170,18 +170,20 @@ sequenceDiagram
             end
         else Valid HTTPURLResponse and Success Code
             CompletionHandler->>CompletionHandler: Check MIME Type<br>(e.g., "text/html")
+            rect rgb(100, 10, 200)
             alt Invalid MIME Type
                 CompletionHandler->>CompletionHandler: Ignore Data<br>(Unexpected format)
             else Valid MIME Type
                 CompletionHandler->>CompletionHandler: Convert `data` to String<br>(e.g., UTF8)
                 CompletionHandler-->>App: Process Data<br>(e.g., load in WKWebView)
             end
+            end
         end
         end
     end
     end
     deactivate CompletionHandler
-       
+          
 ```
 
 
