@@ -430,50 +430,75 @@ This diagram illustrates different types of MSL functions and the attributes tha
 
 ```mermaid
 ---
+title: Different Types of MSL functions and Attributes 
 config:
-  look: handDrawn
   theme: dark
 ---
 sequenceDiagram
 	autonumber
     actor Developer
-    participant MSL_Compiler
-    participant Metal_API
-    participant GPU
+
+    box rgb(20, 22, 55) The System
+        participant MSL_Compiler as MSL Compiler
+        participant Metal_API as Metal API
+        participant GPU
+    end
 
     Developer->>MSL_Compiler: Declare Function with Attribute<br>(e.g., [[kernel]])
     MSL_Compiler->>MSL_Compiler: Analyze Attribute
+
+    rect rgb(20, 15, 255)
     alt Attribute is [[kernel]]
+        rect rgb(10, 100, 200)
         MSL_Compiler->>Metal_API: Expose as Compute Kernel in API
         Metal_API->>GPU: Enqueue Compute Dispatch
         GPU->>GPU: Execute Data-Parallel Kernel over Grid
+        end
     else Attribute is [[vertex]]
+        rect rgb(10, 100, 200)
         MSL_Compiler->>Metal_API: Expose as Vertex Function in API
         Metal_API->>GPU: Enqueue Render Pass
         GPU->>GPU: Execute Vertex Function per Vertex Stream
+        end
     else Attribute is [[fragment]]
+        rect rgb(10, 100, 200)
         MSL_Compiler->>Metal_API: Expose as Fragment Function in API
         Metal_API->>GPU: Enqueue Render Pass
         GPU->>GPU: Execute Fragment Function per Fragment
+        end
     else Attribute is [[visible]]
+        rect rgb(10, 100, 200)
         MSL_Compiler->>Metal_API: Expose as Visible Function in API
         Note over MSL_Compiler: Can be called by other MSL functions
+        end
     else Attribute is [[intersection]]
+        rect rgb(10, 100, 200)
         MSL_Compiler->>Metal_API: Internal Use for Ray Tracing
         GPU->>GPU: Called by Intersect Operations
+        end
     else Attribute is [[mesh]]
+        rect rgb(10, 100, 200)
         MSL_Compiler->>Metal_API: Expose as Mesh Function in Mesh Pipeline
         GPU->>GPU: Execute Mesh Function in Mesh Stage
+        end
     else Attribute is [[object]]
+        rect rgb(10, 100, 200)
         MSL_Compiler->>Metal_API: Expose as Object Function in Mesh Pipeline
         GPU->>GPU: Execute Object Function in Object Stage
+        end
     else Attribute is [[tile]]
+        rect rgb(10, 100, 200)
         MSL_Compiler->>Metal_API: Expose as Tile Function in Render Pass
         GPU->>GPU: Execute Tile Function per Tile
+        end
     else No Attribute (User Function)
+        rect rgb(10, 100, 200)
         MSL_Compiler->>MSL_Compiler: Standard MSL Function
         Note over MSL_Compiler: Callable from other MSL functions
+        end
     end
+    end
+    
     
 ```
 
