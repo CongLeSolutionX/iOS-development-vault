@@ -291,23 +291,23 @@ sequenceDiagram
     
     par Delegate Handling Path
         rect rgb(20, 50, 20)
-        URLSession-->>URLSessionDelegate: ... Delegate Calls Begin ...
-        activate URLSessionDelegate
-        URLSession-->>URLSessionDelegate: urlSession(_:task:willPerformHTTPRedirection:...)
-        URLSession-->>URLSessionDelegate: urlSession(_:dataTask:didReceive response:...)
-        URLSession-->>URLSessionDelegate: urlSession(_:dataTask:didReceive data:) <br> (Multiple calls as data arrives)
-        URLSession-->>URLSessionDelegate: urlSession(_:task:didCompleteWithError:) <br> (Final Completion)
-        URLSessionDelegate-->>App: Delegate Methods Handle <br> Events & Data Progressively
-        deactivate URLSessionDelegate
+            URLSession-->>URLSessionDelegate: ... Delegate Calls Begin ...
+            activate URLSessionDelegate
+            URLSession-->>URLSessionDelegate: urlSession(_:task:willPerformHTTPRedirection:...)
+            URLSession-->>URLSessionDelegate: urlSession(_:dataTask:didReceive response:...)
+            URLSession-->>URLSessionDelegate: urlSession(_:dataTask:didReceive data:) <br> (Multiple calls as data arrives)
+            URLSession-->>URLSessionDelegate: urlSession(_:task:didCompleteWithError:) <br> (Final Completion)
+            URLSessionDelegate-->>App: Delegate Methods Handle <br> Events & Data Progressively
+            deactivate URLSessionDelegate
         end
     and Completion Handler Path
         rect rgb(50, 100, 50)
-        opt Completion Handler is Used<br>(No Delegate Set)
-            URLSession-->>CompletionHandler: ... Completion Handler Invoked ONCE ...
-            activate CompletionHandler
-            CompletionHandler-->>App: Completion Handler Block <br> Executes ONCE after Task Completion<br> Provides: Data, Response, Error<br>(All at once)
-            deactivate CompletionHandler
-        end
+            opt Completion Handler is Used<br>(No Delegate Set)
+                URLSession-->>CompletionHandler: ... Completion Handler Invoked ONCE ...
+                activate CompletionHandler
+                CompletionHandler-->>App: Completion Handler Block <br> Executes ONCE after Task Completion<br> Provides: Data, Response, Error<br>(All at once)
+                deactivate CompletionHandler
+            end
         end
     end
     
@@ -315,7 +315,7 @@ sequenceDiagram
     deactivate URLSession
     App->>App: Process Final Results <br> (Data Aggregated by Delegate, <br> or from Completion Handler)
     Note over App,CompletionHandler: Task lifecycle events can be handled <br> either by Delegate methods (progressive, detailed) <br> or a single Completion Handler (result summary)
-    
+      
 ```
 
 ---
