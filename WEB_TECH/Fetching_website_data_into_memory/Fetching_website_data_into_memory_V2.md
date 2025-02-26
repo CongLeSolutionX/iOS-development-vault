@@ -136,10 +136,13 @@ config:
 sequenceDiagram
     autonumber
     participant App
-    participant URLSession
-    participant URLSessionDataTask
-    participant Server
-    participant CompletionHandler
+    
+    box rgb(20, 22, 55) The Process
+        participant URLSession
+        participant URLSessionDataTask
+        participant Server
+        participant CompletionHandler
+    end
 
     App->>URLSession: Create dataTask(with:url) { ... completionHandler ... }
     URLSession->>URLSessionDataTask: Instantiate Task with Handler
@@ -150,12 +153,21 @@ sequenceDiagram
 
     activate CompletionHandler
     CompletionHandler->>CompletionHandler: Check for `error` parameter
+    
+    rect rgb(20, 15, 255)
     alt Error Present
+        rect rgb(10, 150, 200)
         CompletionHandler-->>App: Handle Client Error
+        end
     else No Error
+        rect rgb(10, 150, 200)
         CompletionHandler->>CompletionHandler: Cast `response` to HTTPURLResponse
+        end
+        rect rgb(100, 20, 20)
         alt Cast Fails or Status Code Not 200-299
+            rect rgb(200, 20, 20)
             CompletionHandler-->>App: Handle Server Error<br>(non-successful HTTP Response)
+            end
         else Valid HTTPURLResponse and Success Code
             CompletionHandler->>CompletionHandler: Check MIME Type<br>(e.g., "text/html")
             alt Invalid MIME Type
@@ -165,9 +177,11 @@ sequenceDiagram
                 CompletionHandler-->>App: Process Data<br>(e.g., load in WKWebView)
             end
         end
+        end
+    end
     end
     deactivate CompletionHandler
-    
+       
 ```
 
 
