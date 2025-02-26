@@ -192,6 +192,7 @@ config:
 }%%
 flowchart TB
     subgraph App_Process["App Process"]
+    style App_Process fill:#535,stroke:#333,stroke-width:1px
         A[Start App] --> B{Configure Session?}
         B -- Yes --> BA["Choose Session Configuration <br>(Default, Ephemeral,<br>Background)"]
         BA --> C[Create URLSession <br>with Configuration]
@@ -225,6 +226,7 @@ flowchart TB
     end
 
     subgraph URL_Loading_System_and_Network["URL Loading System & Network"]
+    style URL_Loading_System_and_Network fill:#5959,stroke:#333,stroke-width:1px
         G --> N["Network Request <br>in Progress <br>(Asynchronous)"]
         N --> H
         HB --> O["File Saved <br>by System <br>(Download Task)"]
