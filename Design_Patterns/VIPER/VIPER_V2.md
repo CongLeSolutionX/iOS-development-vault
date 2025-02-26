@@ -4,12 +4,11 @@ author: Cong Le
 version: "1.0"
 license(s): MIT, CC BY 4.0
 copyright: Copyright (c) 2025 Cong Le. All Rights Reserved.
-source: "https://help.apple.com/pdf/security/en_US/apple-platform-security-guide.pdf"
 ---
 
 
 
-# CHANGE_ME - A Diagrammatical Summary
+# VIPER - A Diagrammatical Summary
 > **Disclaimer:**
 >
 > This document contains my personal notes on the topic,
