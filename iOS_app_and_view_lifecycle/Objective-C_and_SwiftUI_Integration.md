@@ -21,12 +21,29 @@ To fully grasp how **Objective-C components** integrate with **SwiftUI and Swift
 
 ```mermaid
 ---
-title: Objective-C and Swift Integration Diagram
+title: "Objective-C and Swift Integration Diagram"
 config:
   layout: elk
   look: handDrawn
   theme: dark
 ---
+%%%%%%%% Mermaid version v11.4.1-b.14
+%%%%%%%% Available curve styles include the following keywords:
+%% basis, bumpX, bumpY, cardinal, catmullRom, linear, monotoneX, monotoneY, natural, step, stepAfter, stepBefore.
+%%{
+  init: {
+    "graph": { "htmlLabels": false, 'curve': 'linear'},
+    'fontFamily': 'Fantasy',
+    'themeVariables': {
+      'primaryColor': '#BB2528',
+      'primaryTextColor': '#f529',
+      'primaryBorderColor': '#7C0000',
+      'lineColor': '#F8B229',
+      'secondaryColor': '#006100',
+      'tertiaryColor': '#fff'
+    }
+  }
+}%%
 graph LR
     subgraph Objective-C
         AppDelegateObjC["AppDelegate<br>(Objective-C)"]
