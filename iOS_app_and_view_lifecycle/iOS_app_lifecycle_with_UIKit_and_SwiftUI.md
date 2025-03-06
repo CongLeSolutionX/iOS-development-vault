@@ -41,17 +41,17 @@ config:
   }
 }%%
 graph LR
-    subgraph "iOS Application Lifecycle (UIKit)"
+    subgraph iOS_Application_Lifecycle_UIKit["iOS Application Lifecycle<br>(UIKit)"]
         NotRunning["Not Running"]:::lifecycleStarts --> AppLaunch["App Launches"]:::UIKitProcess
         AppLaunch --> didFinishLaunching["didFinishLaunchingWithOptions()"]:::UIKitProcess
         didFinishLaunching --> appDidBecomeActive["applicationDidBecomeActive()"]:::UIKitProcess
         appDidBecomeActive --> Active["Active"]:::lifecycleActive
 
-        Active -- "User Action (Home/Lock),\\nIncoming Call" --> willResignActive["applicationWillResignActive()"]:::UIKitProcess
+        Active -- "User Action (Home/Lock),<br>Incoming Call" --> willResignActive["applicationWillResignActive()"]:::UIKitProcess
         willResignActive --> didEnterBackground["applicationDidEnterBackground()"]:::UIKitProcess
         didEnterBackground --> Background["Background"]:::lifecycleActive
 
-        Background -- "User Reopens App,\\nSystem Promotes App" --> willEnterForeground["applicationWillEnterForeground()"]:::UIKitProcess
+        Background -- "User Reopens App,<br>System Promotes App" --> willEnterForeground["applicationWillEnterForeground()"]:::UIKitProcess
         willEnterForeground --> appDidBecomeActive
         Background -- "System Memory Pressure" --> Suspended["Suspended"]:::lifecycleActive
         Suspended -- "User Relaunches App" --> didFinishLaunching
@@ -59,7 +59,7 @@ graph LR
 
          willTerminate --> Terminated["Terminated"]:::lifecycleEnds
 
-        subgraph "Scene Delegate Lifecycle (UIKit)"
+        subgraph Scene_Delegate_Lifecycle_UIKit["Scene Delegate Lifecycle<br>(UIKit)"]
             Active --> SceneDidBecomeActive["sceneDidBecomeActive()"]:::UIKitProcess
            SceneDidBecomeActive --> Active
             SceneWillResignActive["sceneWillResignActive()"]:::UIKitProcess --> willResignActive
@@ -71,7 +71,7 @@ graph LR
     end
 
 
-    subgraph "SwiftUI View Lifecycle"
+    subgraph SwiftUI_View_Lifecycle["SwiftUI View Lifecycle"]
         Active --> ViewAppear["View.onAppear()"]:::SwiftUIProcess
         ViewAppear --> refreshBody["View.body recomputes"]:::SwiftUIProcess
         ViewAppear --> ViewDisappear["View.onDisappear()"]:::SwiftUIProcess
@@ -86,7 +86,7 @@ graph LR
     classDef lifecycleEnds fill:#bf6c6c,stroke:#333,stroke-width:2px,roundedCorners, color:#ffffff
     classDef lifecycleActive fill:#6bbf6c,stroke:#333,stroke-width:2px,roundedCorners, color:#000000
     classDef UIKitProcess fill:#FF6666,stroke:#333,stroke-width:2px,roundedCorners, color:#ffffff
-    classDef SwiftUIProcess fill:#FFC0CB,stroke:#333,stroke-width:2px,roundedCorners, color:#000000
+    classDef SwiftUIProcess fill:#FFCB55,stroke:#333,stroke-width:2px,roundedCorners, color:#000000
 
 ```
 
@@ -126,7 +126,7 @@ graph TD
     classDef lifecycleEnds fill:#bf6c6c,stroke:#333,stroke-width:2px,roundedCorners, color:#ffffff
     classDef lifecycleActive fill:#6bbf6c,stroke:#333,stroke-width:2px,roundedCorners, color:#000000
     classDef UIKitProcess fill:#FF6666,stroke:#333,stroke-width:2px,roundedCorners, color:#000000
-    classDef SwiftUIProcess fill:#FFC0CB,stroke:#333,stroke-width:2px,roundedCorners, color:#000000
+    classDef SwiftUIProcess fill:#FFCB55,stroke:#333,stroke-width:2px,roundedCorners, color:#000000
 
     %% Nodes
     NotRunning("Not Running"):::lifecycleStarts
@@ -229,24 +229,21 @@ This diagram captures the overarching states of an iOS application managed prima
 
 ```mermaid
 ---
-title: High-Level iOS Application Lifecycle Diagram
+title: "High-Level iOS Application Lifecycle Diagram"
 config:
+  layout: elk
   look: handDrawn
-  theme: dark
+  theme: base
 ---
 %%%%%%%% Mermaid version v11.4.1-b.14
 %%%%%%%% Available curve styles include the following keywords:
 %% basis, bumpX, bumpY, cardinal, catmullRom, linear, monotoneX, monotoneY, natural, step, stepAfter, stepBefore.
 %%{
   init: {
+    "stateDiagram-v2": { "htmlLabels": false, 'curve': 'linear' },
     'fontFamily': 'Fantasy',
     'themeVariables': {
-      'primaryColor': '#BB2528',
-      'primaryTextColor': '#f529',
-      'primaryBorderColor': '#7C0000',
-      'lineColor': '#F8B229',
-      'secondaryColor': '#006100',
-      'tertiaryColor': '#fff'
+      'lineColor': '#F8B229'
     }
   }
 }%%
@@ -286,12 +283,24 @@ SwiftUI introduces the concept of **scene phases**, which align with the app's l
 
 ```mermaid
 ---
-title: SwiftUI Scene Phase Lifecycle Diagram
+title: "SwiftUI Scene Phase Lifecycle Diagram"
 config:
   layout: elk
   look: handDrawn
-  theme: dark
+  theme: base
 ---
+%%%%%%%% Mermaid version v11.4.1-b.14
+%%%%%%%% Available curve styles include the following keywords:
+%% basis, bumpX, bumpY, cardinal, catmullRom, linear, monotoneX, monotoneY, natural, step, stepAfter, stepBefore.
+%%{
+  init: {
+    "stateDiagram-v2": { "htmlLabels": false, 'curve': 'linear' },
+    'fontFamily': 'Fantasy',
+    'themeVariables': {
+      'lineColor': '#F8B229'
+    }
+  }
+}%%
 stateDiagram-v2
     [*] --> SwiftUIApplication : Initialize SwiftUI
 
@@ -318,12 +327,24 @@ This diagram focuses on the lifecycle of individual SwiftUI views within the act
 
 ```mermaid
 ---
-title: SwiftUI View Lifecycle Diagram
+title: "SwiftUI View Lifecycle Diagram"
 config:
   layout: elk
   look: handDrawn
-  theme: dark
+  theme: base
 ---
+%%%%%%%% Mermaid version v11.4.1-b.14
+%%%%%%%% Available curve styles include the following keywords:
+%% basis, bumpX, bumpY, cardinal, catmullRom, linear, monotoneX, monotoneY, natural, step, stepAfter, stepBefore.
+%%{
+  init: {
+    "stateDiagram-v2": { "htmlLabels": false, 'curve': 'linear' },
+    'fontFamily': 'Fantasy',
+    'themeVariables': {
+      'lineColor': '#F8B229'
+    }
+  }
+}%%
 stateDiagram-v2
     Active --> MainViewAppear : MainView.onAppear()
     MainViewAppear --> MainViewDisappear : MainView.onDisappear()
@@ -351,12 +372,24 @@ stateDiagram-v2
 
 ```mermaid
 ---
-title: The iOS application lifecycle with multiple scenes in various states
+title: "The iOS application lifecycle with multiple scenes in various states"
 config:
   layout: elk
   look: handDrawn
-  theme: dark
+  theme: base
 ---
+%%%%%%%% Mermaid version v11.4.1-b.14
+%%%%%%%% Available curve styles include the following keywords:
+%% basis, bumpX, bumpY, cardinal, catmullRom, linear, monotoneX, monotoneY, natural, step, stepAfter, stepBefore.
+%%{
+  init: {
+    "stateDiagram-v2": { "htmlLabels": false, 'curve': 'linear' },
+    'fontFamily': 'Fantasy',
+    'themeVariables': {
+      'lineColor': '#F8B229'
+    }
+  }
+}%%
 stateDiagram-v2
     [*] --> NotRunning
 
