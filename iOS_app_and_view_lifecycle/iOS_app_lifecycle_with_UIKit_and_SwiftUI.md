@@ -18,9 +18,8 @@ copyright: Copyright (c) 2025 Cong Le. All Rights Reserved.
 
 ```mermaid
 ---
-title: iOS Application Lifecycle - UIKit
+title: "iOS Application Lifecycle - UIKit"
 config:
-  layout: elk
   look: handDrawn
   theme: dark
 ---
@@ -29,7 +28,7 @@ config:
 %% basis, bumpX, bumpY, cardinal, catmullRom, linear, monotoneX, monotoneY, natural, step, stepAfter, stepBefore.
 %%{
   init: {
-    "graph": { "htmlLabels": false, 'curve': 'linear' },
+    "graph": { "htmlLabels": false, 'curve': 'linear'},
     'fontFamily': 'Fantasy',
     'themeVariables': {
       'primaryColor': '#BB2528',
