@@ -33,20 +33,12 @@ config:
 %%{
   init: {
     "stateDiagram-v2": { "htmlLabels": false },
-    'fontFamily': 'Fantasy',
-    'themeVariables': {
-      'primaryColor': '#BB2528',
-      'primaryTextColor': '#f529',
-      'primaryBorderColor': '#7C0000',
-      'lineColor': '#F8B229',
-      'secondaryColor': '#006100',
-      'tertiaryColor': '#fff'
-    }
+    'fontFamily': 'Fantasy'
   }
 }%%
 stateDiagram-v2
     %% Define styles
-    classDef lifecycleStarts fill:#6c8ebf,stroke:#333,stroke-width:2px,roundedCorners
+    classDef lifecycleStarts fill:#6eb25,stroke:#333,stroke-width:2px,roundedCorners
     classDef lifecycleEnds fill:#bf6c6c,stroke:#333,stroke-width:2px,roundedCorners
     classDef lifecycleActive fill:#6bbf6c,stroke:#333,stroke-width:2px,roundedCorners
     classDef UIKitProcess fill:#f5a623,stroke:#333,stroke-width:2px,roundedCorners, fontColor:#000
