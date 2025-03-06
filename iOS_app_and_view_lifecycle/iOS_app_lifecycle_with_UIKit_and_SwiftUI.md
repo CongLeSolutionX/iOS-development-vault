@@ -231,7 +231,6 @@ This diagram captures the overarching states of an iOS application managed prima
 ---
 title: "High-Level iOS Application Lifecycle Diagram"
 config:
-  layout: elk
   look: handDrawn
   theme: base
 ---
@@ -285,7 +284,6 @@ SwiftUI introduces the concept of **scene phases**, which align with the app's l
 ---
 title: "SwiftUI Scene Phase Lifecycle Diagram"
 config:
-  layout: elk
   look: handDrawn
   theme: base
 ---
@@ -329,7 +327,6 @@ This diagram focuses on the lifecycle of individual SwiftUI views within the act
 ---
 title: "SwiftUI View Lifecycle Diagram"
 config:
-  layout: elk
   look: handDrawn
   theme: base
 ---
@@ -374,7 +371,6 @@ stateDiagram-v2
 ---
 title: "The iOS application lifecycle with multiple scenes in various states"
 config:
-  layout: elk
   look: handDrawn
   theme: base
 ---
