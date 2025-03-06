@@ -17,12 +17,29 @@ copyright: Copyright (c) 2025 Cong Le. All Rights Reserved.
 
 ```mermaid
 ---
-title: The UIView lifecycle in UIKit - The View Lifecycle Steps
+title: "The UIView lifecycle in UIKit - The View Lifecycle Steps"
 config:
   layout: elk
   look: handDrawn
   theme: dark
 ---
+%%%%%%%% Mermaid version v11.4.1-b.14
+%%%%%%%% Available curve styles include the following keywords:
+%% basis, bumpX, bumpY, cardinal, catmullRom, linear, monotoneX, monotoneY, natural, step, stepAfter, stepBefore.
+%%{
+  init: {
+    "graph": { "htmlLabels": false, 'curve': 'linear'},
+    'fontFamily': 'Fantasy',
+    'themeVariables': {
+      'primaryColor': '#BB2528',
+      'primaryTextColor': '#f529',
+      'primaryBorderColor': '#7C0000',
+      'lineColor': '#F8B229',
+      'secondaryColor': '#006100',
+      'tertiaryColor': '#fff'
+    }
+  }
+}%%
 graph TD
     A[UIView Initialization] --> B["init(frame:)"]
     A --> C["init(coder:)"]

@@ -19,12 +19,29 @@ Below is a **Mermaid** diagram that illustrates the **SwiftUI View Lifecycle** a
 
 ```mermaid
 ---
-title: SwiftUI View lifecycle - The View Lifecycle Steps
+title: "SwiftUI View lifecycle - The View Lifecycle Steps"
 config:
   layout: elk
   look: handDrawn
   theme: dark
 ---
+%%%%%%%% Mermaid version v11.4.1-b.14
+%%%%%%%% Available curve styles include the following keywords:
+%% basis, bumpX, bumpY, cardinal, catmullRom, linear, monotoneX, monotoneY, natural, step, stepAfter, stepBefore.
+%%{
+  init: {
+    "flowchart": { "htmlLabels": false, 'curve': 'linear'},
+    'fontFamily': 'Fantasy',
+    'themeVariables': {
+      'primaryColor': '#BB2528',
+      'primaryTextColor': '#f529',
+      'primaryBorderColor': '#7C0000',
+      'lineColor': '#F8B229',
+      'secondaryColor': '#006100',
+      'tertiaryColor': '#fff'
+    }
+  }
+}%%
 flowchart TD
     A[View Initialization] --> B[Body Computation]
     B --> C[Rendering on Screen]
