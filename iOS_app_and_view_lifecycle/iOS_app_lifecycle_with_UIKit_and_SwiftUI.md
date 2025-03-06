@@ -372,7 +372,7 @@ stateDiagram-v2
 title: "The iOS application lifecycle with multiple scenes in various states"
 config:
   look: handDrawn
-  theme: base
+  theme: default
 ---
 %%%%%%%% Mermaid version v11.4.1-b.14
 %%%%%%%% Available curve styles include the following keywords:
