@@ -18,12 +18,29 @@ copyright: Copyright (c) 2025 Cong Le. All Rights Reserved.
 
 ```mermaid
 ---
-title: iOS App Lifecycle Management
+title: "iOS App Lifecycle Management"
 config:
   layout: elk
   look: handDrawn
   theme: dark
 ---
+%%%%%%%% Mermaid version v11.4.1-b.14
+%%%%%%%% Available curve styles include the following keywords:
+%% basis, bumpX, bumpY, cardinal, catmullRom, linear, monotoneX, monotoneY, natural, step, stepAfter, stepBefore.
+%%{
+  init: {
+    "graph": { "htmlLabels": false, 'curve': 'linear'},
+    'fontFamily': 'Fantasy',
+    'themeVariables': {
+      'primaryColor': '#BB2528',
+      'primaryTextColor': '#f529',
+      'primaryBorderColor': '#7C0000',
+      'lineColor': '#F8B229',
+      'secondaryColor': '#006100',
+      'tertiaryColor': '#fff'
+    }
+  }
+}%%
 graph LR
     subgraph "Introduction to iOS App Lifecycle Management"
         A[What is the App Lifecycle?] --> B{Why is Lifecycle Management Important?}
