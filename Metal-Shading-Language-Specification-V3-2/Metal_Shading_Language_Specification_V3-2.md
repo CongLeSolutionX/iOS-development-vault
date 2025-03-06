@@ -26,15 +26,31 @@ Below is a collection of diagrams and illustrations on explaining Metal Shading 
 
 
 
-## 1. Document Organization (Mindmap)
+## 1. Document Organization
 
 This diagram visually represents the hierarchical structure of the MSL specification document, outlining the main chapters and their focus areas.
 
 ```mermaid
 ---
+title: "Document Organization"
 config:
   theme: dark
 ---
+%%%%%%%% Mermaid version v11.4.1-b.14
+%%{
+  init: {
+    "mindmap": { "htmlLabels": false },
+    'fontFamily': 'Fantasy',
+    'themeVariables': {
+      'primaryColor': '#BB2528',
+      'primaryTextColor': '#f529',
+      'primaryBorderColor': '#7C0000',
+      'lineColor': '#F8B229',
+      'secondaryColor': '#006100',
+      'tertiaryColor': '#fcc326'
+    }
+  }
+}%%
 mindmap
   root((Metal Shading Language Specification v3.2))
     Chapter_1_Introduction
@@ -105,17 +121,33 @@ mindmap
 
 ---
 
-## 2. Metal and C++14 Relationship (Class Diagram)
+## 2. Metal and C++14 Relationship
 
 This diagram illustrates how Metal Shading Language is based on C++14, highlighting the extensions and restrictions that MSL imposes.
 
 ```mermaid
 ---
+title: "Metal and C++14 Relationship"
 config:
   layout: elk
   look: handDrawn
   theme: dark
 ---
+%%%%%%%% Mermaid version v11.4.1-b.14
+%%{
+  init: {
+    "classDiagram": { "htmlLabels": false },
+    'fontFamily': 'Fantasy',
+    'themeVariables': {
+      'primaryColor': '#BB2528',
+      'primaryTextColor': '#f529',
+      'primaryBorderColor': '#7C0000',
+      'lineColor': '#F8B229',
+      'secondaryColor': '#006100',
+      'tertiaryColor': '#fff'
+    }
+  }
+}%%
 classDiagram
     class CPP_14 {
         <<Base Language>>
@@ -153,18 +185,36 @@ classDiagram
 
 ----
 
-# 3. Compiler Options Categories (Flowchart)
+# 3. Compiler Options Categories
 
 
 This diagram categorizes the different compiler options available for MSL, illustrating the control that developers have over the compilation process.
 
 ```mermaid
 ---
+title: "Compiler Options Categories"
 config:
   layout: elk
   look: handDrawn
   theme: dark
 ---
+%%%%%%%% Mermaid version v11.4.1-b.14
+%%%%%%%% Available curve styles include the following keywords:
+%% basis, bumpX, bumpY, cardinal, catmullRom, linear, monotoneX, monotoneY, natural, step, stepAfter, stepBefore.
+%%{
+  init: {
+    "flowchart": { "htmlLabels": false, 'curve': 'linear' },
+    'fontFamily': 'Fantasy',
+    'themeVariables': {
+      'primaryColor': '#BB2528',
+      'primaryTextColor': '#f529',
+      'primaryBorderColor': '#7C0000',
+      'lineColor': '#F8B229',
+      'secondaryColor': '#006100',
+      'tertiaryColor': '#fff'
+    }
+  }
+}%%
 flowchart TD
     A[Start] --> B{Compiler Options};
     B --> C{Preprocessor Options};
@@ -234,18 +284,34 @@ flowchart TD
 ----
 
 
-## 4. Metal Data Types Hierarchy (Class Diagram)
+## 4. Metal Data Types Hierarchy
 
 
 This diagram organizes the various data types in Metal Shading Language into a class hierarchy, reflecting their categories and relationships.
 
 ```mermaid
 ---
+title: "Metal Data Types Hierarchy"
 config:
   layout: elk
   look: handDrawn
   theme: dark
 ---
+%%%%%%%% Mermaid version v11.4.1-b.14
+%%{
+  init: {
+    "classDiagram": { "htmlLabels": false },
+    'fontFamily': 'Fantasy',
+    'themeVariables': {
+      'primaryColor': '#BB2528',
+      'primaryTextColor': '#f529',
+      'primaryBorderColor': '#7C0000',
+      'lineColor': '#F8B229',
+      'secondaryColor': '#006100',
+      'tertiaryColor': '#fff'
+    }
+  }
+}%%
 classDiagram
     class Data_Type {
         <<Abstract Class>>
@@ -434,6 +500,15 @@ title: Different Types of MSL functions and Attributes
 config:
   theme: dark
 ---
+%%{
+  init: {
+    "sequenceDiagram": { "htmlLabels": false },
+    'fontFamily': 'Fantasy',
+    'themeVariables': {
+      'lineColor': '#F8B229'
+    }
+  }
+}%%
 sequenceDiagram
 	autonumber
     actor Developer
@@ -503,9 +578,6 @@ sequenceDiagram
 
 
 These diagrams provide a semantic and strategic visual overview of the Metal Shading Language Specification document. Each diagram is designed to highlight specific aspects of MSL and their underlying technical complexities, following the instructions and guidelines provided. They should be helpful for anyone trying to understand and navigate the MSL specification.
-
-
-
 
 
 
