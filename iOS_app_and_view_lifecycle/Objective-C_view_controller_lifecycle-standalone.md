@@ -16,12 +16,29 @@ copyright: Copyright (c) 2025 Cong Le. All Rights Reserved.
 
 ```mermaid
 ---
-title: The Objective-C View Controller - The View Lifecycle Steps
+title: "The Objective-C View Controller - The View Lifecycle Steps"
 config:
   layout: elk
   look: handDrawn
   theme: dark
 ---
+%%%%%%%% Mermaid version v11.4.1-b.14
+%%%%%%%% Available curve styles include the following keywords:
+%% basis, bumpX, bumpY, cardinal, catmullRom, linear, monotoneX, monotoneY, natural, step, stepAfter, stepBefore.
+%%{
+  init: {
+    "flowchart": { "htmlLabels": false, 'curve': 'linear'},
+    'fontFamily': 'Fantasy',
+    'themeVariables': {
+      'primaryColor': '#BB2528',
+      'primaryTextColor': '#f529',
+      'primaryBorderColor': '#7C0000',
+      'lineColor': '#F8B229',
+      'secondaryColor': '#006100',
+      'tertiaryColor': '#fff'
+    }
+  }
+}%%
 flowchart TD
     A[initWithNibName:bundle:] --> B[loadView]
     B --> C[viewDidLoad]
