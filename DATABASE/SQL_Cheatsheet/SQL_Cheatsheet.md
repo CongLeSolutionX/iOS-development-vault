@@ -28,14 +28,14 @@ Here's the Mermaid code, followed by a breakdown and explanation:
 
 ```mermaid
 ---
-title: "CHANGE_ME_DADDY"
+title: "SQL Cheatsheet"
 ---
 %%{
   init: {
     'theme': 'base',
     'themeVariables': {
-      'fontSize': '15px',
-      'fontFamily': 'Inter'
+      'fontSize': '12px',
+      'fontFamily': 'M Mermaid Monogram'
     }
   }
 }%%
@@ -270,7 +270,7 @@ mindmap
 ### Key improvements and explanations
 
 *   **Mind Map Structure:**  The mind map (`mindmap`) is the most appropriate Mermaid diagram type for this kind of hierarchical, categorized information.  It naturally represents the structure of a cheat sheet.  The `root` node is the overall title ("SQL Cheat Sheet").
-*   **Organization:** I've followed the main sections of the original cheat sheet:  Introduction, SQL Database, SQL Constraints, SQL Operators, SQL Comments, SQL Views, SQL Tables, SQL Clauses, SQL Joins, SQL Functions, SQL Stored Procedures, and SQL Indexes, and SQL Miscellaneous.  Each of these becomes a main branch off the root.
+*   **Organization:** I've followed the following sections:  Introduction, SQL Database, SQL Constraints, SQL Operators, SQL Comments, SQL Views, SQL Tables, SQL Clauses, SQL Joins, SQL Functions, SQL Stored Procedures, and SQL Indexes, and SQL Miscellaneous.  Each of these becomes a main branch off the root.
 *   **Sub-Sections:** Within each main section, I've created sub-nodes for each individual item (e.g., `CREATE DATABASE`, `NOT NULL`, `Arithmetic Operators`). This creates the nested structure.
 *   **Descriptions and Syntax:**  For each item, I've included both the SQL syntax (where applicable) *and* a brief description, mirroring the original cheat sheet.  This is crucial for making the diagram useful. The descriptions are placed as separate sub-nodes below the syntax.
 *   **Comments:** I've included the comments from the original cheat sheet (e.g., "/* Select all data from a table */") within the Mermaid code.  This preserves all the original information.
