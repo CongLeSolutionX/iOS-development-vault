@@ -35,7 +35,7 @@ version: "1.0"
 license(s): "MIT, CC BY 4.0"
 copyright: "Copyright (c) 2025 Cong Le. All Rights Reserved."
 config:
-  theme: base
+  theme: dark
 ---
 %%%%%%%% Mermaid version v11.4.1-b.14
 %%%%%%%% Toggle theme value to `base` to activate the initilization below for the customized theme version.
