@@ -623,10 +623,10 @@ config:
 graph LR
     J["Widget on Home Screen"] --> N["Widget Interaction"]
     N --> O["Deep Link to App Content"]
-    style N fill:#FFD700,stroke:#333,stroke-width:1px;
+    style N fill:#FFD7,stroke:#333,stroke-width:1px;
 
     J --> P["Refresh Widget Content"]
-    style P fill:#98FB98,stroke:#333,stroke-width:1px;
+    style P fill:#98F8,stroke:#333,stroke-width:1px;
 
 ```
 
