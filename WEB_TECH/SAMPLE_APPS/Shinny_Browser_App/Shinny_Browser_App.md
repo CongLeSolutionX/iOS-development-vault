@@ -290,8 +290,6 @@ classDiagram
     
 ```
 
-
-
 *   **Explanation:** This class diagram shows the properties and methods of the `ShinnyBrowserViewController`, `BrowserViewModel`, and `BrowserViewDelegate` protocol.  It also indicates relationships (composition, inheritance, and delegation).
 
 ----
@@ -331,7 +329,7 @@ config:
 sequenceDiagram
     autonumber
     actor User
-    box rgb(20, 150, 100) The System of the Shinny Browser App
+    box rgb(20, 22, 55) The System of the Shinny Browser App
         participant ViewController as ShinnyBrowserViewController
         participant ViewModel as BrowserViewModel
         participant WebView as WKWebView
@@ -399,11 +397,10 @@ version: "1.0"
 license(s): "MIT, CC BY 4.0"
 copyright: "Copyright (c) 2025 Cong Le. All Rights Reserved."
 config:
-  layout: elk
   look: handDrawn
   theme: dark
 ---
-%%%%%%%% Mermaid version v11.4.1-b.14
+%%%%%%%% Note Use Mermaid version v11.4.1-b.14 to see `layout: elk` 
 %%%%%%%% Toggle theme value to `base` to activate the initilization below for the customized theme version.
 %%%%%%%% Available curve styles include the following keywords:
 %% basis, bumpX, bumpY, cardinal, catmullRom, linear, monotoneX, monotoneY, natural, step, stepAfter, stepBefore.
@@ -439,6 +436,7 @@ stateDiagram
 
 *   **Explanation:** This state diagram represents the different loading states of the `WKWebView`.  It shows how the state transitions based on events like `loadURL`, `didCommit`, `didFail`, etc.
 
+
 ---
 
 ### 5. URL Validation Flowchart
@@ -453,7 +451,7 @@ copyright: "Copyright (c) 2025 Cong Le. All Rights Reserved."
 config:
   layout: elk
   look: handDrawn
-  theme: default
+  theme: dark
 ---
 %%%%%%%% Mermaid version v11.4.1-b.14
 %%%%%%%% Toggle theme value to `base` to activate the initilization below for the customized theme version.
@@ -486,7 +484,7 @@ flowchart TD
     G --> J
     I --> J
     
-    classDef highlight fill:#ffc5,stroke:#333,stroke-width:2px
+    classDef highlight fill:#f9f3,stroke:#333,stroke-width:2px
     class A,B,C,D,E,F,G,H,I,J highlight
     
 ```
