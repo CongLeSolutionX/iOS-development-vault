@@ -21,7 +21,7 @@ inspired by the original work: "https://developer.apple.com/documentation/webkit
 ---
 
 ## The Overview and Explanation for the Shinny Browser App
-This [code implementation](https://github.com/CongLeSolutionX/MyApp/tree/WEB_TECH_ShinnyBrowserViewController) details "ShinnyBrowser," a `WKWebView`-based web browser in Swift, building upon the foundational concepts presented in Apple's sample code ([link](https://developer.apple.com/documentation/webkit/viewing-desktop-or-mobile-web-content-using-a-web-view)).  This project leverages the Model-View-ViewModel (MVVM) pattern to decouple the View (UI), ViewModel (business logic), and Model (data persistence and web content, handled by `WKWebView` and `UserDefaults`). This decoupling promotes a more modular, testable, and maintainable codebase.  A comprehensive explanation of the Swift implementation, including Mermaid diagrams and supporting illustrations, is provided below.
+This [code implementation](https://github.com/CongLeSolutionX/MyApp/tree/WEB_TECH_ShinnyBrowserApp_V1) details "ShinnyBrowser," a `WKWebView`-based web browser in Swift, building upon the foundational concepts presented in Apple's sample code ([link](https://developer.apple.com/documentation/webkit/viewing-desktop-or-mobile-web-content-using-a-web-view)).  This project leverages the Model-View-ViewModel (MVVM) pattern to decouple the View (UI), ViewModel (business logic), and Model (data persistence and web content, handled by `WKWebView` and `UserDefaults`). This decoupling promotes a more modular, testable, and maintainable codebase.  A comprehensive explanation of the Swift implementation, including Mermaid diagrams and supporting illustrations, is provided below.
 
 
 ### Key Components
