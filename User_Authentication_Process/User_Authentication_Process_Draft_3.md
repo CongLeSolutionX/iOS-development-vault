@@ -27,9 +27,10 @@ The following documentation updates and optimizes the original Mermaid sequence 
 
 We will maintain the core login and password reset flows within the central sequence diagram but augment it with annotations and incorporate references to additional diagrams that detail specific security measures and processes.
 
+
 ```mermaid
 ---
-title: "CHANGE_ME_DADDY"
+title: "Updated Documentation with Enhanced Authentication and Security Concepts"
 author: "Cong Le"
 version: "1.0"
 license(s): "MIT, CC BY 4.0"
@@ -43,7 +44,7 @@ config:
 %%{
   init: {
     'sequenceDiagram': { 'htmlLabels': false},
-    'fontFamily': 'verdana',
+    'fontFamily': 'Fantasy',
     'themeVariables': {
       'primaryColor': '#B28',
       'primaryTextColor': '#F8B229',
@@ -87,31 +88,31 @@ sequenceDiagram
             end
         else Attempts Allowed
             rect rgb(120, 100, 150)
-            LoginPage ->> AuthenticationService: Authenticate<br>(Username)
-            AuthenticationService ->> PasswordStorage: Retrieve Salt for User
-            PasswordStorage -->> AuthenticationService: Salt
+                LoginPage ->> AuthenticationService: Authenticate<br>(Username)
+                AuthenticationService ->> PasswordStorage: Retrieve Salt for User
+                PasswordStorage -->> AuthenticationService: Salt
 
-            AuthenticationService ->> AuthenticationService: Hash Password with Salt
-            AuthenticationService ->> PasswordStorage: Compare Hash with Stored Hash
+                AuthenticationService ->> AuthenticationService: Hash Password with Salt
+                AuthenticationService ->> PasswordStorage: Compare Hash with Stored Hash
 
-            alt Successful Authentication
-                rect rgb(50, 100, 150)
-                    PasswordStorage -->> AuthenticationService: Authentication Success
-                    AuthenticationService ->> SessionManager: Create Session
-                    SessionManager -->> LoginPage: Session Token
-                    LoginPage ->> Browser: Set Session Cookie<br>(HTTPOnly, Secure)
-                    LoginPage ->> User: Log in successful, Redirect to Welcome Page
+                alt Successful Authentication
+                    rect rgb(50, 100, 150)
+                        PasswordStorage -->> AuthenticationService: Authentication Success
+                        AuthenticationService ->> SessionManager: Create Session
+                        SessionManager -->> LoginPage: Session Token
+                        LoginPage ->> Browser: Set Session Cookie<br>(HTTPOnly, Secure)
+                        LoginPage ->> User: Log in successful, Redirect to Welcome Page
                     
-                    Note over LoginPage, User: Session active, further requests use cookie
+                        Note over LoginPage, User: Session active, further requests use cookie
+                    end
+                else Failed Authentication
+                    rect rgb(50, 90, 100)
+                        PasswordStorage -->> AuthenticationService: Authentication Failure
+                        AuthenticationService ->> RateLimiter: Increment Failed Attempt Count<br>(Username/IP)
+                        AuthenticationService -->> LoginPage: Authentication Failed
+                        LoginPage ->> User: Invalid Username or Password
+                    end
                 end
-            else Failed Authentication
-                rect rgb(50, 90, 100)
-                    PasswordStorage -->> AuthenticationService: Authentication Failure
-                    AuthenticationService ->> RateLimiter: Increment Failed Attempt Count<br>(Username/IP)
-                    AuthenticationService -->> LoginPage: Authentication Failed
-                    LoginPage ->> User: Invalid Username or Password
-                end
-            end
             end
         end
     end
@@ -170,6 +171,8 @@ sequenceDiagram
 
 
 
+
+-----
 
 **Explanation of Updates and Added Concepts:**
 
