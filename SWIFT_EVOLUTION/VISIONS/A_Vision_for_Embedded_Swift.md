@@ -43,7 +43,7 @@ copyright: "Copyright (c) 2025 Cong Le. All Rights Reserved."
 config:
   layout: elk
   look: handDrawn
-  theme: base
+  theme: dark
 ---
 %%%%%%%% Mermaid version v11.4.1-b.14
 %%%%%%%% Retro Groove Palette Theme
@@ -51,19 +51,14 @@ config:
 %%{
   init: {
     'graph': { 'htmlLabels': false, 'curve': 'linear' },
-    'fontFamily': "'Arial', sans-serif", /* Standard font for better base readability */
+    'fontFamily': 'Fantasy',
     'themeVariables': {
-      'primaryColor': '#FDF6E3',                   /* Creamy Beige (Node Background) */
-      'primaryTextColor': '#654321',               /* Dark Brown (Text Color) */
-      'primaryBorderColor': '#D69E2E',             /* Mustard Yellow (Border Color) */
-      'lineColor': '#B7791F',                       /* Darker Mustard/Brown (Arrow/Line Color) */
-      'secondaryColor': '#FBD38D',                 /* Lighter Mustard (Alt Node Background) */
-      'tertiaryColor': '#825718'                   /* Darkest Brown (Special Node Background) */
-      /* Other Palette Colors (Use with 'style'):
-         Avocado Green: #8FBC8F
-         Burnt Orange: #CC5500
-         Light Blue Gray: #A0AEC0
-         White: #FFFFFF */
+      'primaryColor': '#ffff',
+      'primaryTextColor': '#55ff',
+      'primaryBorderColor': '#7c2',
+      'lineColor': '#F8B229',
+      'secondaryColor': '#006100',
+      'tertiaryColor': '#fff'
     }
   }
 }%%
@@ -93,9 +88,9 @@ graph LR
     Current_Swift -- Impractical Due To --> Embedded_Constraints
     Embedded_Constraints -- Motivates --> E[Vision: Embedded Swift]
 
-    style Current_Swift fill:#e6f2ff,stroke:#333
-    style Embedded_Constraints fill:#ffe6e6,stroke:#333
-    style E fill:#e6ffe6,stroke:#333
+    style Current_Swift fill:#e2ff,stroke:#333
+    style Embedded_Constraints fill:#ffe6,stroke:#333
+    style E fill:#e6f6,stroke:#333
     
 ```
 
@@ -189,7 +184,7 @@ config:
       'primaryColor': '#F0F0F0',                   /* Neutral Light Gray (Node Background) */
       'primaryTextColor': '#2D3748',               /* Neutral Dark Gray (Text Color) */
       'primaryBorderColor': '#A6CEE3',             /* Category 1 Blue (Border Color) */
-      'lineColor': '#718096',                       /* Mid Gray (Arrow/Line Color - not from palette but needed) */
+      'lineColor': '#F8B229',                       
       'secondaryColor': '#B2DF8A',                 /* Category 2 Green (Alt Node Background) */
       'tertiaryColor': '#FB9A99'                   /* Category 3 Red (Special Node Background) */
       /* Other Palette Colors (Use with 'style'):
@@ -266,7 +261,7 @@ config:
       'primaryColor': '#2D3748',                   /* Dark Slate (Default Node Background) */
       'primaryTextColor': '#E2E8F0',               /* Light Gray/Off-White (Text Color) */
       'primaryBorderColor': '#EC4899',             /* Primary Neon Pink (Border Color) */
-      'lineColor': '#4A5568',                       /* Medium Gray-Blue (Arrow/Line Color) */
+      'lineColor': '#F8B229',                       
       'secondaryColor': '#22D3EE',                 /* Secondary Neon Cyan (Alt Node Background) */
       'tertiaryColor': '#A78BFA'                   /* Accent Neon Purple (Special Node Background) */
       /* Other Palette Colors (Use with 'style'):
@@ -340,7 +335,7 @@ config:
       'primaryColor': '#2D3748',                   /* Dark Slate (Default Node Background) */
       'primaryTextColor': '#E2E8F0',               /* Light Gray/Off-White (Text Color) */
       'primaryBorderColor': '#EC4899',             /* Primary Neon Pink (Border Color) */
-      'lineColor': '#4A5568',                       /* Medium Gray-Blue (Arrow/Line Color) */
+      'lineColor': '#F8B229',                      
       'secondaryColor': '#22D3EE',                 /* Secondary Neon Cyan (Alt Node Background) */
       'tertiaryColor': '#A78BFA'                   /* Accent Neon Purple (Special Node Background) */
       /* Other Palette Colors (Use with 'style'):
