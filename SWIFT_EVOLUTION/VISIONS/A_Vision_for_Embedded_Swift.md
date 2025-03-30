@@ -43,7 +43,7 @@ copyright: "Copyright (c) 2025 Cong Le. All Rights Reserved."
 config:
   layout: elk
   look: handDrawn
-  theme: base
+  theme: dark
 ---
 %%%%%%%% Mermaid version v11.4.1-b.14
 %%%%%%%% Retro Groove Palette Theme
@@ -51,19 +51,14 @@ config:
 %%{
   init: {
     'graph': { 'htmlLabels': false, 'curve': 'linear' },
-    'fontFamily': "'Arial', sans-serif", /* Standard font for better base readability */
+    'fontFamily': 'Fantasy',
     'themeVariables': {
-      'primaryColor': '#FDF6E3',                   /* Creamy Beige (Node Background) */
-      'primaryTextColor': '#654321',               /* Dark Brown (Text Color) */
-      'primaryBorderColor': '#D69E2E',             /* Mustard Yellow (Border Color) */
-      'lineColor': '#B7791F',                       /* Darker Mustard/Brown (Arrow/Line Color) */
-      'secondaryColor': '#FBD38D',                 /* Lighter Mustard (Alt Node Background) */
-      'tertiaryColor': '#825718'                   /* Darkest Brown (Special Node Background) */
-      /* Other Palette Colors (Use with 'style'):
-         Avocado Green: #8FBC8F
-         Burnt Orange: #CC5500
-         Light Blue Gray: #A0AEC0
-         White: #FFFFFF */
+      'primaryColor': '#ffff',
+      'primaryTextColor': '#55ff',
+      'primaryBorderColor': '#7c2',
+      'lineColor': '#F8B229',
+      'secondaryColor': '#006100',
+      'tertiaryColor': '#fff'
     }
   }
 }%%
@@ -93,9 +88,9 @@ graph LR
     Current_Swift -- Impractical Due To --> Embedded_Constraints
     Embedded_Constraints -- Motivates --> E[Vision: Embedded Swift]
 
-    style Current_Swift fill:#e6f2ff,stroke:#333
-    style Embedded_Constraints fill:#ffe6e6,stroke:#333
-    style E fill:#e6ffe6,stroke:#333
+    style Current_Swift fill:#e2ff,stroke:#333
+    style Embedded_Constraints fill:#ffe6,stroke:#333
+    style E fill:#e6f6,stroke:#333
     
 ```
 
@@ -175,7 +170,7 @@ copyright: "Copyright (c) 2025 Cong Le. All Rights Reserved."
 config:
   layout: elk
   look: handDrawn
-  theme: base
+  theme: dark
 ---
 %%%%%%%% Mermaid version v11.4.1-b.14
 %%%%%%%% Data Clarity Palette Theme
@@ -184,20 +179,14 @@ config:
 %%{
   init: {
     'graph': { 'htmlLabels': false, 'curve': 'linear' },
-    'fontFamily': 'Verdana, Arial, sans-serif',
+    'fontFamily': 'Fantasy',
     'themeVariables': {
-      'primaryColor': '#F0F0F0',                   /* Neutral Light Gray (Node Background) */
-      'primaryTextColor': '#2D3748',               /* Neutral Dark Gray (Text Color) */
-      'primaryBorderColor': '#A6CEE3',             /* Category 1 Blue (Border Color) */
-      'lineColor': '#718096',                       /* Mid Gray (Arrow/Line Color - not from palette but needed) */
-      'secondaryColor': '#B2DF8A',                 /* Category 2 Green (Alt Node Background) */
-      'tertiaryColor': '#FB9A99'                   /* Category 3 Red (Special Node Background) */
-      /* Other Palette Colors (Use with 'style'):
-         Cat 4 Orange: #FDBF6F
-         Cat 5 Purple: #CAB2D6
-         Cat 6 Yellow: #FFFF99 (Needs dark text!)
-         Cat 7 Brown: #B15928
-         White: #FFFFFF */
+      'primaryColor': '#ffff',
+      'primaryTextColor': '#55ff',
+      'primaryBorderColor': '#7c2',
+      'lineColor': '#F8B229',
+      'secondaryColor': '#006100',
+      'tertiaryColor': '#fff'
     }
   }
 }%%
@@ -260,18 +249,14 @@ config:
 %%{
   init: {
     'flowchart': { 'htmlLabels': false, 'curve': 'linear' },
-    'fontFamily': 'Monospace, Arial, sans-serif',
+    'fontFamily': 'Fantasy',
     'themeVariables': {
-      'background' : '#1A202C',                    /* SETTING OVERALL BACKGROUND */
-      'primaryColor': '#2D3748',                   /* Dark Slate (Default Node Background) */
-      'primaryTextColor': '#E2E8F0',               /* Light Gray/Off-White (Text Color) */
-      'primaryBorderColor': '#EC4899',             /* Primary Neon Pink (Border Color) */
-      'lineColor': '#4A5568',                       /* Medium Gray-Blue (Arrow/Line Color) */
-      'secondaryColor': '#22D3EE',                 /* Secondary Neon Cyan (Alt Node Background) */
-      'tertiaryColor': '#A78BFA'                   /* Accent Neon Purple (Special Node Background) */
-      /* Other Palette Colors (Use with 'style'):
-         Accent Neon Yellow: #FACC15 (Needs dark border/text if fill)
-         Secondary Text: #A0AEC0 */
+      'primaryColor': '#ffff',
+      'primaryTextColor': '#55ff',
+      'primaryBorderColor': '#7c2',
+      'lineColor': '#F8B229',
+      'secondaryColor': '#006100',
+      'tertiaryColor': '#fff'
     }
   }
 }%%
@@ -333,19 +318,15 @@ config:
 %%%%%%%% Available curve styles include: basis, bumpX, bumpY, cardinal, catmullRom, linear, monotoneX, monotoneY, natural, step, stepAfter, stepBefore.
 %%{
   init: {
-    'flowchart': { 'htmlLabels': false, 'curve': 'linear' },
-    'fontFamily': 'Monospace, Arial, sans-serif',
+    'graph': { 'htmlLabels': false, 'curve': 'linear' },
+    'fontFamily': 'Fantasy',
     'themeVariables': {
-      'background' : '#1A202C',                    /* SETTING OVERALL BACKGROUND */
-      'primaryColor': '#2D3748',                   /* Dark Slate (Default Node Background) */
-      'primaryTextColor': '#E2E8F0',               /* Light Gray/Off-White (Text Color) */
-      'primaryBorderColor': '#EC4899',             /* Primary Neon Pink (Border Color) */
-      'lineColor': '#4A5568',                       /* Medium Gray-Blue (Arrow/Line Color) */
-      'secondaryColor': '#22D3EE',                 /* Secondary Neon Cyan (Alt Node Background) */
-      'tertiaryColor': '#A78BFA'                   /* Accent Neon Purple (Special Node Background) */
-      /* Other Palette Colors (Use with 'style'):
-         Accent Neon Yellow: #FACC15 (Needs dark border/text if fill)
-         Secondary Text: #A0AEC0 */
+      'primaryColor': '#ffff',
+      'primaryTextColor': '#55ff',
+      'primaryBorderColor': '#7c2',
+      'lineColor': '#F8B229',
+      'secondaryColor': '#006100',
+      'tertiaryColor': '#fff'
     }
   }
 }%%
@@ -398,18 +379,14 @@ config:
 %%{
   init: {
     'graph': { 'htmlLabels': false, 'curve': 'linear' },
-    'fontFamily': 'Verdana, Arial, sans-serif',
+    'fontFamily': 'Fantasy',
     'themeVariables': {
-      'primaryColor': '#F8F8F8',                   /* Neutral Light (Node Background) */
-      'primaryTextColor': '#4A4A4A',               /* Neutral Dark (Text Color) */
-      'primaryBorderColor': '#38A169',             /* Primary Green (Border Color) */
-      'lineColor': '#B0B0B0',                       /* Neutral Medium Gray (Arrow/Line Color) */
-      'secondaryColor': '#9AE6B4',                 /* Secondary Green (Alt Node Background) */
-      'tertiaryColor': '#A0522D'                   /* Accent Brown (Special Node Background) */
-      /* Other Palette Colors (Use with 'style'):
-         Accent Blue: #5A9BD1
-         Accent Cream: #F5F5DC (Needs dark text!)
-         White: #FFFFFF */
+      'primaryColor': '#ffff',
+      'primaryTextColor': '#55ff',
+      'primaryBorderColor': '#7c2',
+      'lineColor': '#F8B229',
+      'secondaryColor': '#006100',
+      'tertiaryColor': '#fff'
     }
   }
 }%%
