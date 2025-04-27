@@ -20,6 +20,7 @@ copyright: Copyright (c) 2025 Cong Le. All Rights Reserved.
 ---
 
 
+
 ## 1. Introduction: What is Clean Architecture?
 
 Clean Architecture, popularized by Robert C. Martin ("Uncle Bob"), is a set of principles and guidelines for designing software systems. Its primary goal is the **separation of concerns**, achieved by dividing the software into distinct layers. This separation aims to create systems that are:
@@ -33,29 +34,46 @@ Clean Architecture, popularized by Robert C. Martin ("Uncle Bob"), is a set of p
 In the context of iOS development, Clean Architecture provides a robust structure for building scalable, maintainable, and testable applications beyond the standard MVC/MVVM patterns, although it often incorporates elements of these.
 
 ```mermaid
-%%{ init: { 'theme': 'dark' } }%%
+---
+title: "What is Clean Architecture?"
+author: "Cong Le"
+version: "1.0"
+license(s): "MIT, CC BY 4.0"
+copyright: "Copyright (c) 2025 Cong Le. All Rights Reserved."
+config:
+  theme: dark
+---
+%%%%%%%% Mermaid version v11.4.1-b.14
+%%{
+  init: {
+    'themeVariables': {
+      'fontSize': '12px',
+      'fontFamily': 'Fantasy'
+    }
+  }
+}%%
 mindmap
-  root((Clean Architecture<br/><b>in iOS</b>))
-    <b>Core Goal</b>
+  root((Clean Architecture<br/>**in iOS**))
+    Core_Goal["**Core Goal**"]
       Separation of Concerns
       Testability
       Maintainability
       Framework Independence
-    <b>Key Principles</b>
+    Key_Principles["**Key Principles**"]
       Layers
       Dependency Rule
       Abstraction
-    <b>Main Components</b>
-      Entities (Enterprise Logic)
-      Use Cases (Application Logic)
-      Interface Adapters (Controllers, Presenters, Gateways)
-      Frameworks & Drivers (UI, DB, Network)
-    <b>Benefits in iOS</b>
+    Main_Components["**Main Components**"]
+      Entities["Entities<br/>(Enterprise Logic)"]
+      Use_Cases["Use Cases<br/>(Application Logic)"]
+      Interface_Adapters["Interface Adapters<br/>(Controllers, Presenters, Gateways)"]
+      Frameworks_and_Drivers["Frameworks & Drivers<br/>(UI, DB, Network)"]
+    Benefits_in_iOS["**Benefits in iOS**"]
       Testable Business Logic
-      UI Agnosticism (easier SwiftUI/UIKit migration)
-      Replaceable Infrastructure (Network, DB)
+      UI_Agnosticism["UI Agnosticism<br/>(easier SwiftUI/UIKit migration)"]
+      Replaceable_Infrastructure["Replaceable Infrastructure<br/>(Network, DB)"]
       Clearer Boundaries
-    <b>Challenges in iOS</b>
+    Challenges_in_iOS["Challenges in iOS"]
       Increased Boilerplate
       Complexity for Simple Apps
       Steeper Learning Curve
@@ -73,7 +91,7 @@ Clean Architecture organizes software into concentric layers, each representing 
 
 ```mermaid
 ---
-title: "CHANGE_ME_DADDY"
+title: "Core Principles - Layers"
 author: "Cong Le"
 version: "1.0"
 license(s): "MIT, CC BY 4.0"
@@ -141,7 +159,7 @@ This rule is primarily achieved through **Abstraction** and **Dependency Inversi
 
 ```mermaid
 ---
-title: "CHANGE_ME_DADDY"
+title: "Core Principles - The Dependency Rule"
 author: "Cong Le"
 version: "1.0"
 license(s): "MIT, CC BY 4.0"
@@ -237,7 +255,7 @@ Let's break down the typical layers adapting Clean Architecture for iOS:
 
 ```mermaid
 ---
-title: "CHANGE_ME_DADDY"
+title: "Entities"
 author: "Cong Le"
 version: "1.0"
 license(s): "MIT, CC BY 4.0"
@@ -286,7 +304,7 @@ classDiagram
 
 ```mermaid
 ---
-title: "CHANGE_ME_DADDY"
+title: "Use Cases (Interactors)"
 author: "Cong Le"
 version: "1.0"
 license(s): "MIT, CC BY 4.0"
@@ -334,7 +352,7 @@ flowchart TD
 
 ```mermaid
 ---
-title: "CHANGE_ME_DADDY"
+title: "Interface Adapters"
 author: "Cong Le"
 version: "1.0"
 license(s): "MIT, CC BY 4.0"
@@ -473,45 +491,79 @@ config:
   }
 }%%
 mindmap
-  root(("Clean Architecture<br/><b>iOS Summary</b>"))
-    <b>Core Principle</b>
-      Dependency Rule (Dependencies point inwards)
-    <b>Layers (Inner to Outer)</b>
-      ::icon(fa fa-chess-king) Entities (Pure Business Logic)
-      ::icon(fa fa-cogs) Use Cases / Interactors (App Logic, Protocols)
-      ::icon(fa fa-plug) Interface Adapters
-          Controllers / ViewModels (Input)
-          Presenters / ViewModels (Output)
-          Gateways / Repositories (Data)
-      ::icon(fa fa-desktop) Frameworks & Drivers
-          UI (UIKit, SwiftUI)
-          DB (Core Data, Realm)
-          Network (URLSession)
-          External SDKs
-    <b>Key Enablers</b>
-      ::icon(fa fa-link) Abstraction (Swift Protocols)
-      ::icon(fa fa-syringe) Dependency Injection
-      SOLID Principles (especially DIP)
-    <b>Data Flow</b>
-      UI -> Controller/VM -> Use Case -> Gateway -> DB/Network
-      DB/Network -> Gateway -> Use Case -> Presenter/VM -> UI
-      ::icon(fa fa-exchange-alt) Data Transfer Objects (DTOs) across boundaries
-    <b>Benefits</b>
-      ::icon(fa fa-flask) High Testability
-      ::icon(fa fa-arrows-alt-h) Framework/UI Independence
-      ::icon(fa fa-database) Infrastructure Independence
-      ::icon(fa fa-wrench) Maintainability
-      ::icon(fa fa-expand-arrows-alt) Scalability
-    <b>Challenges</b>
-      ::icon(fa fa-file-alt) Boilerplate Code
-      ::icon(fa fa-graduation-cap) Learning Curve
-      ::icon(fa fa-exclamation-triangle) Potential Over-Engineering
-    <b>iOS Context</b>
-      Integrates with MVVM/VIPER
-      Uses Swift Protocols extensively
-      Manages iOS Framework dependencies
-      
+  root(("Clean Architecture<br/>**iOS Summary**"))
+    Core_Principle["**Core Principle**"]
+        Dependency_Rule["Dependency Rule<br/>(Dependencies point inwards)"]
+        Layers["Layers<br/>(Inner to Outer)"]
+            Entities["Entities<br/>(Pure Business Logic)"]
+            ::icon(fa fa-chess-king)
+
+            Use_Cases_Interactors["Use Cases /<br/> Interactors<br/>(App Logic, Protocols)"]
+            ::icon(fa fa-cogs)
+
+            Interface_Adapters["Interface Adapters"]
+            ::icon(fa fa-plug)
+                Controllers_ViewModels["Controllers <br/> ViewModels<br/>(Input)"]
+                Presenters_ViewModels["Presenters /<br/>ViewModels<br/>(Output)"]
+                Gateways_Repositories["Gateways /<br/> Repositories<br/>(Data)"]
+            
+            Frameworks_and_Drivers["Frameworks and Drivers"]
+            ::icon(fa fa-desktop)
+                User_Interface["User Interface<br/>(UIKit, SwiftUI)"]
+                Database["Database<br/>(Core Data, Realm)"]
+                Network["Network<br/>(URLSession)"]
+                External_SDKs["External SDKs"]
+
+    Key_Enablers["Key Enablers"]
+        Abstraction["Abstraction<br/>(Swift Protocols)"]
+        ::icon(fa fa-link)
+
+        Dependency_Injection["Dependency Injection"]
+        ::icon(fa fa-syringe)
+
+        SOLID_Principles["SOLID Principles<br/>(especially DIP)"]
+    
+    Data_Flow["**Data Flow**"]
+        The_Flow_1["UI -> Controller/VM -> Use Case -> Gateway -> DB/Network"]
+        The_Flow_2["DB/Network -> Gateway -> Use Case -> Presenter/VM -> UI"]
+        
+        Data_Transfer_Objects["Data Transfer Objects (DTOs) across boundaries"]
+        ::icon(fa fa-exchange-alt)
+    
+    Benefits["**Benefits**"]
+        High_Testability["High Testability"]
+        ::icon(fa fa-flask)
+
+        Framework_UI_Independence["Framework/UI Independence"]
+        ::icon(fa fa-arrows-alt-h)
+
+        Infrastructure_Independence["Infrastructure Independence"]
+        ::icon(fa fa-database)
+
+        Maintainability["Maintainability"]
+        ::icon(fa fa-wrench)
+
+        Scalability["Scalability"]
+        ::icon(fa fa-expand-arrows-alt)
+
+    Challenges["**Challenges**"]
+        Boilerplate_Code["Boilerplate Code"]
+        ::icon(fa fa-file-alt)
+
+        Learning_Curve["Learning Curve"]
+        ::icon(fa fa-graduation-cap)
+
+        Potential_Over_Engineering["Potential Over-Engineering"]
+        ::icon(fa fa-exclamation-triangle)
+
+    iOS_Context["**iOS Context**"]
+        Integrates_with_MVVM_VIPER["Integrates with MVVM/VIPER"]
+        Uses Swift Protocols extensively
+        Manages iOS Framework dependencies    
 ```
+
+----
+
 
 
 
