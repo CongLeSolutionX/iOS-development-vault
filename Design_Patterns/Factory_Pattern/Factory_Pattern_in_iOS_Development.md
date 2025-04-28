@@ -208,8 +208,8 @@ config:
     'fontFamily': 'Monospace',
     'themeVariables': {
       'primaryColor': '#BB28',
-      'primaryTextColor': '#FFF',
-      'textColor': '#FFF',
+      'primaryTextColor': '#000',
+      'textColor': '#000',
       'lineColor': '#F8B229',
       'primaryBorderColor': '#7C3',
       'secondaryColor': '#DD15'
