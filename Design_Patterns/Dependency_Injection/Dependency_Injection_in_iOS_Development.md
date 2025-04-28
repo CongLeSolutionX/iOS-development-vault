@@ -146,7 +146,7 @@ graph TD
 
 There are several ways to inject dependencies into an object in Swift:
 
-#### a) Initializer Injection
+### a) Initializer Injection
 
 This is the **most common and generally preferred** method in Swift. Dependencies are provided through the object's initializer (`init`).
 
@@ -209,6 +209,8 @@ testViewModel.loadData()
 
 ```
 
+
+Link to GitHub repo implementation: [GitHub - CongLeSolutionX/MyApp at DESIGN\_PATTERNS\_Dependency\_Injections](https://github.com/CongLeSolutionX/MyApp/tree/DESIGN_PATTERNS_Dependency_Injections)
 
 
 ```mermaid
@@ -322,6 +324,9 @@ viewModel.loadData()
 ```
 
 
+Link to GitHub repo implementation: [GitHub - CongLeSolutionX/MyApp at DESIGN\_PATTERNS\_Dependency\_Injections](https://github.com/CongLeSolutionX/MyApp/tree/DESIGN_PATTERNS_Dependency_Injections)
+
+
 ```mermaid
 ---
 title: "Property Injection"
@@ -423,6 +428,9 @@ let fancyFormatter = FancyFormatter()
 let fancyReport = generator.generateReport(data: reportData, formatter: fancyFormatter) // Inject FancyFormatter
 
 ```
+
+
+Link to GitHub repo implementation: [GitHub - CongLeSolutionX/MyApp at DESIGN\_PATTERNS\_Dependency\_Injections](https://github.com/CongLeSolutionX/MyApp/tree/DESIGN_PATTERNS_Dependency_Injections)
 
 
 ```mermaid
