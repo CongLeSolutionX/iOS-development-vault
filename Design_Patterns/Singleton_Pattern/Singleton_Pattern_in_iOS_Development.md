@@ -161,7 +161,6 @@ print("Current volume retrieved: \(currentVolume)")
 Link to Github repo: [GitHub - CongLeSolutionX/MyApp at DESIGN\_PATTERNS\_Singleton](https://github.com/CongLeSolutionX/MyApp/tree/DESIGN_PATTERNS_Singleton)
 
 
-s
 **Key Swift Implementation Details:**
 
 *   **`static let shared = ClassName()`:** This is the modern Swift way. `static` makes it a type property, `let` ensures it's assigned only once. Swift guarantees that the initialization of lazy static properties (`let` or `var`) is performed atomically (thread-safe) the first time they are accessed. You don't need `dispatch_once` like in Objective-C.
