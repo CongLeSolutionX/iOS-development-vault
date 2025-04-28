@@ -131,7 +131,7 @@ final class SettingsManager {
         self.username = UserDefaults.standard.string(forKey: "username")
         self.volumeLevel = UserDefaults.standard.float(forKey: "volumeLevel")
         if UserDefaults.standard.object(forKey: "volumeLevel") == nil { // Check if key exists
-             self.volumeLevel = _5 // Default value
+             self.volumeLevel = 5 // Default value
         }
          print("Settings loaded: Username=\(username ?? "nil"), Volume=\(volumeLevel)")
     }
@@ -158,7 +158,10 @@ print("Current volume retrieved: \(currentVolume)")
 // Attempting to create a new instance fails:
 // let anotherSettings = SettingsManager() // Error: 'SettingsManager' initializer is inaccessible due to 'private' protection level
 ```
+Link to Github repo: [GitHub - CongLeSolutionX/MyApp at DESIGN\_PATTERNS\_Singleton](https://github.com/CongLeSolutionX/MyApp/tree/DESIGN_PATTERNS_Singleton)
 
+
+s
 **Key Swift Implementation Details:**
 
 *   **`static let shared = ClassName()`:** This is the modern Swift way. `static` makes it a type property, `let` ensures it's assigned only once. Swift guarantees that the initialization of lazy static properties (`let` or `var`) is performed atomically (thread-safe) the first time they are accessed. You don't need `dispatch_once` like in Objective-C.
