@@ -210,6 +210,14 @@ flowchart TD
 *   **ViewModel to Model:** The ViewModel interacts with the Model by calling its methods to request data or perform business logic operations. This is usually done asynchronously.
 *   **Model to ViewModel:** The Model typically returns data to the ViewModel asynchronously via completion handlers, Combine publishers, RxSwift observables, or async/await.
 
+
+----
+
+
+GitHub link to full code implementation [GitHub - CongLeSolutionX/MyApp at DESIGN\_PATTERNS\_MVVM](https://github.com/CongLeSolutionX/MyApp/tree/DESIGN_PATTERNS_MVVM)
+
+
+
 ---
 
 ## 4. MVVM vs. MVC in iOS
