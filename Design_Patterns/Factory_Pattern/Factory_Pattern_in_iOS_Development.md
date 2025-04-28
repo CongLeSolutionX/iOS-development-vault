@@ -180,6 +180,9 @@ let error = AlertFactory.createAlert(type: .error)
 error.show(title: "Operation Failed", message: "Network connection lost.")
 ```
 
+Link to GitHub repo: [GitHub - CongLeSolutionX/MyApp at DESIGN\_PATTERNS\_Factory\_Patterns](https://github.com/CongLeSolutionX/MyApp/tree/DESIGN_PATTERNS_Factory_Patterns)
+
+
 **Key Idea:** The `AlertFactory` centralizes the creation logic. The client only needs to know about the `AlertFactory` and the `AlertView` protocol, not the specific `SuccessAlert` or `ErrorAlert` structs.
 
 ---
@@ -322,6 +325,9 @@ consoleCreator.logProcess(action: "User Login") // Uses ConsoleLogger
 let fileCreator: LoggerFactory = FileLoggerFactory(logFilePath: "debug.log")
 fileCreator.logProcess(action: "Data Sync") // Uses FileLogger
 ```
+
+Link to GitHub repo: [GitHub - CongLeSolutionX/MyApp at DESIGN\_PATTERNS\_Factory\_Patterns](https://github.com/CongLeSolutionX/MyApp/tree/DESIGN_PATTERNS_Factory_Patterns)
+
 
 **Key Idea:** The `LoggerFactory` protocol defines the *contract* for creating a logger, but the concrete types (`ConsoleLoggerFactory`, `FileLoggerFactory`) decide *which* specific logger to instantiate. The client interacts with the `LoggerFactory` protocol.
 
@@ -501,6 +507,9 @@ let darkFactory = DarkThemeFactory()
 let darkSettings = SettingsScreen(factory: darkFactory)
 darkSettings.displayUI()
 ```
+
+Link to GitHub repo: [GitHub - CongLeSolutionX/MyApp at DESIGN\_PATTERNS\_Factory\_Patterns](https://github.com/CongLeSolutionX/MyApp/tree/DESIGN_PATTERNS_Factory_Patterns)
+
 
 **Key Idea:** The `UIFactory` protocol defines how to create a *set* of UI elements (Button, Label). Concrete factories (`LightThemeFactory`, `DarkThemeFactory`) provide consistent families of these elements. The `SettingsScreen` uses the abstract `UIFactory` and doesn't need to know if it's dealing with light or dark components specifically.
 
