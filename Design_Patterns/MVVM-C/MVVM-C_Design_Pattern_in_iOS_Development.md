@@ -548,6 +548,10 @@ class SomeViewController: UIViewController {
 }
 ```
 
+Full GitHub repo implementation [GitHub - CongLeSolutionX/MyApp at DESIGN\_PATTERNS\_MVVM-C](https://github.com/CongLeSolutionX/MyApp/tree/DESIGN_PATTERNS_MVVM-C)
+
+
+
 ---
 
 ## 6. Advantages of MVVM-C
