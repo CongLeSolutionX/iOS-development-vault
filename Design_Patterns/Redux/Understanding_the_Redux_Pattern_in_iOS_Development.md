@@ -362,6 +362,11 @@ sequenceDiagram
     
 ```
 
+---
+
+
+Full Swift code implementationdemo in GitHub link: [GitHub - CongLeSolutionX/MyApp at DESIGN\_PATTERNS\_Redux](https://github.com/CongLeSolutionX/MyApp/tree/DESIGN_PATTERNS_Redux)
+
 
 ---
 
@@ -369,7 +374,7 @@ sequenceDiagram
 
 Several libraries help implement Redux in Swift/iOS:
 
-*   **ReSwift:** One of the most popular and established Redux-inspired libraries for Swift. Provides core components like `Store`, `Action`, `Reducer`, and `Middleware`.
+*   **RxSwift:** One of the most popular and established Redux-inspired libraries for Swift. Provides core components like `Store`, `Action`, `Reducer`, and `Middleware`.
 *   **The Composable Architecture (TCA):** Developed by Point-Free, TCA is heavily inspired by Redux and the Elm architecture. It provides a powerful and opinionated framework for building applications in a functional way, handling state management, composition, testing, and side effects. While not strictly "Redux," it shares many core principles (reducers, actions, environment for effects similar to middleware).
 *   **Custom Implementations:** The core Redux pattern is simple enough that developers sometimes create their own lightweight implementations using Combine or async/await for state updates and side effects.
 
