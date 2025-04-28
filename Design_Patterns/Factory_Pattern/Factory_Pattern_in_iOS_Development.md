@@ -208,8 +208,8 @@ config:
     'fontFamily': 'Monospace',
     'themeVariables': {
       'primaryColor': '#BB28',
-      'primaryTextColor': '#000',
-      'textColor': '#000',
+      'primaryTextColor': '#FFF',
+      'textColor': '#FFF',
       'lineColor': '#F8B229',
       'primaryBorderColor': '#7C3',
       'secondaryColor': '#DD15'
@@ -355,8 +355,8 @@ config:
     'fontFamily': 'Monospace',
     'themeVariables': {
       'primaryColor': '#BB28',
-      'primaryTextColor': '#000',
-      'textColor': '#000',
+      'primaryTextColor': '#FFF',
+      'textColor': '#FFF',
       'lineColor': '#F8B229',
       'primaryBorderColor': '#7C3',
       'secondaryColor': '#DD15'
