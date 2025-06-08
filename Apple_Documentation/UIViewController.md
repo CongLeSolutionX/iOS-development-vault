@@ -360,10 +360,34 @@ This allows your app to save its UI state when it goes into the background and r
 ```mermaid
 ---
 title: State Preservation and Restoration
+author: "Cong Le"
+version: "0.1"
+license(s): "MIT, CC BY 4.0"
+copyright: "Copyright (c) 2025 Cong Le. All Rights Reserved."
 config:
-  look: handDrawn
-  theme: dark
+  layout: elk
+  theme: base
 ---
+%%%%%%%% Mermaid version v11.4.1-b.14
+%%{
+  init: {
+    'sequence': { 'mirrorActors': true, 'showSequenceNumbers': true, 'actorMargin': 50 },
+    'fontFamily': 'Monaco',
+    'logLevel': 'fatal',
+    'themeVariables': {
+      'primaryColor': '#2BB8',
+      'primaryBorderColor': '#7C0000',
+      'lineColor': '#F8B229',
+      'secondaryColor': '#6122',
+      'tertiaryColor': '#fff',
+      'fontSize': '15px',
+      'textColor': '#F8B229',
+      'actorTextColor': '#E2E',
+      'stroke':'#033',
+      'stroke-width': '0.2px'
+    }
+  }
+}%%
 sequenceDiagram
     autonumber
     participant App
