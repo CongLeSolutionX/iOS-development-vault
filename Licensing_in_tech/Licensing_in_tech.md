@@ -43,9 +43,33 @@ The following mindmap visualizes the hierarchical structure of these license cat
 ```mermaid
 ---
 title: Hugging Face Hub Licenses
+author: "Cong Le"
+version: "1.0"
+license(s): "MIT, CC BY 4.0"
+copyright: "Copyright (c) 2025 Cong Le. All Rights Reserved."
 config:
   theme: dark
 ---
+%%%%%%%% Mermaid version v11.4.1-b.14
+%%{
+  init: {
+    'fontFamily': 'M Mermaid Monogram',
+    'logLevel': 'fatal',
+    'mindmap': {
+	    'nodeAlign': 'center',
+	    'padding': 20
+    },
+    'themeVariables': {
+      'primaryColor': '#FC82',
+      'primaryTextColor': '#F8B229',
+      'primaryBorderColor': '#27AE60',
+      'secondaryColor': '#EBF3',
+      'secondaryTextColor': '#6C3483',
+      'secondaryBorderColor': '#A569BD',
+      'fontSize': '20px'
+    }
+  }
+}%%
 mindmap
   root)"Hugging Face Hub Licenses"(
     Permissive Licenses
@@ -328,6 +352,57 @@ graph LR
 *   **Era 5: Responsible AI (2010s-Present):** OpenRAIL family, Llama, Gemma – a recent response to the rise of AI, incorporating ethical considerations, use-case restrictions, and responsible innovation in licensing.
 *   **Era 6: Evolving & Specialized (Present):** Etalab, Apple Sample Code, DeepFloyd – representing increasing specialization, jurisdictional relevance, and bespoke licensing needs in specific contexts.
 
+
+---
+
+<!-- 
+```mermaid
+%% Current Mermaid version
+info
+```  -->
+
+
+```mermaid
+---
+title: "CongLeSolutionX"
+author: "Cong Le"
+version: "1.0"
+license(s): "MIT, CC BY-SA 4.0"
+copyright: "Copyright (c) 2025 Cong Le. All Rights Reserved."
+config:
+  theme: base
+---
+%%%%%%%% Mermaid version v11.4.1-b.14
+%%{
+  init: {
+    'flowchart': { 'htmlLabels': false },
+    'fontFamily': 'Bradley Hand',
+    'themeVariables': {
+      'primaryColor': '#fc82',
+      'primaryTextColor': '#F8B229',
+      'primaryBorderColor': '#27AE60',
+      'secondaryColor': '#81c784',
+      'secondaryTextColor': '#6C3483',
+      'lineColor': '#F8B229',
+      'fontSize': '20px'
+    }
+  }
+}%%
+flowchart LR
+  My_Meme@{ img: "https://raw.githubusercontent.com/CongLeSolutionX/CongLeSolutionX/refs/heads/main/assets/images/My-meme-light-bulb-question-marks.png", label: "Ăn uống gì chưa ngừi đẹp?", pos: "b", w: 200, h: 150, constraint: "off" }
+
+  Closing_quote@{ shape: braces, label: "...searching insights in the process of formulating better questions..." }
+    
+  My_Meme ~~~ Closing_quote
+    
+  Link_to_my_profile{{"<a href='https://github.com/CongLeSolutionX' target='_blank'>Click here if you care about my profile</a>"}}
+
+  Closing_quote ~~~ My_Meme
+  My_Meme animatingEdge@--> Link_to_my_profile
+  
+  animatingEdge@{ animate: true }
+
+```
 
 
 ---
