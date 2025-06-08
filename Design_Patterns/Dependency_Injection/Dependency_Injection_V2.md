@@ -29,21 +29,25 @@ This is a draft enhanced version from the initial version at [here](./Dependency
 ```mermaid
 ---
 title: Dependency Injection
+author: "Cong Le"
+version: "1.0"
+license(s): "MIT, CC BY 4.0"
+copyright: "Copyright (c) 2025 Cong Le. All Rights Reserved."
 config:
-  layout: elk
   look: handDrawn
-  theme: dark
+  theme: base
 ---
+%%%%%%%% Mermaid version v11.4.1-b.14
 %%{
   init: {
-    'fontFamily': 'verdana',
+    'classDiagram': { 'htmlLabels': false},
+    'fontFamily': 'Monospace',
     'themeVariables': {
-      'primaryColor': '#BB2528',
-      'primaryTextColor': '#f529',
-      'primaryBorderColor': '#7C0000',
+      'primaryColor': '#BB28',
+      'primaryTextColor': '#000',
       'lineColor': '#F8B229',
-      'secondaryColor': '#006100',
-      'tertiaryColor': '#fff'
+      'primaryBorderColor': '#7C3',
+      'secondaryColor': '#DD15'
     }
   }
 }%%
@@ -186,6 +190,58 @@ classDiagram
     *   Use the factory pattern in conjunction with dependency injection to create complex objects with multiple dependencies.
 
 By incorporating these enhancements, the dependency injection diagram becomes a more comprehensive guide for implementing DI in real-world iOS projects.
+
+
+---
+
+<!-- 
+```mermaid
+%% Current Mermaid version
+info
+```  -->
+
+
+```mermaid
+---
+title: "CongLeSolutionX"
+author: "Cong Le"
+version: "1.0"
+license(s): "MIT, CC BY-SA 4.0"
+copyright: "Copyright (c) 2025 Cong Le. All Rights Reserved."
+config:
+  theme: base
+---
+%%%%%%%% Mermaid version v11.4.1-b.14
+%%{
+  init: {
+    'flowchart': { 'htmlLabels': false },
+    'fontFamily': 'Bradley Hand',
+    'themeVariables': {
+      'primaryColor': '#fc82',
+      'primaryTextColor': '#F8B229',
+      'primaryBorderColor': '#27AE60',
+      'secondaryColor': '#81c784',
+      'secondaryTextColor': '#6C3483',
+      'lineColor': '#F8B229',
+      'fontSize': '20px'
+    }
+  }
+}%%
+flowchart LR
+  My_Meme@{ img: "https://raw.githubusercontent.com/CongLeSolutionX/CongLeSolutionX/refs/heads/main/assets/images/My-meme-light-bulb-question-marks.png", label: "Ăn uống gì chưa ngừi đẹp?", pos: "b", w: 200, h: 150, constraint: "off" }
+
+  Closing_quote@{ shape: braces, label: "...searching insights in the process of formulating better questions..." }
+    
+  My_Meme ~~~ Closing_quote
+    
+  Link_to_my_profile{{"<a href='https://github.com/CongLeSolutionX' target='_blank'>Click here if you care about my profile</a>"}}
+
+  Closing_quote ~~~ My_Meme
+  My_Meme animatingEdge@--> Link_to_my_profile
+  
+  animatingEdge@{ animate: true }
+
+```
 
 
 
