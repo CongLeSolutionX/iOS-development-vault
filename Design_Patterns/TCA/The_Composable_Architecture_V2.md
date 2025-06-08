@@ -28,25 +28,35 @@ This is a draft enhanced version from the initial version at [here](./The_Compos
 ```mermaid
 ---
 title: The Composable Architecture in SwiftUI
+author: "Cong Le"
+version: "1.0"
+license(s): "MIT, CC BY-SA 4.0"
+copyright: "Copyright (c) 2025 Cong Le. All Rights Reserved."
 config:
   layout: elk
-  look: handDrawn
-  theme: dark
+  theme: base
 ---
+%%%%%%%% Mermaid version v11.4.1-b.14
+%%%%%%%% Available curve styles include the following keywords:
+%% basis, bumpX, bumpY, cardinal, catmullRom, linear, monotoneX, monotoneY, natural, step, stepAfter, stepBefore.
 %%{
   init: {
-    'fontFamily': 'verdana',
+    'flowchart': { 'htmlLabels': true, 'curve': 'basis' },
+    'fontFamily': 'Andale Mono, monospace',
+    'logLevel': 'fatal',
     'themeVariables': {
-      'primaryColor': '#BB2528',
-      'primaryTextColor': '#f529',
-      'primaryBorderColor': '#7C0000',
+      'primaryColor': '#22BB',
+      'primaryTextColor': '#F8B229',
       'lineColor': '#F8B229',
-      'secondaryColor': '#006100',
-      'tertiaryColor': '#fff'
+      'primaryBorderColor': '#27AE60',
+      'secondaryColor': '#E2F1',
+      'secondaryTextColor': '#6C3483',
+      'secondaryBorderColor': '#A569BD',
+      'fontSize': '20px'
     }
   }
 }%%
-graph TD
+flowchart TD
     %% TCA Core Components
     A[The Composable Architecture - TCA] --> B[State]
     A --> C[Actions]
@@ -155,6 +165,58 @@ Key Improvements and Additions:
 *   **Benefits of TCA:** Added a `Benefits of TCA` node that links to multiple nodes (O1-O8).
 *   **Links to Resources:** Included links to the Point-Free website (where TCA was introduced) and the TCA GitHub repository to provide a starting point for further exploration.
 *   **Styling:** Added some light styling for link nodes.
+
+
+---
+
+<!-- 
+```mermaid
+%% Current Mermaid version
+info
+```  -->
+
+
+```mermaid
+---
+title: "CongLeSolutionX"
+author: "Cong Le"
+version: "1.0"
+license(s): "MIT, CC BY-SA 4.0"
+copyright: "Copyright (c) 2025 Cong Le. All Rights Reserved."
+config:
+  theme: base
+---
+%%%%%%%% Mermaid version v11.4.1-b.14
+%%{
+  init: {
+    'flowchart': { 'htmlLabels': false },
+    'fontFamily': 'Bradley Hand',
+    'themeVariables': {
+      'primaryColor': '#fc82',
+      'primaryTextColor': '#F8B229',
+      'primaryBorderColor': '#27AE60',
+      'secondaryColor': '#81c784',
+      'secondaryTextColor': '#6C3483',
+      'lineColor': '#F8B229',
+      'fontSize': '20px'
+    }
+  }
+}%%
+flowchart LR
+  My_Meme@{ img: "https://raw.githubusercontent.com/CongLeSolutionX/CongLeSolutionX/refs/heads/main/assets/images/My-meme-light-bulb-question-marks.png", label: "Ăn uống gì chưa ngừi đẹp?", pos: "b", w: 200, h: 150, constraint: "off" }
+
+  Closing_quote@{ shape: braces, label: "...searching insights in the process of formulating better questions..." }
+    
+  My_Meme ~~~ Closing_quote
+    
+  Link_to_my_profile{{"<a href='https://github.com/CongLeSolutionX' target='_blank'>Click here if you care about my profile</a>"}}
+
+  Closing_quote ~~~ My_Meme
+  My_Meme animatingEdge@--> Link_to_my_profile
+  
+  animatingEdge@{ animate: true }
+
+```
 
 
 ---
