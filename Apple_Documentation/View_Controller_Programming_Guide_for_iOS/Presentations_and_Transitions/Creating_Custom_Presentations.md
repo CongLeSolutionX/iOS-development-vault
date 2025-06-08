@@ -69,7 +69,40 @@ style UIKit_Presentation fill:#f9f4,stroke:#333,stroke-width:2px
 
 This is the most critical part of the document, detailing the sequence of events.  We'll use a sequence diagram to capture the interaction between UIKit, the Transitioning Delegate, the Presentation Controller, and Animator Objects.
 
+> [!NOTE]
+> WIP Loading....
+
 ```mermaid
+---
+title: "CHANGE_ME_DADDY"
+author: "Cong Le"
+version: "0.1"
+license(s): "MIT, CC BY 4.0"
+copyright: "Copyright (c) 2025 Cong Le. All Rights Reserved."
+config:
+  layout: elk
+  theme: base
+---
+%%%%%%%% Mermaid version v11.4.1-b.14
+%%{
+  init: {
+    'sequence': { 'mirrorActors': true, 'showSequenceNumbers': true, 'actorMargin': 50 },
+    'fontFamily': 'Monaco',
+    'logLevel': 'fatal',
+    'themeVariables': {
+      'primaryColor': '#2BB8',
+      'primaryBorderColor': '#7C0000',
+      'lineColor': '#F8B229',
+      'secondaryColor': '#6122',
+      'tertiaryColor': '#fff',
+      'fontSize': '15px',
+      'textColor': '#F8B229',
+      'actorTextColor': '#E2E',
+      'stroke':'#033',
+      'stroke-width': '0.2px'
+    }
+  }
+}%%
 sequenceDiagram
     participant UIKit
     participant TransitionDelegate
@@ -89,64 +122,64 @@ sequenceDiagram
     deactivate TransitionDelegate
     UIKit->>PresentationController: presentationTransitionWillBegin()
     activate PresentationController
-    Note over PresentationController: Add custom views, configure animations
-    PresentationController-->>UIKit: 
-    deactivate PresentationController
+    %% Note over PresentationController: Add custom views, configure animations
+    %% PresentationController-->>UIKit: 
+    %% deactivate PresentationController
     UIKit->>PresentationController: presentedView()
     activate PresentationController
     PresentationController-->>UIKit: Return presented view (or custom)
     deactivate PresentationController
     UIKit->>Animator: Perform Transition Animations
     activate Animator
-    Note over Animator: Animate presented view controller
-    loop During Animation
-        UIKit->>PresentationController: containerViewWillLayoutSubviews()
-        activate PresentationController
-        PresentationController-->>UIKit:
-        deactivate PresentationController
-        UIKit->>PresentationController: containerViewDidLayoutSubviews()
-        activate PresentationController
-        PresentationController-->>UIKit:
-        deactivate PresentationController
-    end
-    Animator-->>UIKit: Animations Complete
-    deactivate Animator
-    UIKit->>PresentationController: presentationTransitionDidEnd(completed)
-    activate PresentationController
-    Note over PresentationController: Cleanup if canceled
-    PresentationController-->>UIKit:
-    deactivate PresentationController
+    %% Note over Animator: Animate presented view controller
+    %% loop During Animation
+    %%     UIKit->>PresentationController: containerViewWillLayoutSubviews()
+    %%     activate PresentationController
+    %%     PresentationController-->>UIKit:
+    %%     deactivate PresentationController
+    %%     UIKit->>PresentationController: containerViewDidLayoutSubviews()
+    %%     activate PresentationController
+    %%     PresentationController-->>UIKit:
+    %%     deactivate PresentationController
+    %% end
+    %% Animator-->>UIKit: Animations Complete
+    %% deactivate Animator
+    %% UIKit->>PresentationController: presentationTransitionDidEnd(completed)
+    %% activate PresentationController
+    %% Note over PresentationController: Cleanup if canceled
+    %% PresentationController-->>UIKit:
+    %% deactivate PresentationController
 
-    Note over UIKit, Animator: Dismissal Begins
-    UIKit->>PresentationController: dismissalTransitionWillBegin()
-    activate PresentationController
-    Note over PresentationController: Configure dismissal animations
-    PresentationController-->>UIKit:
-    deactivate PresentationController
-     UIKit->>PresentationController: presentedView()
-    activate PresentationController
-    PresentationController-->>UIKit: Return presented view (or custom)
-    deactivate PresentationController
-    UIKit->>Animator: Perform Transition Animations
-    activate Animator
-    Note over Animator: Animate dismissal
-    loop During Animation
-        UIKit->>PresentationController: containerViewWillLayoutSubviews()
-           activate PresentationController
-        PresentationController-->>UIKit:
-        deactivate PresentationController
-        UIKit->>PresentationController: containerViewDidLayoutSubviews()
-           activate PresentationController
-        PresentationController-->>UIKit:
-        deactivate PresentationController
-    end
-    Animator-->>UIKit: Animations Complete
-    deactivate Animator
-    UIKit->>PresentationController: dismissalTransitionDidEnd(completed)
-    activate PresentationController
-    Note over PresentationController: Remove custom views if completed
-    PresentationController-->>UIKit:
-    deactivate PresentationController
+    %% Note over UIKit, Animator: Dismissal Begins
+    %% UIKit->>PresentationController: dismissalTransitionWillBegin()
+    %% activate PresentationController
+    %% Note over PresentationController: Configure dismissal animations
+    %% PresentationController-->>UIKit:
+    %% deactivate PresentationController
+    %% UIKit->>PresentationController: presentedView()
+    %% activate PresentationController
+    %% PresentationController-->>UIKit: Return presented view (or custom)
+    %% deactivate PresentationController
+    %% UIKit->>Animator: Perform Transition Animations
+    %% activate Animator
+    %% Note over Animator: Animate dismissal
+    %% loop During Animation
+    %%     UIKit->>PresentationController: containerViewWillLayoutSubviews()
+    %%        activate PresentationController
+    %%     PresentationController-->>UIKit:
+    %%     deactivate PresentationController
+    %%     UIKit->>PresentationController: containerViewDidLayoutSubviews()
+    %%        activate PresentationController
+    %%     PresentationController-->>UIKit:
+    %%     deactivate PresentationController
+    %% end
+    %% Animator-->>UIKit: Animations Complete
+    %% deactivate Animator
+    %% UIKit->>PresentationController: dismissalTransitionDidEnd(completed)
+    %% activate PresentationController
+    %% Note over PresentationController: Remove custom views if completed
+    %% PresentationController-->>UIKit:
+    %% deactivate PresentationController
 ```
 
 **Explanation:**
