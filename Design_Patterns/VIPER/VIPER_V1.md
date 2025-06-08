@@ -151,9 +151,25 @@ You can further enhance the diagram by adding more details, such as method signa
 ---
 title: VIPER in Swift - Enhanced version
 config:
+  layout: elk
   look: handDrawn
-  theme: dark
+  theme: base
 ---
+%%%%%%%% Mermaid version v11.4.1-b.14
+%%%%%%%% Available curve styles include the following keywords:
+%% basis, bumpX, bumpY, cardinal, catmullRom, linear, monotoneX, monotoneY, natural, step, stepAfter, stepBefore.
+%%{
+  init: {
+    "classDiagram": { "htmlLabels": false },
+    'fontFamily': 'Fantasy',
+    'themeVariables': {
+      'primaryColor': '#B2C3',
+      'primaryTextColor': '#B92',
+      'primaryBorderColor': '#7c2',
+      'lineColor': '#F8B229'
+    }
+  }
+}%%
 classDiagram
     %% VIPER Components
     class View {
