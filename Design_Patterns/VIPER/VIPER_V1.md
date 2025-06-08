@@ -21,9 +21,25 @@ Below is a **Mermaid** illustration that visualizes the **VIPER** architecture a
 ---
 title: VIPER in Swift
 config:
+  layout: elk
   look: handDrawn
-  theme: dark
+  theme: base
 ---
+%%%%%%%% Mermaid version v11.4.1-b.14
+%%%%%%%% Available curve styles include the following keywords:
+%% basis, bumpX, bumpY, cardinal, catmullRom, linear, monotoneX, monotoneY, natural, step, stepAfter, stepBefore.
+%%{
+  init: {
+    "classDiagram": { "htmlLabels": false },
+    'fontFamily': 'Fantasy',
+    'themeVariables': {
+      'primaryColor': '#B2C3',
+      'primaryTextColor': '#B92',
+      'primaryBorderColor': '#7c2',
+      'lineColor': '#F8B229'
+    }
+  }
+}%%
 classDiagram
     %% VIPER Components
     class View {
@@ -222,6 +238,57 @@ classDiagram
 - **Team Communication**: Share the diagram with your development team to maintain a common understanding of the architecture, facilitating better collaboration.
 - **Documentation**: Include the diagram in your project documentation to provide a visual overview of the VIPER implementation.
 
+
+---
+
+<!-- 
+```mermaid
+%% Current Mermaid version
+info
+```  -->
+
+
+```mermaid
+---
+title: "CongLeSolutionX"
+author: "Cong Le"
+version: "1.0"
+license(s): "MIT, CC BY-SA 4.0"
+copyright: "Copyright (c) 2025 Cong Le. All Rights Reserved."
+config:
+  theme: base
+---
+%%%%%%%% Mermaid version v11.4.1-b.14
+%%{
+  init: {
+    'flowchart': { 'htmlLabels': false },
+    'fontFamily': 'Bradley Hand',
+    'themeVariables': {
+      'primaryColor': '#fc82',
+      'primaryTextColor': '#F8B229',
+      'primaryBorderColor': '#27AE60',
+      'secondaryColor': '#81c784',
+      'secondaryTextColor': '#6C3483',
+      'lineColor': '#F8B229',
+      'fontSize': '20px'
+    }
+  }
+}%%
+flowchart LR
+  My_Meme@{ img: "https://raw.githubusercontent.com/CongLeSolutionX/CongLeSolutionX/refs/heads/main/assets/images/My-meme-light-bulb-question-marks.png", label: "Ăn uống gì chưa ngừi đẹp?", pos: "b", w: 200, h: 150, constraint: "off" }
+
+  Closing_quote@{ shape: braces, label: "...searching insights in the process of formulating better questions..." }
+    
+  My_Meme ~~~ Closing_quote
+    
+  Link_to_my_profile{{"<a href='https://github.com/CongLeSolutionX' target='_blank'>Click here if you care about my profile</a>"}}
+
+  Closing_quote ~~~ My_Meme
+  My_Meme animatingEdge@--> Link_to_my_profile
+  
+  animatingEdge@{ animate: true }
+
+```
 
 ---
 **Licenses:**
