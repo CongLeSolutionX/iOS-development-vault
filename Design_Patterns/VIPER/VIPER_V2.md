@@ -31,18 +31,20 @@ title: VIPER Design - Comprehensive Class Diagram
 config:
   layout: elk
   look: handDrawn
-  theme: dark
+  theme: base
 ---
+%%%%%%%% Mermaid version v11.4.1-b.14
+%%%%%%%% Available curve styles include the following keywords:
+%% basis, bumpX, bumpY, cardinal, catmullRom, linear, monotoneX, monotoneY, natural, step, stepAfter, stepBefore.
 %%{
   init: {
-    'fontFamily': 'verdana',
+    "classDiagram": { "htmlLabels": false },
+    'fontFamily': 'Fantasy',
     'themeVariables': {
-      'primaryColor': '#BB2528',
-      'primaryTextColor': '#f529',
-      'primaryBorderColor': '#7C0000',
-      'lineColor': '#F8B229',
-      'secondaryColor': '#006100',
-      'tertiaryColor': '#fff'
+      'primaryColor': '#B2C3',
+      'primaryTextColor': '#B92',
+      'primaryBorderColor': '#7c2',
+      'lineColor': '#F8B229'
     }
   }
 }%%
