@@ -26,9 +26,33 @@ This version now attempts to be more exhaustive by incorporating more dataset-re
 ```mermaid
 ---
 title: Expanded License Types for Datasets and Models on Hugging Face
+author: "Cong Le"
+version: "1.0"
+license(s): "MIT, CC BY 4.0"
+copyright: "Copyright (c) 2025 Cong Le. All Rights Reserved."
 config:
   theme: dark
 ---
+%%%%%%%% Mermaid version v11.4.1-b.14
+%%{
+  init: {
+    'fontFamily': 'M Mermaid Monogram',
+    'logLevel': 'fatal',
+    'mindmap': {
+	    'nodeAlign': 'center',
+	    'padding': 20
+    },
+    'themeVariables': {
+      'primaryColor': '#FC82',
+      'primaryTextColor': '#F8B229',
+      'primaryBorderColor': '#27AE60',
+      'secondaryColor': '#EBF3',
+      'secondaryTextColor': '#6C3483',
+      'secondaryBorderColor': '#A569BD',
+      'fontSize': '20px'
+    }
+  }
+}%%
 mindmap
   root)"Expanded License Types for Datasets and Models on Hugging Face"(
 
