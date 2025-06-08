@@ -141,25 +141,35 @@ mindmap
 ```mermaid
 ---
 title: Apple Platform Security Overview
+author: "Cong Le"
+version: "1.0"
+license(s): "MIT, CC BY-SA 4.0"
+copyright: "Copyright (c) 2025 Cong Le. All Rights Reserved."
 config:
   layout: elk
-  look: handDrawn
-  theme: dark
+  theme: base
 ---
+%%%%%%%% Mermaid version v11.4.1-b.14
+%%%%%%%% Available curve styles include the following keywords:
+%% basis, bumpX, bumpY, cardinal, catmullRom, linear, monotoneX, monotoneY, natural, step, stepAfter, stepBefore.
 %%{
   init: {
-    'fontFamily': 'verdana',
+    'flowchart': { 'htmlLabels': true, 'curve': 'linear' },
+    'fontFamily': 'Andale Mono, monospace',
+    'logLevel': 'fatal',
     'themeVariables': {
-      'primaryColor': '#BB2528',
-      'primaryTextColor': '#f529',
-      'primaryBorderColor': '#7C0000',
+      'primaryColor': '#2BB',
+      'primaryTextColor': '#F8B229',
       'lineColor': '#F8B229',
-      'secondaryColor': '#006100',
-      'tertiaryColor': '#fff'
+      'primaryBorderColor': '#27AE60',
+      'secondaryColor': '#E2F1',
+      'secondaryTextColor': '#6C3483',
+      'secondaryBorderColor': '#A569BD',
+      'fontSize': '20px'
     }
   }
 }%%
-graph LR
+flowchart LR
     subgraph Hardware_Security["Hardware Security"]
         A[Apple Silicon] --> B(Secure Enclave);
         B --> C(AES Engine);
