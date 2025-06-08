@@ -57,11 +57,11 @@ config:
   }
 }%%
 mindmap
-    root((SQL Cheat Sheet))
-        Introduction
+    root)"SQL Cheat Sheet"(
+        Introduction))"Introduction"((
             What_is_SQL["SQL stands for Structured Query Language.<br>
                 Used to store and manipulate data in relational databases."]
-        SQL_Database
+        SQL_Database))"SQL Database"((
             CREATE_DATABASE["CREATE DATABASE database_name;<br>
                 Creates a new SQL Database with specified name."]
             DROP_DATABASE["DROP DATABASE database_name;<br>
@@ -70,14 +70,14 @@ mindmap
                 Creates a full backup of existing database."]
             BACKUP_DATABASE_WITH_DIFFERENTIAL["BACKUP DATABASE database_name TO DISK = 'filepath' WITH DIFFERENTIAL;<br>
                 Creates differential backup."]
-        SQL_Constraints
+        SQL_Constraints))"SQL Constraints"((
             NOT_NULL["A column declared with NOT NULL can't have null values."]
             UNIQUE["A column declared as UNIQUE can't have duplicate values."]
             DEFAULT["Specifies the default value for a column if no value is provided."]
             PRIMARY_KEY["It declares a column as primary key."]
             FOREIGN_KEY["It declares a column as foreign key."]
             CHECK["It ensures that values in a column must satisfy the given condition."]
-        SQL_Operators
+        SQL_Operators))"SQL Operators"((
             Arithmetic_Operators["Add (+),<br> Subtract (-),<br> Multiply (*),<br> Divide (/),<br> Modulus (%)"]
                 
             Bitwise_Operators["Bitwise AND (&),<br> Bitwise OR (|),<br> Bitwise exclusive OR (^)"]
@@ -87,15 +87,15 @@ mindmap
             Compound_Operators["Add equals (+=),<br> Subtract equals (-=),<br> Multiply Equals (*=),<br> Divide Equals (/=),<br> Modulus Equals (%=),<br> Bitwise AND equals (&=),<br> Bitwise OR Equals (|=),<br> Bitwise exclusive OR equals (^=)"]
                 
             Logical_Operators["AND, OR, NOT, ALL, ANY, BETWEEN, IN, EXISTS, LIKE, SOME"]
-        SQL_Comments
+        SQL_Comments))"SQL Comments"((
             Single_Line_Comment["--Single Line Comment"]
             Multi_Line_Comments["/* Multi<br>Line<br>Comments */"]
-        SQL_Views
+        SQL_Views))"SQL Views"((
             CREATE_VIEW["CREATE VIEW view_name AS<br>SELECT column1, column2 ...<br>FROM table_name WHERE condition;<br>It is used to create view."]
             CREATE_OR_REPLACE_VIEW["CREATE OR REPLACE VIEW view_name AS<br>SELECT column1, column2 ...<br>FROM table_name WHERE condition;<br>Used to update an already existing view."]
             DROP_VIEW["DROP VIEW view_name;<br>
                 It is used to remove an already existing view."]
-        SQL_Tables
+        SQL_Tables))"SQL Tables"((
             CREATE_TABLE["CREATE TABLE table_name (column1 datatype, column2 datatype, column3 datatype ....);<br>
                 It is used to create a new table in a database."]
             INSERT_INTO["INSERT INTO table_name (column1, column2, column3 ...) VALUES (value1, value2, value3 ...);<br>
@@ -137,7 +137,7 @@ mindmap
                 SELECT DISTINCT It selects only distinct values from a table.<br>
                 SELECT DISTINCT column1, column2 ...<br>
                 FROM table_name;"]
-        SQL_Clauses
+        SQL_Clauses))"SQL Clauses"((
             WHERE["/* SELECT With WHERE */<br>
                 SELECT column1, column2 ...<br>
                 FROM table_name<br>
@@ -166,7 +166,7 @@ mindmap
                 WHERE condition<br>
                 GROUP BY column_name(s)<br>
                 HAVING condition;"]
-        SQL_Joins
+        SQL_Joins))"SQL Joins"((
             INNER_JOIN["It selects the records which are common in both the tables.<br>
                 SELECT column_name(s)<br>
                 FROM table1 INNER JOIN table2 ON<br>
@@ -187,7 +187,7 @@ mindmap
                 SELECT column_name(s) FROM table1<br>
                 UNION<br>
                 SELECT column_name(s) FROM table2;"]
-        SQL_Functions
+        SQL_Functions))"SQL Functions"((
             COUNT["It returns the number of rows which satisfy the given condition.<br>
                 SELECT COUNT(column_name)<br>
                 FROM table_name WHERE condition;"]
@@ -208,7 +208,7 @@ mindmap
                 FROM table_name;"]
             NOW["It returns current date and time.<br>
                 SELECT NOW() FROM table_name;"]
-        SQL_Stored_Procedures
+        SQL_Stored_Procedures))"SQL Stored Procedures"((
             CREATE_PROCEDURE["This statement is used to create stored procedures.<br>
                 CREATE PROCEDURE procedure_name<br>
                 @parameter_name data_type ....<br>
@@ -219,7 +219,7 @@ mindmap
             EXEC
                 "It is used to call stored procedures."
                 "EXEC procedure_name;"
-        SQL_Indexes
+        SQL_Indexes))"SQL Indexes"((
           CREATE_INDEX["It is used create indexes on the database tables.<br>
             CREATE INDEX index_name<br>
             ON table_name (column1, column2 ...);"]
@@ -228,7 +228,7 @@ mindmap
             RENAME TO new_index_name;"]
           DROP_INDEX["It is used to remove an already existing index on a table.<br>
             DROP INDEX Index_Name;"]
-        SQL_Miscellaneous
+        SQL_Miscellaneous))"SQL Miscellaneous"((
             AND_OR_NOT["WHERE clause can be used with AND, OR and NOT operators to filter the records with more than one condition.<br>
                 /* AND */<br>
                 SELECT column1, column2 ...<br>
