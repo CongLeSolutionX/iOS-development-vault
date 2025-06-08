@@ -515,6 +515,57 @@ sequenceDiagram
 Segues provide a powerful and visual way to manage view controller transitions in iOS apps. By understanding the different types of segues, how to create and modify them, and even how to create custom transitions, you can build sophisticated and user-friendly navigation flows. Remember to use adaptive segues whenever possible for the best user experience across different devices and orientations. The use of unwind segues and programmatic segues adds further flexibility to your app's navigation. Finally, the ability to create custom segues opens up possibilities for unique and engaging user interface transitions.
 
 
+---
+
+<!-- 
+```mermaid
+%% Current Mermaid version
+info
+```  -->
+
+
+```mermaid
+---
+title: "CongLeSolutionX"
+author: "Cong Le"
+version: "1.0"
+license(s): "MIT, CC BY-SA 4.0"
+copyright: "Copyright (c) 2025 Cong Le. All Rights Reserved."
+config:
+  theme: base
+---
+%%%%%%%% Mermaid version v11.4.1-b.14
+%%{
+  init: {
+    'flowchart': { 'htmlLabels': false },
+    'fontFamily': 'Bradley Hand',
+    'themeVariables': {
+      'primaryColor': '#fc82',
+      'primaryTextColor': '#F8B229',
+      'primaryBorderColor': '#27AE60',
+      'secondaryColor': '#81c784',
+      'secondaryTextColor': '#6C3483',
+      'lineColor': '#F8B229',
+      'fontSize': '20px'
+    }
+  }
+}%%
+flowchart LR
+  My_Meme@{ img: "https://raw.githubusercontent.com/CongLeSolutionX/CongLeSolutionX/refs/heads/main/assets/images/My-meme-light-bulb-question-marks.png", label: "Ăn uống gì chưa ngừi đẹp?", pos: "b", w: 200, h: 150, constraint: "off" }
+
+  Closing_quote@{ shape: braces, label: "...searching insights in the process of formulating better questions..." }
+    
+  My_Meme ~~~ Closing_quote
+    
+  Link_to_my_profile{{"<a href='https://github.com/CongLeSolutionX' target='_blank'>Click here if you care about my profile</a>"}}
+
+  Closing_quote ~~~ My_Meme
+  My_Meme animatingEdge@--> Link_to_my_profile
+  
+  animatingEdge@{ animate: true }
+
+```
+
 
 ---
 **Licenses:**
