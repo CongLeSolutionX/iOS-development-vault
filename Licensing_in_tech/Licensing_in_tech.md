@@ -47,7 +47,7 @@ config:
   theme: dark
 ---
 mindmap
-  root((Hugging Face Hub Licenses))
+  root)"Hugging Face Hub Licenses"(
     Permissive Licenses
       Apache License 2.0
       MIT License
@@ -95,37 +95,37 @@ mindmap
       Public Domain
         Creative Commons Zero v1.0 Universal (CC0-1.0)
         Open Data Commons Public Domain Dedication and License (PDDL)
-    Responsible AI Licenses (RAIL)
-      OpenRAIL License Family
-        OpenRAIL license family (openrail)
-        BigScience OpenRAIL-M (bigscience-openrail-m)
-        CreativeML OpenRAIL-M (creativeml-openrail-m)
-        BigCode Open RAIL-M v1 (bigcode-openrail-m)
-        Open Rail++-M License (openrail++)
-        BigScience BLOOM RAIL 1.0 (bigscience-bloom-rail-1.0)
-      Llama Community Licenses
-        Llama 2 Community License Agreement (llama2)
-        Llama 3 Community License Agreement (llama3)
-        Llama 3.1 Community License Agreement (llama3.1)
-        Llama 3.2 Community License Agreement (llama3.2)
-      Gemma Terms of Use (gemma)
-      DeepFloyd IF Research License Agreement (deepfloyd-if-license)
-      Intel Research Use License Agreement (intel-research)
-    Data-Specific Licenses
-      Community Data License Agreement (CDLA)
+    RAIL))"Responsible AI Licenses<br/>(RAIL)"((
+      OpenRAIL_License_Family("OpenRAIL License Family")
+        openrail["OpenRAIL license family (openrail)"]
+        bigscience_openrail_m["BigScience OpenRAIL-M (bigscience-openrail-m)"]
+        creativeml_openrail_m["CreativeML OpenRAIL-M (creativeml-openrail-m)"]
+        bigcode_openrail_m["BigCode Open RAIL-M v1 (bigcode-openrail-m)"]
+        openrail_plus_plus["Open Rail++-M License (openrail++)"]
+        bigscience_bloom_rail_1["BigScience BLOOM RAIL 1.0 (bigscience-bloom-rail-1.0)"]
+      Llama_Community_Licenses("Llama Community Licenses")
+        llama2["Llama 2 Community License Agreement (llama2)"]
+        llama3["Llama 3 Community License Agreement (llama3)"]
+        llama3_1["Llama 3.1 Community License Agreement (llama3.1)"]
+        llama3_2["Llama 3.2 Community License Agreement (llama3.2)"]
+      gemma("Gemma Terms of Use (gemma)")
+      deepfloyd_if_license("DeepFloyd IF Research License Agreement (deepfloyd-if-license)")
+      intel_research("Intel Research Use License Agreement (intel-research)")
+    Data_Specific_Licenses))"Data-Specific Licenses"((
+      CDLA("Community Data License Agreement (CDLA)")
         Community Data License Agreement – Sharing, Version 1.0 (cdla-sharing-1.0)
         Community Data License Agreement – Permissive, Version 1.0 (cdla-permissive-1.0)
         Community Data License Agreement – Permissive, Version 2.0 (cdla-permissive-2.0)
-      Open Data Commons License Family
+      Open_Data_Commons_License_Family("Open Data Commons License Family")
         Open Data Commons License Attribution Family (odc-by)
         Open Database License Family (odbl)
-        Open Data Commons Public Domain Dedication and License (pddl)
-      Computational Use of Data Agreement (C-UDA)
-    LGPL["GNU Lesser General Public License (LGPL) Family"]
+        pddl["Open Data Commons Public Domain Dedication and License (pddl)"]
+      CUDA("Computational Use of Data Agreement (C-UDA)")
+    LGPL))"GNU Lesser General Public License (LGPL) Family"((
       GNU Lesser General Public License v2.1
       GNU Lesser General Public License v3.0
       Lesser General Public License For Linguistic Resources (lgpl-lr)
-    Other Licenses
+    Other_Licenses))"Other Licenses"((
       Artistic license 2.0
       Academic Free License v3.0
       Educational Community License v2.0
