@@ -30,9 +30,9 @@ config:
   theme: dark
 ---
 mindmap
-  root(("Expanded License Types for Datasets and Models on Hugging Face"))
+  root)"Expanded License Types for Datasets and Models on Hugging Face"(
 
-    Permissive_Licenses["Permissive Licenses"]
+    Permissive_Licenses))"Permissive Licenses"((
       General_Permissive["General Permissive"]
         Apache-2.0
         MIT
@@ -58,7 +58,7 @@ mindmap
         CDLA-Permissive-1.0["CDLA-Permissive-1.0<br>(Creative Commons - Attribution Generic, permissive for data)"]
         CDLA-Permissive-2.0["CDLA-Permissive-2.0<br>(Community Data License Agreement Permissive 2.0)"]
 
-    Copyleft_Licenses["Copyleft Licenses<br>(Reciprocal Licenses)"]
+    Copyleft_Licenses))"Copyleft Licenses<br>(Reciprocal Licenses)"((
       General_Copyleft["General Copyleft"]
         GPL_Family["GPL Family"]
           GPL-3.0
@@ -77,38 +77,38 @@ mindmap
           epl-2.0
           epl-1.0
 
-    Creative_Commons_Licenses["Creative Commons Licenses<br>(for Creative Works and Data)"]
-      CC["CC<br>(Generic Creative Commons - often used as a base)"]
-      CC0-1.0["CC0-1.0<br>(Public Domain Dedication, effectively no rights reserved)"]
-      Attribution_BY["Attribution (BY) <br>- Requires Attribution"]
+    Creative_Commons_Licenses))"Creative Commons Licenses<br>(for Creative Works and Data)"((
+      CC("CC<br>(Generic Creative Commons - often used as a base)")
+      CC0-1.0("CC0-1.0<br>(Public Domain Dedication, effectively no rights reserved)")
+      Attribution_BY("Attribution (BY) <br>- Requires Attribution")
         cc-by-4.0
         cc-by-3.0
         cc-by-2.0
         cc-by-2.5
-      ShareAlike_SA["ShareAlike (SA) <br>- Derivatives must be under the same/compatible license"]
+      ShareAlike_SA("ShareAlike (SA) <br>- Derivatives must be under the same/compatible license")
         cc-by-sa-4.0
         cc-by-sa-3.0
-      NonCommercial_NC["NonCommercial (NC) <br>- Restricts Commercial Use"]
+      NonCommercial_NC("NonCommercial (NC) <br>- Restricts Commercial Use")
         cc-by-nc-4.0
         cc-by-nc-3.0
         cc-by-nc-2.0
-      NoDerivatives_ND["NoDerivatives (ND) <br>- No Derivative Works Allowed"]
+      NoDerivatives_ND("NoDerivatives (ND) <br>- No Derivative Works Allowed")
         cc-by-nd-4.0
-      Combinations["Combinations<br>(e.g., NC-ND, NC-SA)"]
+      Combinations("Combinations<br>(e.g., NC-ND, NC-SA)")
         cc-by-nc-nd-4.0
         cc-by-nc-nd-3.0
         cc-by-nc-sa-4.0
         cc-by-nc-sa-3.0
 
 
-    AI_Model_and_Open_RAIL_Family_Licenses["AI/Model and Open RAIL Family Licenses<br>(Responsible AI Licenses)"]
-      Open_RAIL_Family["Open Responsible AI License (Open RAIL) Family"]
+    AI_Model_and_Open_RAIL_Family_Licenses))"AI/Model and Open RAIL Family Licenses<br>(Responsible AI Licenses)"((
+      Open_RAIL_Family("Open Responsible AI License (Open RAIL) Family")
         openrail
         creativeml-openrail-m
         bigscience-openrail-m
         bigcode-openrail-m
         openrail++
-      Model_Specific_and_Related["Model Specific and Related"]
+      Model_Specific_and_Related("Model Specific and Related")
         Llama_Family["Llama Family"]
           llama2
           llama3
@@ -121,7 +121,7 @@ mindmap
         openrail
         bigcode-openrail-l-v1
 
-    Database_and_Data_Specific_Licenses["Database and Data Specific Licenses"]
+    Database_and_Data_Specific_Licenses))"Database and Data Specific Licenses"((
       Database_Focus["Database Focus"]
         PostgreSQL_License["PostgreSQL License<br>(Permissive license for PostgreSQL database)"]
         ODC-By["ODC-By<br>(Open Data Commons Attribution License)"]
@@ -130,13 +130,13 @@ mindmap
         CDLA-Permissive-1.0
         CDLA-Permissive-2.0
 
-    Software_with_Data_Considerations["Software with Data Considerations"]
+    Software_with_Data_Considerations))"Software with Data Considerations"((
       GPL_with_Data_clauses["GPL with Data clauses<br>(Some GPL variants might address data specifically)"]
 
-    Less_Common_Specific_Proprietary_leaning["Less Common/Specific/Proprietary-leaning"]
+    Less_Common_Specific_Proprietary_leaning))"Less Common/Specific/Proprietary-leaning"((
       OSL-3.0 (Open Software License 3.0 - somewhat copyleft leaning)
      
-    Other_Uncategorized["Other/Uncategorized<br>(Review and Categorize)"]
+    Other_Uncategorized))"Other/Uncategorized<br>(Review and Categorize)"((
       other["other<br>(Generic category for licenses not yet specified)"]
       osl-3.0["osl-3.0<br>(Needs review for correct category - leaning towards less common/copyleft-leaning)"]
 
@@ -150,6 +150,58 @@ mindmap
 3.  **Expanded Creative Commons Breakdown:**  Further broke down Creative Commons licenses into categories like "Attribution (BY)", "ShareAlike (SA)", "NonCommercial (NC)", and "NoDerivatives (ND)", and combinations to clarify the structure.
 4.  **Open RAIL Family Emphasis:**  Highlighted "Open RAIL" licenses as a distinct category relevant to AI models, emphasizing responsible AI use licensing.
 5.  **"Other/Uncategorized (Review and Categorize)" Section:**  Kept an "Other" category but renamed with a note to "Review and Categorize". This helps to isolate licenses that need further investigation or better placement.  Licenses like `unlicense`, `other`, `cc` in its generic form, and `gemmma` (likely a typo) are placed here for review.
+
+
+---
+
+<!-- 
+```mermaid
+%% Current Mermaid version
+info
+```  -->
+
+
+```mermaid
+---
+title: "CongLeSolutionX"
+author: "Cong Le"
+version: "1.0"
+license(s): "MIT, CC BY-SA 4.0"
+copyright: "Copyright (c) 2025 Cong Le. All Rights Reserved."
+config:
+  theme: base
+---
+%%%%%%%% Mermaid version v11.4.1-b.14
+%%{
+  init: {
+    'flowchart': { 'htmlLabels': false },
+    'fontFamily': 'Bradley Hand',
+    'themeVariables': {
+      'primaryColor': '#fc82',
+      'primaryTextColor': '#F8B229',
+      'primaryBorderColor': '#27AE60',
+      'secondaryColor': '#81c784',
+      'secondaryTextColor': '#6C3483',
+      'lineColor': '#F8B229',
+      'fontSize': '20px'
+    }
+  }
+}%%
+flowchart LR
+  My_Meme@{ img: "https://raw.githubusercontent.com/CongLeSolutionX/CongLeSolutionX/refs/heads/main/assets/images/My-meme-light-bulb-question-marks.png", label: "Ăn uống gì chưa ngừi đẹp?", pos: "b", w: 200, h: 150, constraint: "off" }
+
+  Closing_quote@{ shape: braces, label: "...searching insights in the process of formulating better questions..." }
+    
+  My_Meme ~~~ Closing_quote
+    
+  Link_to_my_profile{{"<a href='https://github.com/CongLeSolutionX' target='_blank'>Click here if you care about my profile</a>"}}
+
+  Closing_quote ~~~ My_Meme
+  My_Meme animatingEdge@--> Link_to_my_profile
+  
+  animatingEdge@{ animate: true }
+
+```
 
 
 ---
