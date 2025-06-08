@@ -29,13 +29,30 @@ Here's the Mermaid code, followed by a breakdown and explanation:
 ```mermaid
 ---
 title: "SQL Cheatsheet"
+author: "Cong Le"
+version: "1.0"
+license(s): "MIT, CC BY 4.0"
+copyright: "Copyright (c) 2025 Cong Le. All Rights Reserved."
+config:
+  theme: base
 ---
+%%%%%%%% Mermaid version v11.4.1-b.14
 %%{
   init: {
-    'theme': 'base',
+    'fontFamily': 'M Mermaid Monogram',
+    'logLevel': 'fatal',
+    'mindmap': {
+	    'nodeAlign': 'center',
+	    'padding': 20
+    },
     'themeVariables': {
-      'fontSize': '12px',
-      'fontFamily': 'M Mermaid Monogram'
+      'primaryColor': '#FC82',
+      'primaryTextColor': '#F8B229',
+      'primaryBorderColor': '#27AE60',
+      'secondaryColor': '#EBF3',
+      'secondaryTextColor': '#6C3483',
+      'secondaryBorderColor': '#A569BD',
+      'fontSize': '20px'
     }
   }
 }%%
