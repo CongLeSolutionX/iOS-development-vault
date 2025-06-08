@@ -21,11 +21,28 @@ Below is a Mermaid **Class Diagram** that visually represents the **Dependency I
 ```mermaid
 ---
 title: Dependency Injection
+author: "Cong Le"
+version: "1.0"
+license(s): "MIT, CC BY 4.0"
+copyright: "Copyright (c) 2025 Cong Le. All Rights Reserved."
 config:
-  layout: elk
   look: handDrawn
-  theme: dark
+  theme: base
 ---
+%%%%%%%% Mermaid version v11.4.1-b.14
+%%{
+  init: {
+    'classDiagram': { 'htmlLabels': false},
+    'fontFamily': 'Monospace',
+    'themeVariables': {
+      'primaryColor': '#BB28',
+      'primaryTextColor': '#000',
+      'lineColor': '#F8B229',
+      'primaryBorderColor': '#7C3',
+      'secondaryColor': '#DD15'
+    }
+  }
+}%%
 classDiagram
     %% Protocol Definition
     class NetworkServiceProtocol {
