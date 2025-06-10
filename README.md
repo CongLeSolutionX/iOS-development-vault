@@ -244,7 +244,30 @@ graph LR
 
 ---
 
+## 🚀 Project Current Activities
 
+<div align="left"><a name="project-current-activities"></a>
+
+<details open>
+<summary>Click to show/hide more on recent activities of this project </summary>
+
+> powered by [OSS Insight](https://ossinsight.io)
+<!-- All the diagrams below are made with [OSS Insight](https://ossinsight.io/) -->
+
+| :bar_chart: Widget & Description | :art: Snapshot (Light Mode) |
+|---|---|
+| Active Contributors :technologist: of iOS-development-vault - Last 28 days | ![Active Contributors of iOS-development-vault - Last 28 days](https://next.ossinsight.io/widgets/official/compose-recent-active-contributors/thumbnail.png?repo_id=902093760&limit=30&image_size=auto&color_scheme=light) <br/> :link: [View Full Report :mag:](https://next.ossinsight.io/widgets/official/compose-recent-active-contributors?repo_id=902093760&limit=30) |
+| Pushes :arrow_up: and Commits :writing_hand: of iOS-development-vault | ![Pushes and Commits of iOS-development-vault](https://next.ossinsight.io/widgets/official/analyze-repo-pushes-and-commits-per-month/thumbnail.png?repo_id=902093760&image_size=auto&color_scheme=light) <br/> :link: [View Full Report :mag:](https://next.ossinsight.io/widgets/official/analyze-repo-pushes-and-commits-per-month?repo_id=902093760) |
+| Pull Request Size :straight_ruler: of iOS-development-vault | ![Pull Request Size of iOS-development-vault](https://next.ossinsight.io/widgets/official/analyze-repo-pull-requests-size-per-month/thumbnail.png?repo_id=902093760&image_size=auto&color_scheme=light) <br/> :link: [View Full Report :mag:](https://next.ossinsight.io/widgets/official/analyze-repo-pull-requests-size-per-month?repo_id=902093760) |
+| Pull Request Lifecycle :arrows_counterclockwise: of iOS-development-vault | ![Pull Request Lifecycle of iOS-development-vault](https://next.ossinsight.io/widgets/official/analyze-repo-pull-request-open-to-merged/thumbnail.png?repo_id=902093760&image_size=auto&color_scheme=light) <br/> :link: [View Full Report :mag:](https://next.ossinsight.io/widgets/official/analyze-repo-pull-request-open-to-merged?repo_id=902093760) |
+| Lines of Code Changes :computer::scroll: of iOS-development-vault | ![Lines of Code Changes of iOS-development-vault](https://next.ossinsight.io/widgets/official/analyze-repo-loc-per-month/thumbnail.png?repo_id=902093760&image_size=auto&color_scheme=light) <br/> :link: [View Full Report :mag:](https://next.ossinsight.io/widgets/official/analyze-repo-loc-per-month?repo_id=902093760) |
+| Commits Time Distribution :alarm_clock::date: of iOS-development-vault | ![Commits Time Distribution of iOS-development-vault](https://next.ossinsight.io/widgets/official/analyze-repo-commits-time-distribution/thumbnail.png?repo_id=902093760&period=last_1_year&zone=0&image_size=auto&color_scheme=light) <br/> :link: [View Full Report :mag:](https://next.ossinsight.io/widgets/official/analyze-repo-commits-time-distribution?repo_id=902093760&period=last_1_year&zone=0) | 
+
+</details>
+
+</div>
+
+---
 
 ## License
 
