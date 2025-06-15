@@ -245,6 +245,14 @@ graph LR
 
 ## 🚀 Project Current Activities
 
+
+<div align="center">
+	<img alt="Contribution and Feedback" src="https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExM2dtMXUweTRlOXVqOXU5and5ajloeDdycHVsOW1hbG0xazh6ejNpZCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/yE72eDy7lj3JS/giphy.gif"/>
+	<br/>
+	<em>gif image is provided by <a href="https://giphy.com">Giphy</a></em>
+</div>
+
+
 <div align="left"><a name="project-current-activities"></a>
 
 <details open>
