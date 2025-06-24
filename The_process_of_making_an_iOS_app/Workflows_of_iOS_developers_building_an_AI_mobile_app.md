@@ -315,24 +315,32 @@ graph TD
 
 ```mermaid
 ---
-title: "CHANGE_ME_DADDY"
+title: "Combined Workflow"
 author: "Cong Le"
-version: "1.0"
+version: "0.1"
 license(s): "MIT, CC BY 4.0"
 copyright: "Copyright (c) 2025 Cong Le. All Rights Reserved."
 config:
-  theme: dark
+  layout: elk
+  theme: base
 ---
 %%%%%%%% Mermaid version v11.4.1-b.14
-%%%%%%%% Toggle theme value to `base` to activate the initilization below for the customized theme version.
-%%%%%%%% Available curve styles include the following keywords:
-%% basis, bumpX, bumpY, cardinal, catmullRom, linear, monotoneX, monotoneY, natural, step, stepAfter, stepBefore.
 %%{
   init: {
-    'flowchart': {'htmlLabels': true, 'curve': 'basis' },
-    'fontFamily': 'Fantasy',
+    'sequence': { 'mirrorActors': true, 'showSequenceNumbers': true, 'actorMargin': 50 },
+    'fontFamily': 'Monaco',
     'themeVariables': {
-      'lineColor': '#F8B229'
+      'textColor': '#F8B229',
+      'actorBkg': '#22B8',
+      'actorBorder': '#7C0000',
+      'actorTextColor': '#E2E',
+      'actorLineColor': '#E22E',
+      'activationBkgColor': '#FBBF',
+      'tertiaryColor': '#fff',
+      'fontSize': '15px',
+      'signalColor': '#F93B',
+      'signalTextColor': '#2FBE',
+      'sequenceNumberColor': '#000'
     }
   }
 }%%
