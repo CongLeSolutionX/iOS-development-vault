@@ -1,57 +1,28 @@
 # iOS-development-vault
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)  [![License: CC BY 4.0](https://licensebuttons.net/l/by/4.0/88x31.png)](LICENSE-CC-BY)
-
-Copyright © 2025 Cong Le. All Rights Reserved.
 
 ---
 
-> ⚠️🏗️🚧🦺🧱🪵🪨🪚🛠️👷
-> 
-> This is an ongoing project collecting notes for personal educational purposes and references. 
-> 
-> ![Loading...](https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExc2V0dXFocnF0cWZ1MTB5bnFqOGZrbnhqZ2Nyd2Vzd3B4cnh1YnVtNyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/CTkWFZ1IDvsfS/giphy.gif)
-> 
-> gif image is provided by [Giphy](https://giphy.com)
-> 
-> ⚠️🏗️🚧🦺🧱🪵🪨🪚🛠️👷
-
-----
-
-<details open>
-	
-<summary>Click to show/hide the full disclaimer.</summary>
- 
-> <ins>📢 **WARNING** 🚨</ins>
- 
-> **About This Project**
-> - This repository documents my ongoing exploration at the intersection of digital art and artificial intelligence.
-
-> **Purpose**
-> - To publicly document academic research.
-> - To share findings with the community.
-> - To maintain a personal portfolio of creative and technical work.
-
-> **Disclaimer**
-> - This is a personal project.
-> - Any user who shares, adapts, or builds upon this work is responsible for their own interpretations and applications.
-
-> This document contains my personal notes on the topic,
-> compiled from publicly available documentation and various cited sources.
-> The materials are intended for 👨‍🎓 <ins>educational purposes</ins> 👨‍🎓 (<ins>sometimes, entertainment purposes</ins>), 📖 <ins> personal study </ins> 📖, and 🔖 <ins> technical reference </ins> 🔖.
-
-> The content is dual-licensed:
-> 1. **MIT License:** Applies to all code implementations (Swift, Mermaid, and other programming languages).
-> 2. **Creative Commons Attribution-ShareAlike 4.0 International License (CC BY-SA 4.0):** Applies to all non-code content, including text, explanations, diagrams, and illustrations.
-
-> ... and I'm still searching for a real job now.
-
-</details>
+<div align="center">
+  <blockquote>
+  As a visual learner student, I created these personal study notes from the cited source(s) to aid my understanding.<br/>
+  While my firm intention is to provide full credit, the blended format of notes and diagrams may sometimes obscure the original source, for which I apologize.<br/>
+  I am committed to making corrections and welcome any feedback.<br/>
+  This is a non-commercial project for my humble educational purposes only since the start.<br/>
+  My goal is to share my perspective and contribute to the great work already being done.
+  <br/>
+  <br/>
+  I want to extend my genuine apologies to the creators of the original material.<br/>
+  Their work was the direct inspiration for this project, and I adapted it without first reaching out.<br/>
+  My intent comes from a place of deep respect, and I hope this is received in the spirit of homage.<br/>
+  🙏🏼🙏🏼🙏🏼🙏🏼
+  </blockquote>
+</div>
 
 
 ----
 
-These notes cover a wide array of subjects with varying levels of depth and detail. I aim to present iOS development concepts and practices using visual representations.
+These notes cover a wide array of subjects. I aim to present iOS development concepts and practices using visual representations.
 
 ## Demo
 Below is a sample of note in this repo.
@@ -276,108 +247,4 @@ graph LR
 
 ---
 
-## 🚀 Project Current Activities
-
-<div align="center">
-	<img alt="Project Current Activities Top" src="https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExM2dtMXUweTRlOXVqOXU5and5ajloeDdycHVsOW1hbG0xazh6ejNpZCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/yE72eDy7lj3JS/giphy.gif"/>
-	<br/>
-	<em>gif image is provided by <a href="https://giphy.com">Giphy</a></em>
-</div>
-
-
-<div align="left"><a name="project-current-activities"></a>
-
-<details open>
-<summary>Click to show/hide more on recent activities of this project </summary>
-
-> powered by [OSS Insight](https://ossinsight.io)
-<!-- All the diagrams below are made with [OSS Insight](https://ossinsight.io/) -->
-
-| :bar_chart: Widget & Description | :art: Snapshot (Light Mode) |
-|---|---|
-| Active Contributors :technologist: of iOS-development-vault - Last 28 days | ![Active Contributors of iOS-development-vault - Last 28 days](https://next.ossinsight.io/widgets/official/compose-recent-active-contributors/thumbnail.png?repo_id=902093760&limit=30&image_size=auto&color_scheme=light) <br/> :link: [View Full Report :mag:](https://next.ossinsight.io/widgets/official/compose-recent-active-contributors?repo_id=902093760&limit=30) |
-| Pushes :arrow_up: and Commits :writing_hand: of iOS-development-vault | ![Pushes and Commits of iOS-development-vault](https://next.ossinsight.io/widgets/official/analyze-repo-pushes-and-commits-per-month/thumbnail.png?repo_id=902093760&image_size=auto&color_scheme=light) <br/> :link: [View Full Report :mag:](https://next.ossinsight.io/widgets/official/analyze-repo-pushes-and-commits-per-month?repo_id=902093760) |
-| Pull Request Size :straight_ruler: of iOS-development-vault | ![Pull Request Size of iOS-development-vault](https://next.ossinsight.io/widgets/official/analyze-repo-pull-requests-size-per-month/thumbnail.png?repo_id=902093760&image_size=auto&color_scheme=light) <br/> :link: [View Full Report :mag:](https://next.ossinsight.io/widgets/official/analyze-repo-pull-requests-size-per-month?repo_id=902093760) |
-| Pull Request Lifecycle :arrows_counterclockwise: of iOS-development-vault | ![Pull Request Lifecycle of iOS-development-vault](https://next.ossinsight.io/widgets/official/analyze-repo-pull-request-open-to-merged/thumbnail.png?repo_id=902093760&image_size=auto&color_scheme=light) <br/> :link: [View Full Report :mag:](https://next.ossinsight.io/widgets/official/analyze-repo-pull-request-open-to-merged?repo_id=902093760) |
-| Lines of Code Changes :computer::scroll: of iOS-development-vault | ![Lines of Code Changes of iOS-development-vault](https://next.ossinsight.io/widgets/official/analyze-repo-loc-per-month/thumbnail.png?repo_id=902093760&image_size=auto&color_scheme=light) <br/> :link: [View Full Report :mag:](https://next.ossinsight.io/widgets/official/analyze-repo-loc-per-month?repo_id=902093760) |
-| Commits Time Distribution :alarm_clock::date: of iOS-development-vault | ![Commits Time Distribution of iOS-development-vault](https://next.ossinsight.io/widgets/official/analyze-repo-commits-time-distribution/thumbnail.png?repo_id=902093760&period=last_1_year&zone=0&image_size=auto&color_scheme=light) <br/> :link: [View Full Report :mag:](https://next.ossinsight.io/widgets/official/analyze-repo-commits-time-distribution?repo_id=902093760&period=last_1_year&zone=0) | 
-
-</details>
-
-</div>
-
-
-<div align="center">
-	<img alt="Project Current Activities Bottom" src="https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExbXduZDR2b2d4bTF3Mjc5OGhlZWU3Mnl3Y2ozbmk3eHIza2EzdGo3aSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/aNkKabft4Rs5y/giphy.gif"/>
-	<br/>
-	<em>gif image is provided by <a href="https://giphy.com">Giphy</a></em>
-</div>
-
-
----
-
-## License
-
-This project is licensed under the [MIT License](LICENSE), which allows you to use, modify, and distribute the software as long as you provide proper credit to the original authors.
-
-### Software License
-This software is licensed under the [MIT License](LICENSE). You may use, copy, modify, merge, publish, distribute, and sublicense it, provided that you include the original license in all copies or substantial portions of the software.
-
-### Documentation License
-The documentation and other creative materials for this project are licensed under the [Creative Commons Attribution 4.0 International License](LICENSE-CC-BY). You are free to share, adapt, and use the documentation, as long as you give appropriate credit to the original authors.
-
-
-
----
-
-<!-- 
-```mermaid
-%% Current Mermaid version
-info
-```  -->
-
-
-```mermaid
----
-title: "C<char>o&#770;</char>ngL<char>e&#770;</char>SolutionX"
-author: "Cong Le"
-version: "1.0"
-license(s): "MIT, CC BY-SA 4.0"
-copyright: "Copyright (c) 2025 Cong Le. All Rights Reserved."
-config:
-  theme: base
----
-%%%%%%%% Mermaid version v11.4.1-b.14
-%%{
-  init: {
-    'flowchart': { 'htmlLabels': false },
-    'fontFamily': 'Bradley Hand',
-    'themeVariables': {
-      'primaryColor': '#fc82',
-      'primaryTextColor': '#F8B229',
-      'primaryBorderColor': '#27AE60',
-      'secondaryColor': '#81c784',
-      'secondaryTextColor': '#6C3483',
-      'lineColor': '#F8B229',
-      'fontSize': '20px'
-    }
-  }
-}%%
-flowchart LR
-  My_Meme@{ img: "https://raw.githubusercontent.com/CongLeSolutionX/CongLeSolutionX/refs/heads/main/assets/images/My-meme-light-bulb-question-marks.png", label: "Ăn uống gì chưa ngừi đẹp?", pos: "b", w: 200, h: 150, constraint: "off" }
-
-  Closing_quote@{ shape: braces, label: "...searching insights in the process of formulating better questions..." }
-    
-   Closing_quote ~~~ My_Meme
-    
-  Link_to_my_profile{{"<a href='https://github.com/CongLeSolutionX' target='_blank'>Click here if you care about the profile of a tech guy looking for a job 🙏🏼</a>"}}
-
-  Closing_quote ~~~ My_Meme
-  My_Meme animatingEdge@--> Link_to_my_profile
-  
-  animatingEdge@{ animate: true }
-
-```
-
----
 
