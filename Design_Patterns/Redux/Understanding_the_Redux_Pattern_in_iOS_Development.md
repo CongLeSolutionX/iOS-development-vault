@@ -1,9 +1,9 @@
 ---
 created: 2025-04-27 05:31:26
-author: Cong Le
-version: "1.0"
-license(s): MIT, CC BY 4.0
-copyright: Copyright (c) 2025 Cong Le. All Rights Reserved.
+author: NA
+version: NA
+license(s): NA
+copyright: NA
 ---
 
 
@@ -28,10 +28,10 @@ Redux is a predictable state container pattern, originally popularized in the Ja
 ```mermaid
 ---
 title: "What is Redux in iOS?"
-author: "Cong Le"
-version: "1.0"
-license(s): "MIT, CC BY 4.0"
-copyright: "Copyright (c) 2025 Cong Le. All Rights Reserved."
+author: NA
+version: NA
+license(s): NA
+copyright: NA
 config:
   theme: dark
 ---
@@ -88,10 +88,10 @@ The **Store** is the central hub of the Redux architecture. It holds the entire 
 ```mermaid
 ---
 title: "The Core Components of Redux - Store"
-author: "Cong Le"
-version: "1.0"
-license(s): "MIT, CC BY 4.0"
-copyright: "Copyright (c) 2025 Cong Le. All Rights Reserved."
+author: NA
+version: NA
+license(s): NA
+copyright: NA
 config:
   theme: base
 ---
@@ -139,10 +139,10 @@ The **State** is a plain data structure (like a Swift `struct`) representing the
 ```mermaid
 ---
 title: "The Core Components of Redux - Action"
-author: "Cong Le"
-version: "1.0"
-license(s): "MIT, CC BY 4.0"
-copyright: "Copyright (c) 2025 Cong Le. All Rights Reserved."
+author: NA
+version: NA
+license(s): NA
+copyright: NA
 config:
   theme: base
 ---
@@ -187,10 +187,10 @@ graph LR
 ```mermaid
 ---
 title: "The Core Components of Redux - Reducer"
-author: "Cong Le"
-version: "1.0"
-license(s): "MIT, CC BY 4.0"
-copyright: "Copyright (c) 2025 Cong Le. All Rights Reserved."
+author: NA
+version: NA
+license(s): NA
+copyright: NA
 config:
   theme: base
 ---
@@ -238,10 +238,10 @@ The strict unidirectional data flow is the core principle that makes Redux predi
 ```mermaid
 ---
 title: "The Unidirectional Data Flow"
-author: "Cong Le"
-version: "1.0"
-license(s): "MIT, CC BY 4.0"
-copyright: "Copyright (c) 2025 Cong Le. All Rights Reserved."
+author: NA
+version: NA
+license(s): NA
+copyright: NA
 config:
   theme: base
 ---
@@ -296,10 +296,10 @@ Since Reducers must be pure functions, they cannot perform side effects like net
 ```mermaid
 ---
 title: "Middleware: Handling Side Effects"
-author: "Cong Le"
-version: "1.0"
-license(s): "MIT, CC BY 4.0"
-copyright: "Copyright (c) 2025 Cong Le. All Rights Reserved."
+author: NA
+version: NA
+license(s): NA
+copyright: NA
 config:
   theme: base
 ---
@@ -405,10 +405,10 @@ Redux offers a robust pattern for managing application state in iOS, particularl
 ```mermaid
 ---
 title: "Summary"
-author: "Cong Le"
-version: "1.0"
-license(s): "MIT, CC BY 4.0"
-copyright: "Copyright (c) 2025 Cong Le. All Rights Reserved."
+author: NA
+version: NA
+license(s): NA
+copyright: NA
 config:
   theme: dark
 ---
@@ -459,64 +459,5 @@ mindmap
       
 ```
 
-
----
-
-<!-- 
-```mermaid
-%% Current Mermaid version
-info
-```  -->
-
-
-```mermaid
----
-title: "CongLeSolutionX"
-author: "Cong Le"
-version: "1.0"
-license(s): "MIT, CC BY-SA 4.0"
-copyright: "Copyright (c) 2025 Cong Le. All Rights Reserved."
-config:
-  theme: base
----
-%%%%%%%% Mermaid version v11.4.1-b.14
-%%{
-  init: {
-    'flowchart': { 'htmlLabels': false },
-    'fontFamily': 'Bradley Hand',
-    'themeVariables': {
-      'primaryColor': '#fc82',
-      'primaryTextColor': '#F8B229',
-      'primaryBorderColor': '#27AE60',
-      'secondaryColor': '#81c784',
-      'secondaryTextColor': '#6C3483',
-      'lineColor': '#F8B229',
-      'fontSize': '20px'
-    }
-  }
-}%%
-flowchart LR
-  My_Meme@{ img: "https://raw.githubusercontent.com/CongLeSolutionX/CongLeSolutionX/refs/heads/main/assets/images/My-meme-light-bulb-question-marks.png", label: "Ăn uống gì chưa ngừi đẹp?", pos: "b", w: 200, h: 150, constraint: "off" }
-
-  Closing_quote@{ shape: braces, label: "...searching insights in the process of formulating better questions..." }
-    
-  My_Meme ~~~ Closing_quote
-    
-  Link_to_my_profile{{"<a href='https://github.com/CongLeSolutionX' target='_blank'>Click here if you care about my profile</a>"}}
-
-  Closing_quote ~~~ My_Meme
-  My_Meme animatingEdge@--> Link_to_my_profile
-  
-  animatingEdge@{ animate: true }
-
-```
-
-
-
----
-**Licenses:**
-
-- **MIT License:**  [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE) - Full text in [LICENSE](LICENSE) file.
-- **Creative Commons Attribution 4.0 International:** [![License: CC BY 4.0](https://licensebuttons.net/l/by/4.0/88x31.png)](LICENSE-CC-BY) - Legal details in [LICENSE-CC-BY](LICENSE-CC-BY) and at [Creative Commons official site](http://creativecommons.org/licenses/by/4.0/).
 
 ---

@@ -1,9 +1,9 @@
 ---
 created: 2025-04-27 05:31:26
-author: Cong Le
-version: "1.0"
-license(s): MIT, CC BY 4.0
-copyright: Copyright (c) 2025 Cong Le. All Rights Reserved.
+author: NA
+version: NA
+license(s): NA
+copyright: NA
 ---
 
 
@@ -32,10 +32,10 @@ The **Model-View-ViewModel-Coordinator (MVVM-C)** pattern is an architectural pa
 ```mermaid
 ---
 title: "What is MVVM-C?"
-author: "Cong Le"
-version: "1.0"
-license(s): "MIT, CC BY 4.0"
-copyright: "Copyright (c) 2025 Cong Le. All Rights Reserved."
+author: NA
+version: NA
+license(s): NA
+copyright: NA
 config:
   theme: dark
 ---
@@ -92,10 +92,10 @@ The Model represents the application's data and core domain logic. It's unaware 
 ```mermaid
 ---
 title: "Core Components - Model"
-author: "Cong Le"
-version: "1.0"
-license(s): "MIT, CC BY 4.0"
-copyright: "Copyright (c) 2025 Cong Le. All Rights Reserved."
+author: NA
+version: NA
+license(s): NA
+copyright: NA
 config:
   theme: base
 ---
@@ -140,10 +140,10 @@ The View is responsible for presenting the UI to the user and capturing user inp
 ```mermaid
 ---
 title: "Core Components - View"
-author: "Cong Le"
-version: "1.0"
-license(s): "MIT, CC BY 4.0"
-copyright: "Copyright (c) 2025 Cong Le. All Rights Reserved."
+author: NA
+version: NA
+license(s): NA
+copyright: NA
 config:
   theme: base
 ---
@@ -202,10 +202,10 @@ The ViewModel acts as an intermediary between the Model and the View. It prepare
 ```mermaid
 ---
 title: "Core Components - ViewModel"
-author: "Cong Le"
-version: "1.0"
-license(s): "MIT, CC BY 4.0"
-copyright: "Copyright (c) 2025 Cong Le. All Rights Reserved."
+author: NA
+version: NA
+license(s): NA
+copyright: NA
 config:
   theme: base
 ---
@@ -259,10 +259,10 @@ This is the defining component of MVVM-C. The Coordinator manages the navigation
 ```mermaid
 ---
 title: "Core Components - Coordinator"
-author: "Cong Le"
-version: "1.0"
-license(s): "MIT, CC BY 4.0"
-copyright: "Copyright (c) 2025 Cong Le. All Rights Reserved."
+author: NA
+version: NA
+license(s): NA
+copyright: NA
 config:
   theme: base
 ---
@@ -324,10 +324,10 @@ The power of MVVM-C lies in its clean separation and defined communication paths
 ```mermaid
 ---
 title: "Component Interactions & Communication Flow"
-author: "Cong Le"
-version: "1.0"
-license(s): "MIT, CC BY 4.0"
-copyright: "Copyright (c) 2025 Cong Le. All Rights Reserved."
+author: NA
+version: NA
+license(s): NA
+copyright: NA
 config:
   theme: base
 ---
@@ -386,10 +386,10 @@ For non-trivial applications, a single coordinator becomes unmanageable. MVVM-C 
 ```mermaid
 ---
 title: "Coordinator Hierarchy & Flow Management"
-author: "Cong Le"
-version: "1.0"
-license(s): "MIT, CC BY 4.0"
-copyright: "Copyright (c) 2025 Cong Le. All Rights Reserved."
+author: NA
+version: NA
+license(s): NA
+copyright: NA
 config:
   theme: base
 ---
@@ -582,10 +582,10 @@ Full GitHub repo implementation [GitHub - CongLeSolutionX/MyApp at DESIGN\_PATTE
 ```mermaid
 ---
 title: "Summary in Mind Map"
-author: "Cong Le"
-version: "1.0"
-license(s): "MIT, CC BY 4.0"
-copyright: "Copyright (c) 2025 Cong Le. All Rights Reserved."
+author: NA
+version: NA
+license(s): NA
+copyright: NA
 config:
   theme: dark
 ---
@@ -653,60 +653,3 @@ mindmap
 
 ---
 
-<!-- 
-```mermaid
-%% Current Mermaid version
-info
-```  -->
-
-
-```mermaid
----
-title: "CongLeSolutionX"
-author: "Cong Le"
-version: "1.0"
-license(s): "MIT, CC BY-SA 4.0"
-copyright: "Copyright (c) 2025 Cong Le. All Rights Reserved."
-config:
-  theme: base
----
-%%%%%%%% Mermaid version v11.4.1-b.14
-%%{
-  init: {
-    'flowchart': { 'htmlLabels': false },
-    'fontFamily': 'Bradley Hand',
-    'themeVariables': {
-      'primaryColor': '#fc82',
-      'primaryTextColor': '#F8B229',
-      'primaryBorderColor': '#27AE60',
-      'secondaryColor': '#81c784',
-      'secondaryTextColor': '#6C3483',
-      'lineColor': '#F8B229',
-      'fontSize': '20px'
-    }
-  }
-}%%
-flowchart LR
-  My_Meme@{ img: "https://raw.githubusercontent.com/CongLeSolutionX/CongLeSolutionX/refs/heads/main/assets/images/My-meme-light-bulb-question-marks.png", label: "Ăn uống gì chưa ngừi đẹp?", pos: "b", w: 200, h: 150, constraint: "off" }
-
-  Closing_quote@{ shape: braces, label: "...searching insights in the process of formulating better questions..." }
-    
-  My_Meme ~~~ Closing_quote
-    
-  Link_to_my_profile{{"<a href='https://github.com/CongLeSolutionX' target='_blank'>Click here if you care about my profile</a>"}}
-
-  Closing_quote ~~~ My_Meme
-  My_Meme animatingEdge@--> Link_to_my_profile
-  
-  animatingEdge@{ animate: true }
-
-```
-
-
----
-**Licenses:**
-
-- **MIT License:**  [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE) - Full text in [LICENSE](LICENSE) file.
-- **Creative Commons Attribution 4.0 International:** [![License: CC BY 4.0](https://licensebuttons.net/l/by/4.0/88x31.png)](LICENSE-CC-BY) - Legal details in [LICENSE-CC-BY](LICENSE-CC-BY) and at [Creative Commons official site](http://creativecommons.org/licenses/by/4.0/).
-
----
