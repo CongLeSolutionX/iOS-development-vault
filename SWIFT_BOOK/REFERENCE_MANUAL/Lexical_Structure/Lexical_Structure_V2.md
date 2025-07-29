@@ -1,10 +1,10 @@
 ---
 source_url: "https://github.com/swiftlang/swift-book/blob/main/TSPL.docc/ReferenceManual/LexicalStructure.md"
 created: 2025-02-04 11:50:26
-author: Cong Le
-version: "2.0"
-license(s): MIT, CC BY 4.0
-copyright: Copyright (c) 2025 Cong Le. All Rights Reserved.
+author: NA
+version: NA
+license(s): NA
+copyright: NA
 ---
 
 
