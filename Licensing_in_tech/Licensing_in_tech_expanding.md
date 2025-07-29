@@ -1,19 +1,37 @@
 ---
 created: 2025-02-18 05:31:26
-author: Cong Le
-version: "1.0"
-license(s): MIT, CC BY 4.0
-copyright: Copyright (c) 2025 Cong Le. All Rights Reserved.
+author: NA
+version: NA
+license(s): NA
+copyright: NA
 ---
 
 
 
 # An Overview on Licencing in Tech Industry - An Expanding Diagrammatic Guide
-> This content is dual-licensed under your choice of the following licenses:
-> 1.  **MIT License:** For the code implementations in Swift and Mermaid provided in this document.
-> 2.  **Creative Commons Attribution 4.0 International License (CC BY 4.0):** For all other content, including the text, explanations, and the Mermaid diagrams and illustrations.
+
 
 ---
+
+<div align="center">
+  <blockquote>
+  As a visual learner student, I created these personal study notes from the cited source(s) to aid my understanding.<br/>
+  While my firm intention is to provide full credit, the blended format of notes and diagrams may sometimes obscure the original source, for which I apologize.<br/>
+  I am committed to making corrections and welcome any feedback.<br/>
+  This is a non-commercial project for my humble educational purposes only since the start.<br/>
+  My goal is to share my perspective and contribute to the great work already being done.
+  <br/>
+  <br/>
+  I want to extend my genuine apologies to the creators of the original material.<br/>
+  Their work was the direct inspiration for this project, and I adapted it without first reaching out.<br/>
+  My intent comes from a place of deep respect, and I hope this is received in the spirit of homage.<br/>
+  🙏🏼🙏🏼🙏🏼🙏🏼
+  </blockquote>
+</div>
+
+----
+
+
 
 
 
@@ -176,10 +194,5 @@ mindmap
 5.  **"Other/Uncategorized (Review and Categorize)" Section:**  Kept an "Other" category but renamed with a note to "Review and Categorize". This helps to isolate licenses that need further investigation or better placement.  Licenses like `unlicense`, `other`, `cc` in its generic form, and `gemmma` (likely a typo) are placed here for review.
 
 
----
-**Licenses:**
-
-- **MIT License:**  [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE) - Full text in [LICENSE](LICENSE) file.
-- **Creative Commons Attribution 4.0 International:** [![License: CC BY 4.0](https://licensebuttons.net/l/by/4.0/88x31.png)](LICENSE-CC-BY) - Legal details in [LICENSE-CC-BY](LICENSE-CC-BY) and at [Creative Commons official site](http://creativecommons.org/licenses/by/4.0/).
 
 ---
