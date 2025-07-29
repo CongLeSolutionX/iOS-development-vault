@@ -1,9 +1,9 @@
 ---
 created: 2025-03-14 05:31:26
-author: Cong Le
-version: "1.0"
-license(s): MIT, CC BY 4.0
-copyright: Copyright (c) 2025 Cong Le. All Rights Reserved.
+author: NA
+version: NA
+license(s): NA
+copyright: NA
 original source: "https://developer.apple.com/ios/planning/"
 ---
 
@@ -23,10 +23,10 @@ original source: "https://developer.apple.com/ios/planning/"
 ```mermaid
 ---
 title: "iOS App Development Planning"
-author: "Cong Le"
-version: "1.0"
-license(s): "MIT, CC BY 4.0"
-copyright: "Copyright (c) 2025 Cong Le. All Rights Reserved."
+author: NA
+version: NA
+license(s): NA
+copyright: NA
 config:
   layout: elk
   look: handDrawn

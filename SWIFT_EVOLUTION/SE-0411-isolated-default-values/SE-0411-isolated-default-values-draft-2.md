@@ -1,9 +1,9 @@
 ---
 created: 2025-02-11 05:48:19
-author: Cong Le
-version: "1.0"
-license(s): MIT, CC BY 4.0
-copyright: Copyright (c) 2025 Cong Le. All Rights Reserved.
+author: NA
+version: NA
+license(s): NA
+copyright: NA
 source_url: "https://github.com/swiftlang/swift-evolution/blob/main/proposals/0411-isolated-default-values.md"
 ---
 

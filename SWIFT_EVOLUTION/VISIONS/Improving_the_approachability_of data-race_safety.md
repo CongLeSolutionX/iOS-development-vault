@@ -1,9 +1,9 @@
 ---
 created: 2025-03-29 05:31:26
-author: Cong Le
-version: "1.0"
-license(s): MIT, CC BY 4.0
-copyright: Copyright (c) 2025 Cong Le. All Rights Reserved.
+author: NA
+version: NA
+license(s): NA
+copyright: NA
 original source: "https://github.com/swiftlang/swift-evolution/blob/main/visions/approachable-concurrency.md"
 ---
 
@@ -27,11 +27,11 @@ This diagram provides a high-level overview of the core goals driving Swift's co
 
 ```mermaid
 ---
-title: "CHANGE_ME_DADDY"
-author: "Cong Le"
-version: "1.0"
-license(s): "MIT, CC BY 4.0"
-copyright: "Copyright (c) 2025 Cong Le. All Rights Reserved."
+title: NA
+author: NA
+version: NA
+license(s): NA
+copyright: NA
 config:
   layout: elk
   look: handDrawn
@@ -102,10 +102,10 @@ This illustrates the intended ideal path for learning and adopting concurrency f
 ```mermaid
 ---
 title: "Progressive Disclosure Path for Concurrency"
-author: "Cong Le"
-version: "1.0"
-license(s): "MIT, CC BY 4.0"
-copyright: "Copyright (c) 2025 Cong Le. All Rights Reserved."
+author: NA
+version: NA
+license(s): NA
+copyright: NA
 config:
   layout: elk
   look: handDrawn
@@ -167,10 +167,10 @@ This diagram explains *why* sequential code often encounters data-race errors in
 ```mermaid
 ---
 title: "The 'False Positive' Problem in Sequential Code"
-author: "Cong Le"
-version: "1.0"
-license(s): "MIT, CC BY 4.0"
-copyright: "Copyright (c) 2025 Cong Le. All Rights Reserved."
+author: NA
+version: NA
+license(s): NA
+copyright: NA
 config:
   layout: elk
   look: handDrawn
@@ -236,10 +236,10 @@ This set of diagrams explains the core proposal: allowing modules to default to 
 ```mermaid
 ---
 title: "The Concept of the Module-Level Default Isolation"
-author: "Cong Le"
-version: "1.0"
-license(s): "MIT, CC BY 4.0"
-copyright: "Copyright (c) 2025 Cong Le. All Rights Reserved."
+author: NA
+version: NA
+license(s): NA
+copyright: NA
 config:
   layout: elk
   look: handDrawn
@@ -289,10 +289,10 @@ graph TD
 ```mermaid
 ---
 title: "Rule by Target Type"
-author: "Cong Le"
-version: "1.0"
-license(s): "MIT, CC BY 4.0"
-copyright: "Copyright (c) 2025 Cong Le. All Rights Reserved."
+author: NA
+version: NA
+license(s): NA
+copyright: NA
 config:
   layout: elk
   look: handDrawn
@@ -343,10 +343,10 @@ flowchart TD
 ```mermaid
 ---
 title: "Risks"
-author: "Cong Le"
-version: "1.0"
-license(s): "MIT, CC BY 4.0"
-copyright: "Copyright (c) 2025 Cong Le. All Rights Reserved."
+author: NA
+version: NA
+license(s): NA
+copyright: NA
 config:
   layout: elk
   look: handDrawn
@@ -403,10 +403,10 @@ This addresses the difficulty of conforming isolated types (like `@MainActor` cl
 ```mermaid
 ---
 title: "Isolated Conformances"
-author: "Cong Le"
-version: "1.0"
-license(s): "MIT, CC BY 4.0"
-copyright: "Copyright (c) 2025 Cong Le. All Rights Reserved."
+author: NA
+version: NA
+license(s): NA
+copyright: NA
 config:
   layout: elk
   look: handDrawn
@@ -475,10 +475,10 @@ This deals with restrictions related to class inheritance and isolation.
 ```mermaid
 ---
 title: "Isolated Subclasses and Overrides"
-author: "Cong Le"
-version: "1.0"
-license(s): "MIT, CC BY 4.0"
-copyright: "Copyright (c) 2025 Cong Le. All Rights Reserved."
+author: NA
+version: NA
+license(s): NA
+copyright: NA
 config:
   layout: elk
   look: handDrawn
@@ -541,10 +541,10 @@ This addresses the execution behavior of `nonisolated async` functions.
 ```mermaid
 ---
 title: "Easing Basic Async Code Introduction (SE-0338 Revision)"
-author: "Cong Le"
-version: "1.0"
-license(s): "MIT, CC BY 4.0"
-copyright: "Copyright (c) 2025 Cong Le. All Rights Reserved."
+author: NA
+version: NA
+license(s): NA
+copyright: NA
 config:
   layout: elk
   look: handDrawn
@@ -613,10 +613,10 @@ This covers proposals to help migrate existing codebases.
 ```mermaid
 ---
 title: "Easing Incremental Migration"
-author: "Cong Le"
-version: "1.0"
-license(s): "MIT, CC BY 4.0"
-copyright: "Copyright (c) 2025 Cong Le. All Rights Reserved."
+author: NA
+version: NA
+license(s): NA
+copyright: NA
 config:
   layout: elk
   look: handDrawn
@@ -682,10 +682,10 @@ graph TD
 ```mermaid
 ---
 title: "Scope Exclusions"
-author: "Cong Le"
-version: "1.0"
-license(s): "MIT, CC BY 4.0"
-copyright: "Copyright (c) 2025 Cong Le. All Rights Reserved."
+author: NA
+version: NA
+license(s): NA
+copyright: NA
 config:
   layout: elk
   look: handDrawn

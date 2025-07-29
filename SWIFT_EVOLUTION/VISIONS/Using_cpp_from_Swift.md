@@ -1,9 +1,9 @@
 ---
 created: 2025-03-29 05:31:26
-author: Cong Le
-version: "1.0"
-license(s): MIT, CC BY 4.0
-copyright: Copyright (c) 2025 Cong Le. All Rights Reserved.
+author: NA
+version: NA
+license(s): NA
+copyright: NA
 original source: "https://github.com/swiftlang/swift-evolution/blob/main/visions/using-c%2B%2B-from-swift.md"
 ---
 
@@ -36,10 +36,10 @@ This mindmap outlines the central theme, primary goals, and key motivations behi
 ```mermaid
 ---
 title: "Overall Vision and Goals"
-author: "Cong Le"
-version: "1.0"
-license(s): "MIT, CC BY 4.0"
-copyright: "Copyright (c) 2025 Cong Le. All Rights Reserved."
+author: NA
+version: NA
+license(s): NA
+copyright: NA
 config:
   theme: dark
 ---
@@ -99,10 +99,10 @@ This flowchart illustrates the general decision-making process the Swift compile
 ```mermaid
 ---
 title: "Core Interoperability Approach: Pattern Recognition & Mapping"
-author: "Cong Le"
-version: "1.0"
-license(s): "MIT, CC BY 4.0"
-copyright: "Copyright (c) 2025 Cong Le. All Rights Reserved."
+author: NA
+version: NA
+license(s): NA
+copyright: NA
 config:
   layout: elk
   look: handDrawn
@@ -173,10 +173,10 @@ This diagram outlines the high-level strategy for deciding whether to import a C
 ```mermaid
 ---
 title: "Type Import Strategy: Value vs. Reference Semantics"
-author: "Cong Le"
-version: "1.0"
-license(s): "MIT, CC BY 4.0"
-copyright: "Copyright (c) 2025 Cong Le. All Rights Reserved."
+author: NA
+version: NA
+license(s): NA
+copyright: NA
 config:
   layout: elk
   look: handDrawn
@@ -245,10 +245,10 @@ This diagram details the different ways C++ reference types can be managed and h
 ```mermaid
 ---
 title: "Reference Type Management Strategies"
-author: "Cong Le"
-version: "1.0"
-license(s): "MIT, CC BY 4.0"
-copyright: "Copyright (c) 2025 Cong Le. All Rights Reserved."
+author: NA
+version: NA
+license(s): NA
+copyright: NA
 config:
   layout: elk
   look: handDrawn
@@ -313,10 +313,10 @@ This diagram categorizes the different kinds of C++ types imported as Swift stru
 ```mermaid
 ---
 title: "Value Type Categories"
-author: "Cong Le"
-version: "1.0"
-license(s): "MIT, CC BY 4.0"
-copyright: "Copyright (c) 2025 Cong Le. All Rights Reserved."
+author: NA
+version: NA
+license(s): NA
+copyright: NA
 config:
   layout: elk
   look: handDrawn
@@ -378,10 +378,10 @@ This diagram illustrates the core problem with "projections" – values (often p
 ```mermaid
 ---
 title: "Projection Handling Challenge"
-author: "Cong Le"
-version: "1.0"
-license(s): "MIT, CC BY 4.0"
-copyright: "Copyright (c) 2025 Cong Le. All Rights Reserved."
+author: NA
+version: NA
+license(s): NA
+copyright: NA
 config:
   layout: elk
   look: handDrawn
@@ -439,10 +439,10 @@ This flowchart shows the desired mapping for common C++ iterator patterns.
 ```mermaid
 ---
 title: "Iterator and Range Mapping"
-author: "Cong Le"
-version: "1.0"
-license(s): "MIT, CC BY 4.0"
-copyright: "Copyright (c) 2025 Cong Le. All Rights Reserved."
+author: NA
+version: NA
+license(s): NA
+copyright: NA
 config:
   layout: elk
   look: handDrawn
@@ -490,10 +490,10 @@ This diagram highlights the mapping between C++ `const` and Swift's mutability s
 ```mermaid
 ---
 title: "Mutability Mapping (`const` vs. Swift Mutability)"
-author: "Cong Le"
-version: "1.0"
-license(s): "MIT, CC BY 4.0"
-copyright: "Copyright (c) 2025 Cong Le. All Rights Reserved."
+author: NA
+version: NA
+license(s): NA
+copyright: NA
 config:
   layout: elk
   look: handDrawn
@@ -554,10 +554,10 @@ Illustrates mapping common C++ getter/setter patterns to Swift computed properti
 ```mermaid
 ---
 title: "Computed Property Mapping (Getters/Setters)"
-author: "Cong Le"
-version: "1.0"
-license(s): "MIT, CC BY 4.0"
-copyright: "Copyright (c) 2025 Cong Le. All Rights Reserved."
+author: NA
+version: NA
+license(s): NA
+copyright: NA
 config:
   layout: elk
   look: handDrawn
@@ -625,10 +625,10 @@ Highlights the difficulty in bridging the two generic systems.
 ```mermaid
 ---
 title: "C++ Templates / Swift Generics Limitation"
-author: "Cong Le"
-version: "1.0"
-license(s): "MIT, CC BY 4.0"
-copyright: "Copyright (c) 2025 Cong Le. All Rights Reserved."
+author: NA
+version: NA
+license(s): NA
+copyright: NA
 config:
   layout: elk
   look: handDrawn
@@ -685,10 +685,10 @@ Shows the relationship between Swift code, the Swift standard library, the C++ s
 ```mermaid
 ---
 title: "Standard Library Interaction & Overlay"
-author: "Cong Le"
-version: "1.0"
-license(s): "MIT, CC BY 4.0"
-copyright: "Copyright (c) 2025 Cong Le. All Rights Reserved."
+author: NA
+version: NA
+license(s): NA
+copyright: NA
 config:
   layout: elk
   look: handDrawn
@@ -745,10 +745,10 @@ Outlines the proposed staged approach for developing and stabilizing C++ interop
 ```mermaid
 ---
 title: "Evolution Strategy"
-author: "Cong Le"
-version: "1.0"
-license(s): "MIT, CC BY 4.0"
-copyright: "Copyright (c) 2025 Cong Le. All Rights Reserved."
+author: NA
+version: NA
+license(s): NA
+copyright: NA
 config:
   layout: elk
   look: handDrawn
@@ -801,10 +801,10 @@ Summarizes the necessary tooling support for a good user experience.
 ```mermaid
 ---
 title: "Tooling and Build Process Requirements"
-author: "Cong Le"
-version: "1.0"
-license(s): "MIT, CC BY 4.0"
-copyright: "Copyright (c) 2025 Cong Le. All Rights Reserved."
+author: NA
+version: NA
+license(s): NA
+copyright: NA
 config:
   layout: elk
   look: handDrawn
@@ -867,10 +867,10 @@ This flowchart specifically illustrates the dangling pointer problem described i
 ```mermaid
 ---
 title: "Appendix 2: Lifetime Issue with Projections from Value Types"
-author: "Cong Le"
-version: "1.0"
-license(s): "MIT, CC BY 4.0"
-copyright: "Copyright (c) 2025 Cong Le. All Rights Reserved."
+author: NA
+version: NA
+license(s): NA
+copyright: NA
 config:
   layout: elk
   look: handDrawn

@@ -1,9 +1,9 @@
 ---
 created: 2025-03-29 05:31:26
-author: Cong Le
-version: "1.0"
-license(s): MIT, CC BY 4.0
-copyright: Copyright (c) 2025 Cong Le. All Rights Reserved.
+author: NA
+version: NA
+license(s): NA
+copyright: NA
 original source: "https://github.com/swiftlang/swift-evolution/blob/main/visions/embedded-swift.md"
 ---
 
@@ -36,10 +36,10 @@ This diagram contrasts the characteristics of current Swift deployments with the
 ```mermaid
 ---
 title: "The Problem: Bridging the Gap"
-author: "Cong Le"
-version: "1.1"
-license(s): "MIT, CC BY 4.0"
-copyright: "Copyright (c) 2025 Cong Le. All Rights Reserved."
+author: NA
+version: NA
+license(s): NA
+copyright: NA
 config:
   layout: elk
   look: handDrawn
@@ -104,10 +104,10 @@ This mind map outlines the primary objectives driving the development of the Emb
 ```mermaid
 ---
 title: "Core Goals of Embedded Swift"
-author: "Cong Le"
-version: "1.0"
-license(s): "MIT, CC BY 4.0"
-copyright: "Copyright (c) 2025 Cong Le. All Rights Reserved."
+author: NA
+version: NA
+license(s): NA
+copyright: NA
 config:
   theme: dark
 ---
@@ -163,10 +163,10 @@ This diagram details the features restricted in Embedded Swift, showing the base
 ```mermaid
 ---
 title: "Embedded Swift Language Subset Hierarchy"
-author: "Cong Le"
-version: "1.0"
-license(s): "MIT, CC BY 4.0"
-copyright: "Copyright (c) 2025 Cong Le. All Rights Reserved."
+author: NA
+version: NA
+license(s): NA
+copyright: NA
 config:
   layout: elk
   look: handDrawn
@@ -232,10 +232,10 @@ This flowchart explains the core compiler techniques used to achieve the goals o
 ```mermaid
 ---
 title: "Embedded Swift Compilation Model"
-author: "Cong Le"
-version: "1.0"
-license(s): "MIT, CC BY 4.0"
-copyright: "Copyright (c) 2025 Cong Le. All Rights Reserved."
+author: NA
+version: NA
+license(s): NA
+copyright: NA
 config:
   layout: elk
   look: handDrawn
@@ -302,10 +302,10 @@ This diagram shows how developers might enable Embedded Swift and write code com
 ```mermaid
 ---
 title: "Enabling Embedded Mode and Conditional Code"
-author: "Cong Le"
-version: "1.0"
-license(s): "MIT, CC BY 4.0"
-copyright: "Copyright (c) 2025 Cong Le. All Rights Reserved."
+author: NA
+version: NA
+license(s): NA
+copyright: NA
 config:
   layout: elk
   look: handDrawn
@@ -363,10 +363,10 @@ This illustrates the minimal external dependencies anticipated for binaries comp
 ```mermaid
 ---
 title: "Expected Dependency Profile"
-author: "Cong Le"
-version: "1.0"
-license(s): "MIT, CC BY 4.0"
-copyright: "Copyright (c) 2025 Cong Le. All Rights Reserved."
+author: NA
+version: NA
+license(s): NA
+copyright: NA
 config:
   layout: elk
   look: handDrawn

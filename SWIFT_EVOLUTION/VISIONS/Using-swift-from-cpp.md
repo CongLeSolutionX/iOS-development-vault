@@ -1,9 +1,9 @@
 ---
 created: 2025-03-29 05:31:26
-author: Cong Le
-version: "1.0"
-license(s): MIT, CC BY 4.0
-copyright: Copyright (c) 2025 Cong Le. All Rights Reserved.
+author: NA
+version: NA
+license(s): NA
+copyright: NA
 original source: "https://github.com/swiftlang/swift-evolution/blob/main/visions/using-swift-from-c%2B%2B.md"
 ---
 
@@ -33,10 +33,10 @@ This flowchart illustrates the core motivation and the high-level solution propo
 ```mermaid
 ---
 title: "Overview: The Problem and Proposed Solution"
-author: "Cong Le"
-version: "1.0"
-license(s): "MIT, CC BY 4.0"
-copyright: "Copyright (c) 2025 Cong Le. All Rights Reserved."
+author: NA
+version: NA
+license(s): NA
+copyright: NA
 config:
   layout: elk
   look: handDrawn
@@ -91,10 +91,10 @@ This diagram contrasts the proposed C++ reverse interoperability mechanism with 
 ```mermaid
 ---
 title: "Comparison: Reverse Interoperability Mechanisms"
-author: "Cong Le"
-version: "1.0"
-license(s): "MIT, CC BY 4.0"
-copyright: "Copyright (c) 2025 Cong Le. All Rights Reserved."
+author: NA
+version: NA
+license(s): NA
+copyright: NA
 config:
   layout: elk
   look: handDrawn
@@ -157,10 +157,10 @@ This mind map outlines the primary objectives guiding the design of the feature.
 ```mermaid
 ---
 title: "Core Goals of Swift-to-C++ Interoperability"
-author: "Cong Le"
-version: "1.0"
-license(s): "MIT, CC BY 4.0"
-copyright: "Copyright (c) 2025 Cong Le. All Rights Reserved."
+author: NA
+version: NA
+license(s): NA
+copyright: NA
 config:
   theme: dark
 ---
@@ -226,10 +226,10 @@ This diagram illustrates the flow of generating and using the C++ header file.
 ```mermaid
 ---
 title: "Technical Approach: Header Generation and Usage"
-author: "Cong Le"
-version: "1.0"
-license(s): "MIT, CC BY 4.0"
-copyright: "Copyright (c) 2025 Cong Le. All Rights Reserved."
+author: NA
+version: NA
+license(s): NA
+copyright: NA
 config:
   layout: elk
   look: handDrawn
@@ -297,10 +297,10 @@ This mind map summarizes how major Swift language features are expected to be re
 ```mermaid
 ---
 title: "Bridging Key Swift Constructs to C++"
-author: "Cong Le"
-version: "1.0"
-license(s): "MIT, CC BY 4.0"
-copyright: "Copyright (c) 2025 Cong Le. All Rights Reserved."
+author: NA
+version: NA
+license(s): NA
+copyright: NA
 config:
   theme: dark
 ---
@@ -357,10 +357,10 @@ This flowchart outlines how the specific bridging details will be designed and a
 ```mermaid
 ---
 title: "Evolution Process for the Feature"
-author: "Cong Le"
-version: "1.0"
-license(s): "MIT, CC BY 4.0"
-copyright: "Copyright (c) 2025 Cong Le. All Rights Reserved."
+author: NA
+version: NA
+license(s): NA
+copyright: NA
 config:
   look: handDrawn
   theme: dark
@@ -408,10 +408,10 @@ This mind map details the planned support within the broader Swift ecosystem too
 ```mermaid
 ---
 title: "Ecosystem Integration"
-author: "Cong Le"
-version: "1.0"
-license(s): "MIT, CC BY 4.0"
-copyright: "Copyright (c) 2025 Cong Le. All Rights Reserved."
+author: NA
+version: NA
+license(s): NA
+copyright: NA
 config:
   theme: dark
 ---

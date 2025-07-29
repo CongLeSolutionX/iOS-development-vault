@@ -1,9 +1,9 @@
 ---
 created: 2025-02-11 05:48:19
-author: Cong Le
-version: "2.0"
-license(s): MIT, CC BY 4.0
-copyright: Copyright (c) 2025 Cong Le. All Rights Reserved.
+author: NA
+version: NA
+license(s): NA
+copyright: NA
 original source: https://github.com/jrasmusson/swift-arcade/tree/master/Extract-Views
 ---
 
@@ -144,7 +144,7 @@ graph LR
 
     end
 
-    classDef parentView fill:#e3eef9,stroke:#ccc,stroke-width:1px,stroke-dasharray: 5 5;
+    classDef parentView fill:#e224,stroke:#ccc,stroke-width:1px,stroke-dasharray: 5 5;
     classDef extractedView fill:#e3e4f9,stroke:#333,stroke-width:1px;
     classDef parentConstraintLink stroke:#orange,stroke-width:2.5px;
     classDef childConstraintLink stroke:#blue,stroke-width:2.5px;
