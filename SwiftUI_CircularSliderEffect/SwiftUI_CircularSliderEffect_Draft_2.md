@@ -1,17 +1,36 @@
 ---
 created: 2025-02-18 05:31:26
-author: Cong Le
-version: "1.0"
-license(s): MIT, CC BY 4.0
-copyright: Copyright (c) 2025 Cong Le. All Rights Reserved.
+author: NA
+version: NA
+license(s): NA
+copyright: NA
 ---
 
 
 
 # SwiftUI - Circular Slider Effect
-> This content is dual-licensed under your choice of the following licenses:
-> 1.  **MIT License:** For the code implementations in Swift and Mermaid provided in this document.
-> 2.  **Creative Commons Attribution 4.0 International License (CC BY 4.0):** For all other content, including the text, explanations, and the Mermaid diagrams and illustrations.
+
+
+---
+
+<div align="center">
+  <blockquote>
+  As a visual learner student, I created these personal study notes from the cited source(s) to aid my understanding.<br/>
+  While my firm intention is to provide full credit, the blended format of notes and diagrams may sometimes obscure the original source, for which I apologize.<br/>
+  I am committed to making corrections and welcome any feedback.<br/>
+  This is a non-commercial project for my humble educational purposes only since the start.<br/>
+  My goal is to share my perspective and contribute to the great work already being done.
+  <br/>
+  <br/>
+  I want to extend my genuine apologies to the creators of the original material.<br/>
+  Their work was the direct inspiration for this project, and I adapted it without first reaching out.<br/>
+  My intent comes from a place of deep respect, and I hope this is received in the spirit of homage.<br/>
+  🙏🏼🙏🏼🙏🏼🙏🏼
+  </blockquote>
+</div>
+
+----
+
 
 ---
 This doc will explain the Swift code implementation from this branch https://github.com/CongLeSolutionX/MyApp/tree/SwiftUI_Circular_Slider_Effect-SAVE-FOR-REFERENCE.
