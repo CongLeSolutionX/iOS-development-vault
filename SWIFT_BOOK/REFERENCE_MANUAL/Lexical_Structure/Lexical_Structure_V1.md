@@ -741,12 +741,4 @@ flowchart TB
 
 This diagram combines a flowchart explaining how Swift determines if an operator is infix, prefix, or postfix based on whitespace rules, with a 'character set' subgraph detailing valid characters for custom operators. The flowchart visualizes the decision process based on whitespace around the operator. The character set provides a reference for allowed operator head characters (ASCII and Unicode ranges) and the special case of dot operators.
 
-
-
----
-**Licenses:**
-
-- **MIT License:**  [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE) - Full text in [LICENSE](LICENSE) file.
-- **Creative Commons Attribution 4.0 International:** [![License: CC BY 4.0](https://licensebuttons.net/l/by/4.0/88x31.png)](LICENSE-CC-BY) - Legal details in [LICENSE-CC-BY](LICENSE-CC-BY) and at [Creative Commons official site](http://creativecommons.org/licenses/by/4.0/).
-
 ---
