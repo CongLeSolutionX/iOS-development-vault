@@ -157,14 +157,36 @@ This diagram illustrates the process of comparing two Semantic Versions to deter
 
 ```mermaid
 ---
-title: Version Precedence
+title: "Version Precedence"
+author: "Cong Le"
+version: "0.1"
+license(s): "MIT, CC BY 4.0"
+copyright: "Copyright © 2025 Cong Le. All Rights Reserved."
 config:
   layout: elk
-  look: handDrawn
   theme: forest
 ---
+%%%%%%%% Mermaid version v11.4.1-b.14
+%%{
+  init: {
+    'sequence': { 'mirrorActors': true, 'showSequenceNumbers': true, 'actorMargin': 50 },
+    'fontFamily': 'JetBrains Mono',
+    'themeVariables': {
+      'textColor': '#F8B229',
+      'actorBkg': '#22B8',
+      'actorBorder': '#7C0000',
+      'actorTextColor': '#E2E',
+      'actorLineColor': '#E22E',
+      'activationBkgColor': '#FBBF',
+      'tertiaryColor': '#fff',
+      'fontSize': '15px',
+      'signalColor': '#F93B',
+      'signalTextColor': '#22BB',
+      'sequenceNumberColor': '#000'
+    }
+  }
+}%%
 sequenceDiagram
-    autonumber
     participant VersionComparer
     participant VersionA
     participant VersionB
