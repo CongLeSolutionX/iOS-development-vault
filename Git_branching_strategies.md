@@ -120,7 +120,7 @@ gitGraph
     commit id: "Release Prep"
     branch master
     checkout master
-    merge release/1.0.0
+    %% merge release/1.0.0
     commit id: "Production Release 1.0.0" tag: "v1.0.0"
     checkout develop
     merge master
