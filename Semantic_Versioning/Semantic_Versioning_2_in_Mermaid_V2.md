@@ -1,10 +1,10 @@
 ---
 source_url: "https://semver.org/"
 created: 2025-2-3 09:50:26
-author: Cong Le
-version: "2.0"
-license(s): MIT, CC BY 4.0
-copyright: Copyright (c) 2025 Cong Le. All Rights Reserved.
+author: NA
+version: NA
+license(s): NA
+copyright: NA
 ---
 
 
@@ -457,11 +457,5 @@ graph LR
 
 **Explanation:**  This enhanced mind map provides a more detailed and nuanced overview of the benefits of Semantic Versioning. Expanding each category with specific sub-points directly from the article content makes it more informative.  The improved labels and consistent styling contribute to a more polished and effective visual summary of SemVer's advantages. The color-coded styles further differentiate the main benefits from their sub-points in the mind map.
 
-
----
-**Licenses:**
-
-- **MIT License:**  [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE) - Full text in [LICENSE](LICENSE) file.
-- **Creative Commons Attribution 4.0 International:** [![License: CC BY 4.0](https://licensebuttons.net/l/by/4.0/88x31.png)](LICENSE-CC-BY) - Legal details in [LICENSE-CC-BY](LICENSE-CC-BY) and at [Creative Commons official site](http://creativecommons.org/licenses/by/4.0/).
 
 ---
