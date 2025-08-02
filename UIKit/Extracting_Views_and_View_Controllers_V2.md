@@ -9,7 +9,7 @@ original source: https://github.com/jrasmusson/swift-arcade/tree/master/Extract-
 
 
 
-# Extracting Views & View Controllers - NEED RENDERED ON A MACBOOK TO SEE THE BEAUTY OF THE DIAGRAMS
+# Extracting Views & View Controllers
 
 
 ---
