@@ -1,9 +1,9 @@
 ---
 created: 2025-04-06 05:31:26
-author: Cong Le
-version: "1.0"
-license(s): MIT, CC BY 4.0
-copyright: Copyright (c) 2025 Cong Le. All Rights Reserved.
+author: NA
+version: NA
+license(s): NA
+copyright: NA
 ---
 
 
@@ -36,31 +36,39 @@ copyright: Copyright (c) 2025 Cong Le. All Rights Reserved.
 ```mermaid
 ---
 title: "Swiftlang - Swift Format"
-author: "Cong Le"
-version: "1.0"
-license(s): "MIT, CC BY 4.0"
-copyright: "Copyright (c) 2025 Cong Le. All Rights Reserved."
+author: NA
+version: NA
+license(s): NA
+copyright: NA
 config:
   layout: elk
+  theme: base
   look: handDrawn
-  theme: default
 ---
 %%%%%%%% Mermaid version v11.4.1-b.14
-%%%%%%%% Toggle theme value to `base` to activate the initilization below for the customized theme version.
 %%%%%%%% Available curve styles include the following keywords:
 %% basis, bumpX, bumpY, cardinal, catmullRom, linear, monotoneX, monotoneY, natural, step, stepAfter, stepBefore.
 %%{
   init: {
-    'flowchart': {'htmlLabels': true, 'curve': 'basis' },
-    'fontFamily': 'Fantasy',
+    'flowchart': { 'htmlLabels': true, 'curve': 'basis' },
+    'fontFamily': 'American Typewriter, monospace',
+    'logLevel': 'fatal',
     'themeVariables': {
-      'lineColor': '#F8B229'
+      'primaryColor': '#2211',
+      'primaryTextColor': '#F8B229',
+      'lineColor': '#F8B229',
+      'primaryBorderColor': '#27AE60',
+      'secondaryColor': '#2F11',
+      'secondaryTextColor': '#6C3483',
+      'secondaryBorderColor': '#A569BD',
+      'fontSize': '20px'
     }
   }
 }%%
 flowchart TD
-    subgraph "User Interaction Layer"
-        CLI_Interface["Command-Line Interface (CLI)"]:::user
+    subgraph User_Interaction_Layer["User Interaction Layer"]
+    style User_Interaction_Layer fill:#2B2B,stroke:#5422,stroke-width:1px
+        CLI_Interface["Command-Line Interface<br/>(CLI)"]:::user
         API_Layer["API Layer"]:::user
     end
 
@@ -69,15 +77,18 @@ flowchart TD
     CLI_Interface -->|"loads_configuration"| ConfigLoader
     API_Layer -->|"invokes_API"| ConfigLoader
 
-    subgraph "Formatting and Linting Engine"
-        subgraph "Formatting Pipeline"
+    subgraph Formatting_and_Linting_Engine["Formatting and Linting Engine"]
+    style Formatting_and_Linting_Engine fill:#22BB,stroke:#5422,stroke-width:1px
+        subgraph Formatting_Pipeline["Formatting Pipeline"]
+        style Formatting_Pipeline fill:#f9e79f,stroke:#5422,stroke-width:1px
             CoreProcessing["Core Processing"]:::engine
             RulesEngine["Rules Engine"]:::engine
             PrettyPrint["Pretty Print Module"]:::engine
             CoreProcessing -->|"applies_rules"| RulesEngine
             RulesEngine -->|"formats_output"| PrettyPrint
         end
-        subgraph "Linting Pipeline"
+        subgraph Linting_Pipeline["Linting Pipeline"]
+        style Linting_Pipeline fill:#f9e79f,stroke:#5422,stroke-width:1px
             SwiftLinter["Swift Linter"]:::engine
             LintPipeline["Lint Pipeline"]:::engine
             SwiftLinter -->|"generates_diagnostics"| LintPipeline
@@ -126,13 +137,5 @@ flowchart TD
 
 ```
 
-
-
-
----
-**Licenses:**
-
-- **MIT License:**  [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE) - Full text in [LICENSE](LICENSE) file.
-- **Creative Commons Attribution 4.0 International:** [![License: CC BY 4.0](https://licensebuttons.net/l/by/4.0/88x31.png)](LICENSE-CC-BY) - Legal details in [LICENSE-CC-BY](LICENSE-CC-BY) and at [Creative Commons official site](http://creativecommons.org/licenses/by/4.0/).
 
 ---
