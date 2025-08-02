@@ -32,33 +32,35 @@ copyright: NA
 ----
 
 
-## A Diagrammatic Guide 
-
-
-
-
 ```mermaid
 ---
 title: "Muter-mutation-testing - Muter"
-author: NA
-version: NA
-license(s): NA
-copyright: NA
+author: "Cong Le"
+version: "1.0"
+license(s): "MIT, CC BY-SA 4.0"
+copyright: "Copyright © 2025 Cong Le. All Rights Reserved."
 config:
   layout: elk
-  look: handDrawn
   theme: base
+  look: handDrawn
 ---
 %%%%%%%% Mermaid version v11.4.1-b.14
-%%%%%%%% Toggle theme value to `base` to activate the initilization below for the customized theme version.
 %%%%%%%% Available curve styles include the following keywords:
 %% basis, bumpX, bumpY, cardinal, catmullRom, linear, monotoneX, monotoneY, natural, step, stepAfter, stepBefore.
 %%{
   init: {
-    'flowchart': {'htmlLabels': true, 'curve': 'basis' },
-    'fontFamily': 'Fantasy',
+    'flowchart': { 'htmlLabels': true, 'curve': 'basis' },
+    'fontFamily': 'American Typewriter, monospace',
+    'logLevel': 'fatal',
     'themeVariables': {
-      'lineColor': '#F8B229'
+      'primaryColor': '#2211',
+      'primaryTextColor': '#F8B229',
+      'lineColor': '#F8B229',
+      'primaryBorderColor': '#27AE60',
+      'secondaryColor': '#2F11',
+      'secondaryTextColor': '#6C3483',
+      'secondaryBorderColor': '#A569BD',
+      'fontSize': '20px'
     }
   }
 }%%
